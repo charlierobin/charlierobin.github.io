@@ -96,8 +96,8 @@
 
             <section class="panel spotlight medium" id="first">
                 <div class="content span-7">
-                    <h2 class="major">Factotum</h2>
-                    <p>Xojo, Unity, Xcode, Cinder, Adobe After Effects, Cinema 4D, Modo, Python, C++, Swift, Objective-C, C#, PHP, JavaScript, Angular</p>
+                    <h2 class="major">factotum</h2>
+                    <p>Xojo, Unity, Xcode, Cinder, Adobe After Effects, Cinema 4D, Modo, Python, C++, Swift, Objective-C, C#, PHP, JavaScript, Angular, HTML/CSS</p>
                     <p>Design, Engineering &amp; VFX</p>
                 </div>
                 <div class="image filtered tinted" data-position="top left">
@@ -108,7 +108,7 @@
             <section class="panel">
 
                 <div class="intro color2">
-                    <h2 class="major">A gallery of things</h2>
+                    <h2 class="major">a gallery of things</h2>
                     <p>Just seeing how images and videos can be presented in a simple gallery...</p>
                 </div>
 
@@ -156,10 +156,10 @@
 
             <section class="panel">
                 <div class="intro color4">
-                    <h2 class="major">Contact</h2>
+                    <h2 class="major">contact</h2>
                     <p><a href="mailto:charlie@charlierobin.com" title="email address">charlie@charlierobin.com</a></p>
                     <ul class="contact-icons color1">
-                        <li class="icon brands fa-github"><a href="https://github.com/charlierobin">GitHub</a></li>
+                        <li class="icon brands fa-github"><a href="https://github.com/charlierobin">github.com/charlierobin</a></li>
                     </ul>
                 </div>
             </section>
@@ -170,11 +170,139 @@
 
     </div>
 
-    <script src="js/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
     <script src="js/browser.min.js"></script>
     <script src="js/breakpoints.min.js"></script>
     <script src="js/main.js"></script>
 
+    <script>
+        (function($) {
+
+            var $wrapper = $('#wrapper');
+            var $body = $('body');
+
+            $('.gallery')
+                .on('click', 'a', function(event) {
+
+                    var $a = $(this),
+                        $gallery = $a.parents('.gallery'),
+                        $modal = $gallery.children('.modal'),
+                        $modalImg = $modal.find('img'),
+                        href = $a.attr('href');
+
+                    if (!href.match(/\.(jpg|gif|png)$/)) return;
+
+                    // Prevent default.
+                    event.preventDefault();
+                    event.stopPropagation();
+
+                    // Locked? Bail.
+                    if ($modal[0]._locked) return;
+
+                    // Lock.
+                    $modal[0]._locked = true;
+
+                    $modalImg.attr('src', href);
+
+                    // Set visible.
+                    $modal.addClass('visible');
+
+                    // Focus.
+                    $modal.focus();
+
+                    // Delay.
+                    setTimeout(function() {
+
+                        // Unlock.
+                        $modal[0]._locked = false;
+
+                    }, 600);
+
+                })
+                .on('click', '.modal', function(event) {
+
+                    var $modal = $(this),
+                        $modalImg = $modal.find('img');
+
+                    // Locked? Bail.
+                    if ($modal[0]._locked)
+                        return;
+
+                    // Already hidden? Bail.
+                    if (!$modal.hasClass('visible'))
+                        return;
+
+                    // Stop propagation.
+                    event.stopPropagation();
+
+                    // Lock.
+                    $modal[0]._locked = true;
+
+                    // Clear visible, loaded.
+                    $modal
+                        .removeClass('loaded')
+
+                    // Delay.
+                    setTimeout(function() {
+
+                        $modal
+                            .removeClass('visible')
+
+                        // Pause scroll zone.
+                        $wrapper.triggerHandler('---pauseScrollZone');
+
+                        setTimeout(function() {
+
+                            // Clear src.
+                            $modalImg.attr('src', '');
+
+                            // Unlock.
+                            $modal[0]._locked = false;
+
+                            // Focus.
+                            $body.focus();
+
+                        }, 475);
+
+                    }, 125);
+
+                })
+                .on('keypress', '.modal', function(event) {
+
+                    var $modal = $(this);
+
+                    // Escape? Hide modal.
+                    if (event.keyCode == 27)
+                        $modal.trigger('click');
+
+                })
+                .on('mouseup mousedown mousemove', '.modal', function(event) {
+
+                    // Stop propagation.
+                    event.stopPropagation();
+
+                })
+                .prepend('<div class="modal" tabIndex="-1"><div class="inner"><img src="" /><video controls="" muted="" preload="metadata" poster=""><source src="" type="video/mp4" /></video></div></div>')
+                .find('img')
+                .on('load', function(event) {
+
+                    var $modalImg = $(this),
+                        $modal = $modalImg.parents('.modal');
+
+                    setTimeout(function() {
+
+                        // No longer visible? Bail.
+                        if (!$modal.hasClass('visible')) return;
+
+                        // Set loaded.
+                        $modal.addClass('loaded');
+
+                    }, 275);
+
+                });
+
+        })(jQuery);
+    </script>
 </body>
 
 </html>
