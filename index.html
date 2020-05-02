@@ -252,17 +252,21 @@
                     event.preventDefault();
                     event.stopPropagation();
 
-                    var $newElement = null;
+                    var $newElement = $('<div class="modal" tabIndex="-1"><div class="inner"></div></div>');
 
                     if (type == "img") {
 
-                        $newElement = $('<div class="modal media_image" tabIndex="-1"><div class="inner"><img src="' + href + '" /></div></div>');
+                        $newElement.addClass('media_image');
+
+                        $newElement.find('.inner').append('<img src="' + href + '" />');
 
                     } else {
 
-                        var poster = href.replace(".mp4", ".jpg");
+                        var poster_href = href.replace(".mp4", ".jpg");
 
-                        $newElement = $('<div class="modal media_video" tabIndex="-1"><div class="inner"><video src="' + href + '" controls muted preload="metadata" poster="' + poster + '" type="video/mp4"></video></div></div>');
+                        $newElement.addClass('media_video');
+
+                        $newElement.find('.inner').append('<video src="' + href + '" controls muted preload="metadata" poster="' + poster_href + '" type="video/mp4"></video>');
                     }
 
                     $gallery.prepend($newElement);
