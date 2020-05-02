@@ -235,6 +235,9 @@
     <script>
         (function($) {
 
+            var $wrapper = $('#wrapper');
+            var $body = $('body');
+
             $('.gallery')
                 .on('click', 'a', function(event) {
 
@@ -273,8 +276,6 @@
 
                         setTimeout(function() {
 
-                            if (!$modal.hasClass('visible')) return;
-
                             $modal.addClass('loaded');
 
                         }, 275);
@@ -283,11 +284,38 @@
                     $newElement.addClass('visible');
 
                     $newElement.focus();
+
+                }).on('keypress click', '.modal > .inner', function(event) {
+
+                    event.stopPropagation();
+
+                }).on('keypress click', '.modal', function(event) {
+
+                    if (event.target.nodeName == "IMG" || event.target.nodeName == "VIDEO") return;
+
+                    if ((event.type == "keypress" && event.keyCode == 27) || event.type == "click") {
+
+                        var $modal = $(this);
+
+                        $modal.removeClass('loaded')
+
+                        setTimeout(function() {
+
+                            $modal.removeClass('visible')
+
+                            setTimeout(function() {
+
+                                $modal.remove();
+
+                                $body.focus();
+
+                            }, 475);
+                        }, 125);
+                    }
+                }).on('mouseup mousedown mousemove wheel', '.modal', function(event) {
+
+                    event.stopPropagation();
                 });
-
-
-
-
         })(jQuery);
     </script>
 
