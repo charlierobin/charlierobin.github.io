@@ -2555,6 +2555,10 @@ button:disabled,
     width: 100rem;
 }
 
+.panel.narrow {
+    width: 25rem;
+}
+
 .panel.small {
     width: 35rem;
 }
