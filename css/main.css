@@ -3733,3 +3733,32 @@ body.is-preload #wrapper {
         transform: none;
     }
 }
+
+#charlie-landscape {
+    display: none;
+    background-color: red;
+}
+    
+#charlie-portrait {
+    background-color: green;
+}
+
+@media screen and (max-width: 736px) {
+    
+    #charlie-landscape {
+        background-color: red;
+        display: block;
+    }
+    
+    #charlie-portrait {
+        display: none;
+        background-color: green;
+    }
+}
+
+
+
+
+
+
+
