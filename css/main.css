@@ -3734,26 +3734,74 @@ body.is-preload #wrapper {
     }
 }
 
-#charlie-landscape {
-    display: none;
-    background-color: red;
-}
-    
-#charlie-portrait {
-    background-color: green;
+// custom
+
+body,
+input,
+select,
+textarea {
+    font-family: 'Titillium Web', sans-serif;
+    font-weight: 200;
 }
 
-@media screen and (max-width: 736px) {
-    
-    #charlie-landscape {
-        background-color: red;
-        display: block;
-    }
-    
-    #charlie-portrait {
-        display: none;
-        background-color: green;
-    }
+strong,
+b {
+    font-weight: 400;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: 600;
+}
+
+h1 .lighten {
+    font-weight: 200;
+}
+
+h6 {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+code,
+pre {
+    font-family: "Courier New", monospace;
+}
+
+label {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 700;
+}
+
+input[type="checkbox"]+label,
+input[type="radio"]+label {
+    font-weight: 300;
+}
+
+input[type="submit"],
+input[type="reset"],
+input[type="button"],
+button,
+.button {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 700;
+}
+
+table th {
+    font-weight: 400;
+}
+
+.gallery .modal .inner video {
+    max-width: 90vw;
+    max-height: 85vh;
+    box-shadow: 0 1rem 3rem 0 rgba(0, 0, 0, 0.35);
+}
+
+.nobr {
+    white-space: nowrap;
 }
 
 

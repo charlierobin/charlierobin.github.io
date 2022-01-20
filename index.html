@@ -3,6 +3,7 @@
 
 <head>
     <title>charlie @ github pages - fac•tō•tum</title>
+    
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 
@@ -23,79 +24,45 @@
 
     <noscript><link href="css/noscript.css" rel="stylesheet" /></noscript>
 
-    <script>
-        simulator = false;
-    </script>
-
     <style>
         body,
         input,
         select,
-        textarea {
+        textarea 
+        {
             font-family: 'Titillium Web', sans-serif;
             font-weight: 200;
         }
         
-        strong,
-        b {
-            font-weight: 400;
+        #video-loop
+        {
+            background-image: url('../images/loop_portrait/loop_portrait_00000.jpg');
+            background-position: center;
+            background-repeat: none;
+            background-size: cover;
         }
         
-        h1,
-        h2,
-        h3,
-        h4,
-        h5,
-        h6 {
-            font-weight: 600;
+        @media screen and (max-width: 736px) 
+        {
+            #video-loop
+            {
+               background-image: url('../images/loop_landscape/loop_landscape_00000.jpg');
+            }
+            
+            #chinaski
+            {
+                height: 40rem;
+            }
         }
         
-        h1 .lighten {
-            font-weight: 200;
-        }
+        /* @media screen and (max-width: 736px) and (orientation: portrait){} */
         
-        h6 {
-            font-family: Arial, Helvetica, sans-serif;
-        }
-        
-        code,
-        pre {
-            font-family: "Courier New", monospace;
-        }
-        
-        label {
-            font-family: Arial, Helvetica, sans-serif;
-            font-weight: 700;
-        }
-        
-        input[type="checkbox"]+label,
-        input[type="radio"]+label {
-            font-weight: 300;
-        }
-        
-        input[type="submit"],
-        input[type="reset"],
-        input[type="button"],
-        button,
-        .button {
-            font-family: Arial, Helvetica, sans-serif;
-            font-weight: 700;
-        }
-        
-        table th {
-            font-weight: 400;
-        }
-        
-        .gallery .modal .inner video {
-            max-width: 90vw;
-            max-height: 85vh;
-            box-shadow: 0 1rem 3rem 0 rgba(0, 0, 0, 0.35);
-        }
-        
-        .nobr {
-            white-space: nowrap;
-        }
     </style>
+    
+    <script>
+        simulator = false;
+    </script>
+    
 </head>
 
 <body class="is-preload">
@@ -112,12 +79,7 @@
                         <li><a href="#first" class="button primary color1 circle icon solid fa-angle-right">Next</a></li>
                     </ul>
                 </div>
-                <div id="charlie-landscape" class="image span-1-75">
-                    <img src="images/loop_landscape.mp4" alt="Short video loop" />
-                </div>
-                <div id="charlie-portrait" class="image span-1-75">
-                    <img src="images/loop_portrait.mp4" alt="Short video loop" />
-                </div>
+                <div id="video-loop" class="image span-1-75"></div>
             </section>
 
             <section class="panel spotlight small" id="first">
@@ -131,16 +93,16 @@
                 </div>
             </section>
 
-			<section class="panel banner">
-				<div class="image span-2-5" style="overflow: hidden;">
-						<img src="images/factotum.jpg" alt="Matt Dillon as Henry ‘Hank’ Chinaski" />
+            <section class="panel banner">
+                <div id="chinaski" class="image span-2-5" style="overflow: hidden;">
+                        <img src="images/factotum.jpg" alt="Matt Dillon as Henry ‘Hank’ Chinaski" />
                         <div style="width: 100%; position: absolute; bottom: 0; background-color: rgb(187, 0, 0); padding: 10px;">
                             <p style="text-align: center; margin: 0; padding: 0; font-size: 3em; font-weight: bold; line-height: 1; margin-bottom: 0.1em;">fac⋅tō⋅tum</p>
                             <p style="text-align: center; margin: 0; padding: 0; font-size: 1em; line-height: 1; margin-bottom: 0.2em;">n. A man who never had a job he liked, <br>and never kept a job he had</p>
                         </div>
- 				</div>
-			</section>
-				
+                 </div>
+            </section>
+                
             <section class="panel">
 
                 <div class="intro color4">
@@ -247,11 +209,44 @@
 
     </div>
 
-	<script src="js/consolidated.js"></script>
+    <script src="js/consolidated.js"></script>
 
     <script>
+    
         (function($) {
 
+            // console.log(window);
+
+            var imgArray = new Array();
+            
+            var name = $( '#video-loop' ).css( 'background-image' );
+
+            name = name.includes( 'portrait' ) ? 'portrait' : 'landscape';
+            
+            for( var i = 0; i < 251; i++ )
+            {
+                imgArray[ i ] = new Image( 360, 640 );
+                
+                imgArray[ i ].src = 'images/loop_' + name + '/loop_' + name + '_' + i.toString().padStart( 5, '0' ) + '.jpg';
+            }
+            
+            var frame = 0;
+                
+            function update()
+            {
+                $( '#video-loop' ).css( 'background-image', 'url(' + imgArray[ frame ].src + ')' );
+                
+                frame++;
+                
+                if( frame >= imgArray.length ) frame = 0;
+                
+                window.requestAnimationFrame( update );
+            }
+            
+            window.requestAnimationFrame( update );
+          
+          {
+          
             var $wrapper = $('#wrapper');
             var $body = $('body');
 
@@ -337,6 +332,10 @@
 
                     event.stopPropagation();
                 });
+                
+            }
+                
+                
         })(jQuery);
     </script>
 
