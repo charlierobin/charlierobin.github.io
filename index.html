@@ -23,44 +23,9 @@
     <link href="css/main.css" rel="stylesheet" />
 
     <noscript><link href="css/noscript.css" rel="stylesheet" /></noscript>
-
-    <style>
-        body,
-        input,
-        select,
-        textarea 
-        {
-            font-family: 'Titillium Web', sans-serif;
-            font-weight: 200;
-        }
-        
-        #video-loop
-        {
-            background-image: url('../images/loop_portrait/loop_portrait_00000.jpg');
-            background-position: center;
-            background-repeat: none;
-            background-size: cover;
-        }
-        
-        @media screen and (max-width: 736px) 
-        {
-            #video-loop
-            {
-               background-image: url('../images/loop_landscape/loop_landscape_00000.jpg');
-            }
-            
-            #chinaski
-            {
-                height: 40rem;
-            }
-        }
-        
-        /* @media screen and (max-width: 736px) and (orientation: portrait){} */
-        
-    </style>
     
     <script>
-        simulator = false;
+        simulateMobileBrowser = false;
     </script>
     
 </head>
@@ -209,7 +174,10 @@
 
     </div>
 
-    <script src="js/consolidated.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="js/browser.min.js"></script>
+    <script src="js/breakpoints.min.js"></script>
+    <script src="js/main.js"></script>
 
     <script>
     

@@ -88,7 +88,7 @@
     // Tweaks/fixes.
 
     // Mobile: Revert to native scrolling.
-    if (browser.mobile || simulator) {
+    if (browser.mobile || simulateMobileBrowser) {
 
         // Disable all scroll-assist features.
         settings.keyboardShortcuts.enabled = false;
