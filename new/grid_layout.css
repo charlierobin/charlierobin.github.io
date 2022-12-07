@@ -1,0 +1,100 @@
+#gallery-content {
+	
+	grid-template-areas: 
+	"oscar  oscar-detail  asteroids       toasters         showreel  mongo       mongo      old-showreel  dell-candids  hitachi-compilation  hitachi-compilation  imazin  imazin       hitachi-budapest  hitachi-teamwork  hitachi-teamwork"
+	"oscar  hitachi       hitachi-detail  toasters-detail  showreel  dell-intro  dell-loop  dell-loop     dell-candids  helicopter           clint                zandip  mongo-intro  mongo-intro       outline           timelapse";
+}
+
+/* for gallery grid in landscape ... */
+
+#oscar {
+	grid-area: oscar;
+}
+
+#oscar-detail {
+	grid-area: oscar-detail;
+}
+
+#asteroids {
+	grid-area: asteroids;
+}
+
+#toasters {
+	grid-area: toasters;
+}
+
+#toasters-detail {
+	grid-area: toasters-detail;
+}
+
+#hitachi {
+	grid-area: hitachi;
+}
+
+#hitachi-detail {
+	grid-area: hitachi-detail;
+}
+
+#showreel {
+	grid-area: showreel;
+}
+
+#mongo {
+	grid-area: mongo;
+}
+
+#dell-intro {
+	grid-area: dell-intro;
+}
+
+#old-showreel {
+	grid-area: old-showreel;
+}
+
+#dell-loop {
+	grid-area: dell-loop;
+}
+
+#dell-candids {
+	grid-area: dell-candids;
+}
+
+#hitachi-compilation {
+	grid-area: hitachi-compilation;
+}
+
+#imazin {
+	grid-area: imazin;
+}
+
+#hitachi-budapest {
+	grid-area: hitachi-budapest;
+}
+
+#hitachi-teamwork {
+	grid-area: hitachi-teamwork;
+}
+
+#helicopter {
+	grid-area: helicopter;
+}
+
+#clint {
+	grid-area: clint;
+}
+
+#zandip {
+	grid-area: zandip;
+}
+
+#mongo-intro {
+	grid-area: mongo-intro;
+}
+
+#outline {
+	grid-area: outline;
+}
+
+#timelapse {
+	grid-area: timelapse;
+}
