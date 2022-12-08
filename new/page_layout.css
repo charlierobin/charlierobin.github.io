@@ -1,0 +1,64 @@
+#wrapper {
+	padding: var(--padding);
+	display: inline-flex;
+	align-items: center;
+	height: 100vh;
+	height: calc(var(--vh, 1vh) * 100);
+}
+
+main {
+	height: var(--maxHeightVH);
+	max-height: var(--maxHeight);
+	background-color: white;
+	box-shadow: 0 2rem 4rem 0.25rem rgba(0, 0, 0, 0.5);
+	display: flex;
+}
+
+.width-one {
+	width: var(--oneWidth);
+	max-width: var(--oneWidthMax);
+}
+
+.width-three-quarters {
+	width: calc( var(--oneWidth) * 0.75 );
+	max-width: calc( var(--oneWidthMax) * 0.75 );
+}
+
+.width-half {
+	width: calc( var(--oneWidth) / 2 );
+	max-width: calc( var(--oneWidthMax) / 2 );
+}
+
+#gallery {
+	display: inline-flex;
+}
+
+#gallery-content {
+	display: grid;
+	grid-template-rows: 50% 50%%;
+}
+
+@media only screen and (max-width: 740px) {
+  
+	  #wrapper {
+			padding: 0;
+			display: block;
+			background-color: black;
+			height: unset;
+		}
+	
+	  main {
+		  max-height: unset;
+		  height: unset;
+		  display: unset;
+	  }
+	 
+	section {
+		max-width: unset !important;
+		 width: 100% !important;
+	}
+	
+	#gallery, #gallery-content {
+		display: unset;
+	}
+}

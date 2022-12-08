@@ -9,8 +9,11 @@
     <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:ital,wght@0,200;0,800&display=swap" rel="stylesheet" />
 
     <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="page_layout.css">
     <link rel="stylesheet" href="grid_layout.css">
 
+    <script src="docready.js"></script>
+    
     <style>
     
         :root {
@@ -37,36 +40,6 @@
             font-family: 'Titillium Web', Verdana, sans-serif;
             font-weight: 200;
         }
-
-        #wrapper {
-            padding: var(--padding);
-            display: inline-flex;
-            align-items: center;
-            height: 100vh;
-        }
-        
-        main {
-            height: var(--maxHeightVH);
-            max-height: var(--maxHeight);
-            background-color: white;
-            box-shadow: 0 2rem 4rem 0.25rem rgba(0, 0, 0, 0.5);
-            display: flex;
-        }
-
-        .width-one {
-            width: var(--oneWidth);
-            max-width: var(--oneWidthMax);
-        }
-        
-        .width-three-quarters {
-            width: calc( var(--oneWidth) * 0.75 );
-            max-width: calc( var(--oneWidthMax) * 0.75 );
-        }
-        
-        .width-half {
-            width: calc( var(--oneWidth) / 2 );
-            max-width: calc( var(--oneWidthMax) / 2 );
-        }
         
         .svg-button {
             width: 40px;
@@ -87,15 +60,6 @@
             padding-top: calc( var(--oneWidth) / 3.2 );
         }
         
-        #gallery {
-            display: inline-flex;
-        }
-        
-        #gallery-content {
-            display: grid;
-            grid-template-rows: 50% 49%%;
-        }
-        
         article.linked-with h3::before {
            content: '';
            display: inline-block;
@@ -113,6 +77,7 @@
         }
         
         article {
+            background-image: url('images/black.gif');
             background-color: black;
         }
         
@@ -141,29 +106,7 @@
         }
         
         @media only screen and (max-width: 740px) {
-          
-              #wrapper {
-                    padding: 0;
-                    display: block;
-                    background-color: black;
-                    height: unset;
-                }
-            
-              main {
-                  max-height: unset;
-                  height: unset;
-                  display: unset;
-              }
-             
-            section {
-                max-width: unset !important;
-                 width: 100% !important;
-            }
-            
-            #gallery, #gallery-content {
-                display: unset;
-            }
-            
+                      
             article {
                 width: 100% !important;
                 max-width: unset !important;
@@ -278,7 +221,7 @@
                 
                 <section id="gallery-content">
                     
-                     <article id="oscar" class="width-three-quarters" style="background-image: url('https://storage.googleapis.com/charlierobin-1245.appspot.com/oscar/oscar-the-grouch.gif');">
+                     <article id="oscar" class="width-three-quarters" style="background-image: url('https://storage.googleapis.com/charlierobin-1245.appspot.com/oscar/oscar-the-grouch.jpg');">
                          <a href="https://github.com/charlierobin/oscar-the-grouch-version-1" title=""></a>
                      </article>
                      
@@ -299,7 +242,7 @@
                          <a href="https://storage.googleapis.com/charlierobin-1245.appspot.com/videos/work/asteroids-gameplay.mp4" title="">asteroids</a>
                      </article>
                      
-                     <article id="toasters" class="width-half" style="background-image: url('https://storage.googleapis.com/charlierobin-1245.appspot.com/flying-toasters/flying-toaster-loop.gif');">
+                     <article id="toasters" class="width-half" style="background-image: url('https://storage.googleapis.com/charlierobin-1245.appspot.com/flying-toasters/flying-toaster-loop.jpg');">
                          <a href="https://github.com/charlierobin/flying-toasters-live-desktop-xojo-opengl" title=""></a>
                      </article>
                      
@@ -413,6 +356,28 @@
             </section>
         </main>
     </div>
+
+    <script>
+    
+        docReady(function() 
+        {
+            var scheduled;
+            
+            update();
+            
+            window.addEventListener('resize', () => 
+            {
+                clearTimeout( scheduled );
+                scheduled = window.setTimeout ( update, 500 );
+            });
+            
+            function update()
+            {
+                let vh = window.innerHeight * 0.01;
+                document.documentElement.style.setProperty('--vh', `${vh}px`);
+            }
+        });
+    </script>
 
 </body>
 
