@@ -1,386 +1,389 @@
-<!DOCTYPE HTML>
-<html>
+<!doctype html>
+
+<html lang="en">
 
 <head>
-    <title>charlie @ github pages - fac•tō•tum</title>
-
+    <title>charlie robin @ github pages - fac•tō•tum</title>
+    
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=yyaXgAKK7x">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png?v=yyaXgAKK7x">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png?v=yyaXgAKK7x">
-    <link rel="manifest" href="site.webmanifest?v=yyaXgAKK7x">
-    <link rel="mask-icon" href="safari-pinned-tab.svg?v=yyaXgAKK7x" color="#000000">
-    <link rel="shortcut icon" href="favicon.ico?v=yyaXgAKK7x">
-    <meta name="msapplication-TileColor" content="#da532c">
-    <meta name="theme-color" content="#ffffff">
+    <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:ital,wght@0,200;0,800&display=swap" rel="stylesheet" />
 
-    <link
-        href="https://fonts.googleapis.com/css2?family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap"
-        rel="stylesheet" />
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="page_layout.css">
+    <link rel="stylesheet" href="grid_layout.css">
 
-    <link href="css/main.css" rel="stylesheet" />
-
-    <noscript>
-        <link href="css/noscript.css" rel="stylesheet" />
-    </noscript>
-
-    <script>
-        simulateMobileBrowser = false;
-    </script>
+    <script src="docready.js"></script>
+    
+    <style>
+    
+        :root {
+            --padding: 100px;
+            
+            --maxHeightVH: 90vh;
+            --maxHeight: 840px;
+            
+            --oneWidth: var( --maxHeightVH );
+            --oneWidthMax: var( --maxHeight );
+            
+            --contentPadding: 20px;
+            
+            --minHeight: 400px;
+            
+            --fontSize: 20px;
+        }
+    
+        body {
+            background: rgb(11, 0, 61);
+            background: linear-gradient(0deg, rgb(11, 0, 61) 0%, rgb(49, 0, 44) 100%);
+            color: rgb(255, 255, 255);
+            font-size: 0;
+            font-family: 'Titillium Web', Verdana, sans-serif;
+            font-weight: 200;
+        }
+        
+        .svg-button {
+            width: 40px;
+            height: 40px;
+            opacity: 0.5;
+        }
+        
+        .do-not-break {
+            white-space: nowrap;
+        }
+        
+        .content {
+            padding: var(--contentPadding);
+            font-size: var( --fontSize );
+        }
+        
+        section.content {
+            padding-top: calc( var(--oneWidth) / 3.2 );
+        }
+        
+        article.linked-with h3::before {
+           content: '';
+           display: inline-block;
+           width: 15px;
+           height: 15px;
+           margin-right: 10px;
+        }
+        
+        article.left h3::before {
+           background-image: url('images/left-arrow.svg');
+        }
+        
+        article.above h3::before {
+           background-image: url('images/up-arrow.svg');
+        }
+        
+        article {
+            background-image: url('images/black.gif');
+            background-color: black;
+        }
+        
+        a {
+            color: white;
+        }
+        
+        article > a {
+            display: block;
+            height: 100%;
+            border: 0;
+            text-decoration: none;
+        }
+    
+       #welcome p a, article p a {
+           display: inline-flex;
+       }
+        
+        h1::after, h2::after, h3::after {
+            content: '';
+            display: block;
+            width: 25%;
+            padding-bottom: 10px;
+            margin-bottom: 10px;
+            border-bottom: 4px rgba(255, 255, 255, 0.45) solid;
+        }
+        
+        @media only screen and (max-width: 740px) {
+                      
+            article {
+                width: 100% !important;
+                max-width: unset !important;
+            }
+            
+            article.linked-with h3::before {
+                 display: none;
+              }
+              
+            .min-height, article > a {
+                height: var(--minHeight);
+            }
+            
+            section.content {
+                padding-top: 10px;
+            }
+            
+           .hideWhenNarrowed {
+               display: none;
+           }
+        }
+        
+        /* specifics */
+        
+        #video {
+            background-image: url("images/loop_portrait.mp4");
+        }
+        
+        #welcome {
+            background-image: url("images/overlay.png"), linear-gradient(45deg, #726193 20%, #e37b7c 60%, #ffe4b4);
+        }
+        
+        #factotum {
+            
+            
+            background-image: url("images/overlay.png"), linear-gradient(45deg, rgba(81, 84, 99, 0.93) 20%, #aaabaa 60%, #f0dab9);
+            
+            
+            /* background-image: url("images/pic02.jpg"), linear-gradient(45deg, rgba(114, 97, 147, 0.25) 25%, rgba(227, 123, 124, 0.25) 50%, rgba(255, 228, 180, 0.25)); */
+            
+            /* background-image: url("images/overlay.png"), linear-gradient(45deg, rgba(114, 97, 147, 0.25) 25%, rgba(227, 123, 124, 0.25) 50%, rgba(255, 228, 180, 0.25)); */
+            
+            /* background-image: url("images/pic02.jpg"); */
+        }
+        
+        #pic {
+            background-image: url("images/factotum.jpg");
+        }
+        
+        #gallery-intro {
+            /* background-image: url("images/overlay.png"), linear-gradient(45deg, rgba(114, 97, 147, 0.25) 25%, rgba(227, 123, 124, 0.25) 50%, rgba(255, 228, 180, 0.25)); */
+            
+            background-color: rgb(53, 56, 101);
+            background-image: url("images/overlay.png"), linear-gradient(45deg, rgba(114, 97, 147, 0.25) 25%, rgba(227, 123, 124, 0.25) 50%, rgba(255, 228, 180, 0.25));
+        }
+        
+        #contact {
+            background-color: rgb(53, 56, 101);
+            
+            background-image: url("images/overlay.png"), linear-gradient(45deg, rgba(114, 97, 147, 0.25) 25%, rgba(227, 123, 124, 0.25) 50%, rgba(255, 228, 180, 0.25));
+            
+            /* background-image: url("images/overlay.png"), linear-gradient(45deg, rgb(115, 111, 119) 25%, rgb(197, 167, 167) 50%, rgb(254, 247, 220)); */
+            /* background-image: url("images/overlay.png"), linear-gradient(45deg, rgba(114, 97, 147, 0.25) 25%, rgba(227, 123, 124, 0.25) 50%, rgba(255, 228, 180, 0.25)); */
+        }
+        
+        #contact p:last-child
+        {
+            font-size: small;
+        }
+        
+        @media only screen and (max-width: 740px) {
+            
+            #video {
+                background-image: url("images/loop_landscape.mp4");
+            }
+            
+            #welcome, #factotum, #gallery-intro, #contact {
+                background-image: none;
+            }
+            
+            #contact p:last-child
+            {
+                text-align: right;
+            }
+        }
+        
+    </style>
 
 </head>
 
-<body class="is-preload">
+<body>
 
-    <div id="page-wrapper">
-
-        <div id="wrapper">
-
-            <section class="panel banner right">
-                <div class="content color0 span-4">
-                    <h1 class="major"><span class="lighten">hello, my name<br /> is </span>charlie</h1>
-                    <p>this is a little single-page site experimenting with <strong><a href="https://pages.github.com"
-                                title="Websites for you and your projects, hosted directly from your GitHub repository">GitHub
-                                Pages</a></strong></p>
-                    <p><a href="#first" style="text-decoration: none; border: none;"><img src="images/right-chevron.svg"
-                                class="svg-button" alt="Right arrow icon" /></a></p>
-                </div>
-                <div id="video-loop" class="image span-1-75"></div>
+    <div id="wrapper">
+        <main>
+            <section id="video" class="min-height width-half"></section>
+            
+            <section id="welcome" class="width-one content">
+                
+                <h1>hello, my name is charlie</h1>
+                
+                <p>this is a single-page experiment with GitHub Pages</p>
+                
+                <p class="hideWhenNarrowed"><a href="#gallery" title="Skip straight to the gallery"><img src="images/right-chevron.svg" class="svg-button" alt="Right arrow icon"></a></p>
+                
             </section>
-
-            <section class="panel spotlight small">
-                <div class="content span-9">
-                    <h2 class="major">fac⋅tō⋅tum</h2>
-                    <p>Xojo, Unity, Xcode, Cinder OpenGL, <span class="nobr">Adobe After Effects</span>, <span
-                            class="nobr">Cinema 4D</span>, Modo, Python, C++, Swift, Objective-C, C#, PHP, JavaScript,
-                        Angular, HTML/CSS</p>
-                    <p>art, design, engineering &amp; vfx</p>
-                </div>
-                <div class="image filtered" data-position="top">
-                    <img src="images/pic02.jpg" alt="factotum" />
-                </div>
-            </section>
-
-            <section class="panel banner">
-                <div id="chinaski" class="image span-2-5" style="overflow: hidden;">
-                    <img src="images/factotum.jpg" alt="Matt Dillon as Henry ‘Hank’ Chinaski" />
-                    <div
-                        style="width: 100%; position: absolute; bottom: 0; background-color: rgb(187, 0, 0); padding: 10px;">
-                        <p
-                            style="text-align: center; margin: 0; padding: 0; font-size: 3em; font-weight: bold; line-height: 1; margin-bottom: 0.1em;">
-                            fac⋅tō⋅tum</p>
-                        <p
-                            style="text-align: center; margin: 0; padding: 0; font-size: 1em; line-height: 1; margin-bottom: 0.2em;">
-                            n. A man who never had a job he liked, <br>and never kept a job he had</p>
-                    </div>
-                </div>
-            </section>
-
-            <section class="panel" id="first">
-
-                <div class="intro color4">
-                    <h2 class="major">a gallery of things</h2>
+            
+            <!-- <section id="pic" class="min-height width-half"></section> -->
+            
+            <section id="gallery">
+                
+                <!-- <section id="gallery-intro" class="width-half content">
+                    
+                    <h2>a gallery of things</h2>
+                    
                     <p>works, videos, images, experiments…</p>
-                </div>
-
-                <div class="gallery">
-
-                    <a href="https://github.com/charlierobin/oscar-the-grouch-version-1"
-                        title="A version of Oscar the Grouch adapted for macOS/OSX (Github source code and precompiled binaries)"
-                        class="image filtered span-2-5" data-position="center">
-                        <img src="https://storage.googleapis.com/charlierobin-1245.appspot.com/oscar/oscar-the-grouch.gif"
-                            alt="Oscar the Grouch preview" /></a>
-
-                    <div class="group span-3">
-
-                        <a href="https://github.com/charlierobin/oscar-the-grouch-version-1"
-                            title="Github source code and precompiled downloadable binary for Macintosh"
-                            class="text-block span-1-5" data-position="center">
-                            <h3>◂ oscar the grouch</h3>
-                            <p>based on the original Apple Macintosh system 6/7 extension by Eric Shapiro and Ken Hornak</p>
-                            <p>source code and precompiled version available for download at GitHub</p>
-                            <p><img src="images/github.svg" class="svg-button" alt="GitHub icon" /></p></a>
-
-                        <a href="https://storage.googleapis.com/charlierobin-1245.appspot.com/videos/work/asteroids-gameplay.mp4"
-                            class="image filtered span-1-5" data-position="center">
-                            <img src="https://storage.googleapis.com/charlierobin-1245.appspot.com/videos/work/asteroids-gameplay.jpg"
-                                alt="" /></a>
-
-                        <a href="https://storage.googleapis.com/charlierobin-1245.appspot.com/hitachi-screensaver/hitachi-screensaver.mp4"
-                            class="image filtered span-1-5" data-position="center">
-                            <img src="https://storage.googleapis.com/charlierobin-1245.appspot.com/hitachi-screensaver/hitachi-screensaver-poster-frame.jpg"
-                                alt="" /></a>
-
-                        <a href="https://github.com/charlierobin/hitachi-screensaver"
-                            title="Github source code and precompiled downloadable binary for Macintosh"
-                            class="text-block span-1-5" data-position="center">
-                            <h3>◂ screensaver</h3>
-                            <p>source code, resources and precompiled downloads available at GitHub</p>
-                            <p><img src="images/github.svg" class="svg-button" alt="GitHub icon" /></p></a>
-
-                    </div>
-
-                    <div class="group span-1-5">
-
-                        <a href="https://github.com/charlierobin/flying-toasters-live-desktop-xojo-opengl"
-                            class="image filtered span-1-5" data-position="center">
-                            <img src="https://storage.googleapis.com/charlierobin-1245.appspot.com/flying-toasters/flying-toaster-loop.gif"
-                                alt="" /></a>
-
-                        <a href="https://github.com/charlierobin/flying-toasters-live-desktop-xojo-opengl"
-                            title="Github source code and precompiled downloadable binary for Macintosh"
-                            class="text-block span-1-5" data-position="center">
-                            <h3>▴ flying toasters desktop</h3>
-                            <p>source code, resources and precompiled downloads available at GitHub</p>
-                            <p><img src="images/github.svg" class="svg-button" alt="GitHub icon" /></p></a>
-
-                    </div>
-
-                    <a href="https://storage.googleapis.com/charlierobin-1245.appspot.com/videos/work/charlie_robin.mp4"
-                        class="image filtered span-3" data-position="center">
-                        <img src="https://storage.googleapis.com/charlierobin-1245.appspot.com/videos/work/charlie_robin.jpg"
-                            alt="" /></a>
-
-                    <div class="group span-4-5">
-
-                        <a href="https://storage.googleapis.com/charlierobin-1245.appspot.com/videos/work/MongoDB_Candids.mp4"
-                            class="image filtered span-3" data-position="center">
-                            <img src="https://storage.googleapis.com/charlierobin-1245.appspot.com/videos/work/MongoDB_Candids.jpg"
-                                alt="" /></a>
-
-                        <a href="https://storage.googleapis.com/charlierobin-1245.appspot.com/videos/work/charlie_robin_old_showreel.mp4"
-                            class="image filtered span-1-5" data-position="center">
-                            <img src="https://storage.googleapis.com/charlierobin-1245.appspot.com/videos/work/charlie_robin_old_showreel.jpg"
-                                alt="" /></a>
-
-                        <a href="https://storage.googleapis.com/charlierobin-1245.appspot.com/videos/work/dell_2008.mp4"
-                            class="image filtered span-1-5" data-position="center">
-                            <img src="https://storage.googleapis.com/charlierobin-1245.appspot.com/videos/work/dell_2008.jpg"
-                                alt="" /></a>
-
-                        <a href="https://storage.googleapis.com/charlierobin-1245.appspot.com/videos/work/Dell_Loop.mp4"
-                            class="image filtered span-3" data-position="center">
-                            <img src="https://storage.googleapis.com/charlierobin-1245.appspot.com/videos/work/Dell_Loop.jpg"
-                                alt="" /></a>
-
-                    </div>
-
-                    <a href="https://storage.googleapis.com/charlierobin-1245.appspot.com/videos/work/dell_gig_edit.mp4"
-                        class="image filtered span-3" data-position="center">
-                        <img src="https://storage.googleapis.com/charlierobin-1245.appspot.com/videos/work/dell_gig_edit.jpg"
-                            alt="" /></a>
-
-                    <div class="group span-3">
-
-                        <a href="https://storage.googleapis.com/charlierobin-1245.appspot.com/videos/work/hitachi_edit.mp4"
-                            class="image filtered span-3" data-position="center">
-                            <img src="https://storage.googleapis.com/charlierobin-1245.appspot.com/videos/work/hitachi_edit.jpg"
-                                alt="" /></a>
-
-                        <a href="https://storage.googleapis.com/charlierobin-1245.appspot.com/videos/other/huey.mp4"
-                            class="image filtered span-1-5" data-position="center">
-                            <img src="https://storage.googleapis.com/charlierobin-1245.appspot.com/videos/other/huey.jpg"
-                                alt="" /></a>
-
-                        <a href="https://storage.googleapis.com/charlierobin-1245.appspot.com/videos/other/hollywood-white-hunter-black-heart.mp4"
-                            class="image filtered span-1-5" data-position="center"
-                            title="Hollywood, from White Hunter, Black Heart">
-                            <img src="https://storage.googleapis.com/charlierobin-1245.appspot.com/videos/other/hollywood-white-hunter-black-heart.jpg"
-                                alt="" /></a>
-
-                    </div>
-
-                    <div class="group span-4-5">
-
-                        <a href="https://storage.googleapis.com/charlierobin-1245.appspot.com/videos/work/NAPP_Imazin.mp4"
-                            class="image filtered span-3" data-position="center">
-                            <img src="https://storage.googleapis.com/charlierobin-1245.appspot.com/videos/work/NAPP_Imazin.jpg"
-                                alt="" /></a>
-
-                        <a href="https://storage.googleapis.com/charlierobin-1245.appspot.com/videos/work/Hitachi_Budapest.mp4"
-                            class="image filtered span-1-5" data-position="center">
-                            <img src="https://storage.googleapis.com/charlierobin-1245.appspot.com/videos/work/Hitachi_Budapest.jpg"
-                                alt="" /></a>
-
-                        <a href="https://storage.googleapis.com/charlierobin-1245.appspot.com/videos/work/NAPP_Loop.mp4"
-                            class="image filtered span-1-5" data-position="center">
-                            <img src="https://storage.googleapis.com/charlierobin-1245.appspot.com/videos/work/NAPP_Loop.jpg"
-                                alt="" /></a>
-
-                        <a href="https://storage.googleapis.com/charlierobin-1245.appspot.com/videos/work/MongoDB_London_2013.mp4"
-                            class="image filtered span-3" data-position="bottom">
-                            <img src="https://storage.googleapis.com/charlierobin-1245.appspot.com/videos/work/MongoDB_London_2013.jpg"
-                                alt="" /></a>
-
-                    </div>
-
-                    <div class="group span-3">
-
-                        <a href="https://storage.googleapis.com/charlierobin-1245.appspot.com/videos/work/Teamwork.mp4"
-                            class="image filtered span-3" data-position="center">
-                            <img src="https://storage.googleapis.com/charlierobin-1245.appspot.com/videos/work/Teamwork.jpg"
-                                alt="" /></a>
-
-                        <a href="https://storage.googleapis.com/charlierobin-1245.appspot.com/videos/work/Outline_logo.mp4"
-                            class="image filtered span-1-5" data-position="center">
-                            <img src="https://storage.googleapis.com/charlierobin-1245.appspot.com/videos/work/Outline_logo.jpg"
-                                alt="" /></a>
-
-                        <a href="https://storage.googleapis.com/charlierobin-1245.appspot.com/videos/timelapse/bay_timelapse.mp4"
-                            class="image filtered span-1-5" data-position="center" title="">
-                            <img src="https://storage.googleapis.com/charlierobin-1245.appspot.com/videos/timelapse/bay_timelapse.jpg"
-                                alt="" /></a>
-
-                    </div>
-
-                </div>
-
+                
+                </section> -->
+                
+                <section id="gallery-content">
+                    
+                     <article id="oscar" class="width-three-quarters" style="background-image: url('https://storage.googleapis.com/charlierobin-1245.appspot.com/oscar/oscar-the-grouch.jpg');">
+                         <a href="https://github.com/charlierobin/oscar-the-grouch-version-1" title=""></a>
+                     </article>
+                     
+                     <article id="oscar-detail" class="width-half linked-with left">
+                         
+                         <div class="content">
+                         
+                             <h3>oscar the grouch</h3>
+                             <p>based on the original Apple Macintosh system 6/7 extension by Eric Shapiro and Ken Hornak</p>
+                             <p>source code and precompiled version available for download at GitHub</p>
+                             <p><a href="https://github.com/charlierobin/oscar-the-grouch-version-1" title="A version of Oscar the Grouch adapted for macOS/OSX (Github source code and precompiled binaries)"><img src="images/github.svg" class="svg-button" alt="GitHub icon"></a></p>
+                         
+                         </div>
+                         
+                     </article>
+                     
+                     <article id="asteroids" class="width-half" style="background-image: url('https://storage.googleapis.com/charlierobin-1245.appspot.com/videos/work/asteroids-gameplay.jpg');">
+                         <a href="https://storage.googleapis.com/charlierobin-1245.appspot.com/videos/work/asteroids-gameplay.mp4" title="">asteroids</a>
+                     </article>
+                     
+                     <article id="toasters" class="width-half" style="background-image: url('https://storage.googleapis.com/charlierobin-1245.appspot.com/flying-toasters/flying-toaster-loop.jpg');">
+                         <a href="https://github.com/charlierobin/flying-toasters-live-desktop-xojo-opengl" title=""></a>
+                     </article>
+                     
+                     <article id="toasters-detail" class="width-half linked-with above">
+                         
+                         <div class="content">
+                             
+                             <h3>flying toasters</h3>
+                             <p>source code, resources and precompiled downloads available at GitHub</p>
+                             <p><a href="https://github.com/charlierobin/flying-toasters-live-desktop-xojo-opengl" title="Github source code and precompiled downloadable binary for Macintosh"><img src="images/github.svg" class="svg-button" alt="GitHub icon"></a></p>
+                         
+                         </div>
+                         
+                     </article>
+                     
+                     <article id="hitachi" class="width-half" style="background-image: url('https://storage.googleapis.com/charlierobin-1245.appspot.com/hitachi-screensaver/hitachi-screensaver-poster-frame.jpg');">
+                         <a href="https://github.com/charlierobin/hitachi-screensaver" title=""></a>
+                     </article>
+                     
+                     <article id="hitachi-detail" class="width-half linked-with left">
+                         
+                         <div class="content">
+                             
+                             <h3>screensaver</h3>
+                             <p>source code, resources and precompiled downloads available at GitHub</p>
+                             <p><a href="https://github.com/charlierobin/hitachi-screensaver" title="Github source code and precompiled downloadable binary for Macintosh"><img src="images/github.svg" class="svg-button" alt="GitHub icon"></a></p>
+                         
+                         </div>
+                         
+                     </article>
+                     
+                     <!-- upper row -->
+                     
+                     <article id="showreel" class="width-1" style="background-image: url('https://storage.googleapis.com/charlierobin-1245.appspot.com/videos/work/charlie_robin.jpg');">
+                         <a href="https://storage.googleapis.com/charlierobin-1245.appspot.com/videos/work/charlie_robin.mp4" title=""></a>
+                     </article>
+                        
+                    <article id="mongo" class="width-1" style="background-image: url('https://storage.googleapis.com/charlierobin-1245.appspot.com/videos/work/MongoDB_Candids.jpg');">
+                        <a href="https://storage.googleapis.com/charlierobin-1245.appspot.com/videos/work/MongoDB_Candids.mp4" title=""></a>
+                    </article>
+                    
+                    <article id="old-showreel" class="width-half" style="background-image: url('https://storage.googleapis.com/charlierobin-1245.appspot.com/videos/work/charlie_robin_old_showreel.jpg');">
+                        <a href="https://storage.googleapis.com/charlierobin-1245.appspot.com/videos/work/charlie_robin_old_showreel.mp4" title=""></a>
+                    </article>
+                    
+                    <article id="dell-candids" class="width-1" style="background-image: url('https://storage.googleapis.com/charlierobin-1245.appspot.com/videos/work/dell_gig_edit.jpg');">
+                        <a href="https://storage.googleapis.com/charlierobin-1245.appspot.com/videos/work/dell_gig_edit.mp4" title=""></a>
+                    </article>
+                    
+                    <article id="hitachi-compilation" class="width-1" style="background-image: url('https://storage.googleapis.com/charlierobin-1245.appspot.com/videos/work/hitachi_edit.jpg');">
+                        <a href="https://storage.googleapis.com/charlierobin-1245.appspot.com/videos/work/hitachi_edit.mp4" title=""></a>
+                    </article>
+                    
+                    <article id="imazin" class="width-1" style="background-image: url('https://storage.googleapis.com/charlierobin-1245.appspot.com/videos/work/NAPP_Imazin.jpg');">
+                        <a href="https://storage.googleapis.com/charlierobin-1245.appspot.com/videos/work/NAPP_Imazin.mp4" title=""></a>
+                    </article>
+                    
+                    <article id="hitachi-budapest" class="width-half" style="background-image: url('https://storage.googleapis.com/charlierobin-1245.appspot.com/videos/work/Hitachi_Budapest.jpg');">
+                        <a href="https://storage.googleapis.com/charlierobin-1245.appspot.com/videos/work/Hitachi_Budapest.mp4" title=""></a>
+                    </article>
+                    
+                    <article id="hitachi-teamwork" class="width-1" style="background-image: url('https://storage.googleapis.com/charlierobin-1245.appspot.com/videos/work/Teamwork.jpg');">
+                        <a href="https://storage.googleapis.com/charlierobin-1245.appspot.com/videos/work/Teamwork.mp4" title=""></a>
+                    </article>
+                    
+                    <!-- lower row -->
+                    
+                    <article id="dell-intro" class="width-half" style="background-image: url('https://storage.googleapis.com/charlierobin-1245.appspot.com/videos/work/dell_2008.jpg');">
+                        <a href="https://storage.googleapis.com/charlierobin-1245.appspot.com/videos/work/dell_2008.mp4" title=""></a>
+                    </article>
+                    
+                    <article id="dell-loop" class="width-1" style="background-image: url('https://storage.googleapis.com/charlierobin-1245.appspot.com/videos/work/Dell_Loop.jpg');">
+                        <a href="https://storage.googleapis.com/charlierobin-1245.appspot.com/videos/work/Dell_Loop.mp4" title=""></a>
+                    </article>
+                    
+                    <article id="helicopter" class="width-half" style="background-image: url('https://storage.googleapis.com/charlierobin-1245.appspot.com/videos/other/huey.jpg');">
+                        <a href="https://storage.googleapis.com/charlierobin-1245.appspot.com/videos/other/huey.mp4" title=""></a>
+                    </article>
+                    
+                    <article id="clint" class="width-half" style="background-image: url('https://storage.googleapis.com/charlierobin-1245.appspot.com/videos/other/hollywood-white-hunter-black-heart.jpg');">
+                        <a href="https://storage.googleapis.com/charlierobin-1245.appspot.com/videos/other/hollywood-white-hunter-black-heart.mp4" title=""></a>
+                    </article>
+                    
+                    <article id="zandip" class="width-half" style="background-image: url('https://storage.googleapis.com/charlierobin-1245.appspot.com/videos/work/NAPP_Loop.jpg');">
+                        <a href="https://storage.googleapis.com/charlierobin-1245.appspot.com/videos/work/NAPP_Loop.mp4" title=""></a>
+                    </article>
+                    
+                    <article id="mongo-intro" class="width-1" style="background-image: url('https://storage.googleapis.com/charlierobin-1245.appspot.com/videos/work/MongoDB_London_2013.jpg');">
+                        <a href="https://storage.googleapis.com/charlierobin-1245.appspot.com/videos/work/MongoDB_London_2013.mp4" title=""></a>
+                    </article>
+                    
+                    <article id="outline" class="width-half" style="background-image: url('https://storage.googleapis.com/charlierobin-1245.appspot.com/videos/work/Outline_logo.jpg');">
+                        <a href="https://storage.googleapis.com/charlierobin-1245.appspot.com/videos/work/Outline_logo.mp4" title=""></a>
+                    </article>
+                    
+                    <article id="timelapse" class="width-half" style="background-image: url('https://storage.googleapis.com/charlierobin-1245.appspot.com/videos/timelapse/bay_timelapse.jpg');">
+                        <a href="https://storage.googleapis.com/charlierobin-1245.appspot.com/videos/timelapse/bay_timelapse.mp4" title=""></a>
+                    </article>
+                    
+                </section>
+                
             </section>
-
-            <section class="panel">
-                <div class="intro color4">
-                    <p><a href="mailto:charlie@charlierobin.com" title="email address">charlie@charlierobin.com</a></p>
-                    <p><img src="images/github.svg" class="svg-button" alt="GitHub icon" /></p>
-                    <p><a href="https://github.com/charlierobin" title="github repositories">github.com/charlierobin</a></p>
-                </div>
+            
+            <section id="contact" class="content">
+                
+                <p><a href="mailto:charlie@charlierobin.com" title="email address">charlie@charlierobin.com</a></p>
+                <p><a href="https://github.com/charlierobin" title="github repositories & download links">github.com/charlierobin</a></p>
+                
+                <p>charlie robin 1995-2023</p>
+                
             </section>
-
-            <div class="copyright">charlie robin 1995-2022</div>
-
-        </div>
-
+        </main>
     </div>
 
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
-        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-    <script src="js/browser.min.js"></script>
-    <script src="js/breakpoints.min.js"></script>
-    <script src="js/main.js"></script>
-
     <script>
-
-        (function ($) {
-
-            // console.log(window);
-
-            var imgArray = new Array();
-
-            var name = $('#video-loop').css('background-image');
-
-            name = name.includes('portrait') ? 'portrait' : 'landscape';
-
-            for (var i = 0; i < 251; i++) {
-                imgArray[i] = new Image(360, 640);
-
-                imgArray[i].src = 'images/loop_' + name + '/loop_' + name + '_' + i.toString().padStart(5, '0') + '.jpg';
-            }
-
-            var frame = 0;
-
-            function update() {
-                $('#video-loop').css('background-image', 'url(' + imgArray[frame].src + ')');
-
-                frame++;
-
-                if (frame >= imgArray.length) frame = 0;
-
-                window.requestAnimationFrame(update);
-            }
-
-            window.requestAnimationFrame(update);
-
+    
+        docReady(function() 
+        {
+            var scheduled;
+            
+            update();
+            
+            window.addEventListener('resize', () => 
             {
-                var $wrapper = $('#wrapper');
-                var $body = $('body');
-
-                $('.gallery')
-                    .on('click', 'a', function (event) {
-
-                        var $a = $(this);
-                        var $gallery = $a.parents('.gallery');
-                        var href = $a.attr('href');
-
-                        if (!href.match(/\.(jpg|gif|png|mp4)\??.*$/)) return;
-
-                        var type = href.match(/\.mp4\??.*$/) ? "video" : "img";
-
-                        event.preventDefault();
-                        event.stopPropagation();
-
-                        var $newElement = $('<div class="modal" tabIndex="-1"><div class="inner"></div></div>');
-
-                        if (type == "img") {
-
-                            $newElement.addClass('media_image');
-
-                            $newElement.find('.inner').append('<img src="' + href + '" />');
-
-                        } else {
-
-                            var poster_href = href.replace(".mp4", ".jpg");
-
-                            $newElement.addClass('media_video');
-
-                            $newElement.find('.inner').append('<video src="' + href + '" controls muted preload="auto" poster="' + poster_href + '" type="video/mp4"></video>');
-                        }
-
-                        $gallery.prepend($newElement);
-
-                        var targetTag = type == "img" ? "img" : "video";
-                        var eventName = type == "img" ? "load" : "loadedmetadata";
-
-                        $newElement.find(targetTag).on(eventName, function (event) {
-
-                            var $modal = $(this).parents('.modal');
-
-                            setTimeout(function () {
-
-                                $modal.addClass('loaded');
-
-                            }, 275);
-                        });
-
-                        $newElement.addClass('visible');
-
-                        $newElement.focus();
-
-                    }).on('keypress click', '.modal > .inner', function (event) {
-
-                        event.stopPropagation();
-
-                    }).on('keypress click', '.modal', function (event) {
-
-                        if (event.target.nodeName == "IMG" || event.target.nodeName == "VIDEO") return;
-
-                        if ((event.type == "keypress" && event.keyCode == 27) || event.type == "click") {
-
-                            var $modal = $(this);
-
-                            $modal.removeClass('loaded')
-
-                            setTimeout(function () {
-
-                                $modal.removeClass('visible')
-
-                                setTimeout(function () {
-
-                                    $modal.remove();
-
-                                    $body.focus();
-
-                                }, 475);
-                            }, 125);
-                        }
-                    }).on('mouseup mousedown mousemove wheel', '.modal', function (event) {
-
-                        event.stopPropagation();
-                    });
-
+                clearTimeout( scheduled );
+                scheduled = window.setTimeout ( update, 500 );
+            });
+            
+            function update()
+            {
+                let vh = window.innerHeight * 0.01;
+                document.documentElement.style.setProperty('--vh', `${vh}px`);
             }
-
-        })(jQuery);
+        });
     </script>
 
 </body>
