@@ -35,7 +35,8 @@ main {
 
 #gallery-content {
 	display: grid;
-	grid-template-rows: 50% 50%%;
+	grid-template-rows: 50% 50%;
+	grid-auto-flow: column;
 }
 
 @media only screen and (max-width: 740px) {

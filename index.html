@@ -94,7 +94,7 @@
             color: white;
         }
         
-        article > a {
+        article > a, section > a {
             display: block;
             height: 100%;
             border: 0;
@@ -141,7 +141,13 @@
         /* specifics */
         
         #video {
-            background-image: url("images/loop_portrait.mp4");
+            /* background-image: url("images/loop_portrait.mp4"); */
+        }
+        
+        #video video {
+            object-fit: cover;
+            width: 100%;
+            height: 100%;
         }
         
         #welcome {
@@ -162,7 +168,7 @@
         }
         
         #pic {
-            background-image: url("images/factotum.jpg");
+            background-image: url("https://storage.googleapis.com/charlierobin-1245.appspot.com/pictures/me_in_mali.jpg");
         }
         
         #gallery-intro {
@@ -189,7 +195,7 @@
         @media only screen and (max-width: 740px) {
             
             #video {
-                background-image: url("images/loop_landscape.mp4");
+                /* background-image: url("images/loop_landscape.mp4"); */
             }
             
             #welcome, #factotum, #gallery-intro, #contact {
@@ -210,7 +216,12 @@
 
     <div id="wrapper">
         <main>
-            <section id="video" class="min-height width-half"></section>
+            <section id="video" class="min-height width-half">
+                <video muted playsinline autoplay loop  poster="https://storage.googleapis.com/charlierobin-1245.appspot.com/pictures/loop_portrait_00000.jpg">
+                  <source src="images/loop_portrait.mp4" type="video/mp4">
+                  No video for you! Come back one year!
+                </video>
+            </section>
             
             <section id="welcome" class="width-three-quarters content">
                 
@@ -221,8 +232,6 @@
                 <p class="hideWhenNarrowed"><a href="#gallery" title="Skip straight to the gallery"><img src="images/right-chevron.svg" class="svg-button" alt="Right arrow icon"></a></p>
                 
             </section>
-            
-            <!-- <section id="pic" class="min-height width-half"></section> -->
             
             <section id="gallery">
                 
@@ -361,6 +370,10 @@
                 
             </section>
             
+            <section id="pic" class="min-height width-one">
+                <a href="archaeology.html" title="Very old work"></a>
+            </section>
+            
             <section id="contact" class="content">
                 
                 <p><a href="mailto:charlie@charlierobin.com" title="email address">charlie@charlierobin.com</a></p>
@@ -374,8 +387,12 @@
 
     <script>
     
+        // ipad only !
+        
         docReady(function() 
         {
+            if (! isMobileSafari()) return;
+            
             var scheduled;
             
             update();
@@ -390,6 +407,11 @@
             {
                 let vh = window.innerHeight * 0.01;
                 document.documentElement.style.setProperty('--vh', `${vh}px`);
+            }
+            
+            function isMobileSafari() 
+            {
+                return navigator.userAgent.match(/(iPod|iPhone|iPad)/) && navigator.userAgent.match(/AppleWebKit/)
             }
         });
     </script>
