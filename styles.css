@@ -105,6 +105,10 @@ h3::after {
   border-bottom: 4px rgba(255, 255, 255, 0.45) solid;
 }
 
+h1::after {
+  margin-bottom: 30px;
+}
+
 h1 span {
   font-size: 2.5em;
   font-weight: var(--boldWeight);
