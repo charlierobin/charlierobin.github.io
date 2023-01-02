@@ -106,6 +106,7 @@ h3::after {
 }
 
 h1::after {
+  padding-bottom: 0px;
   margin-bottom: 30px;
 }
 
