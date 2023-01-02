@@ -154,6 +154,14 @@
             background-image: url("images/overlay.png"), linear-gradient(45deg, #726193 20%, #e37b7c 60%, #ffe4b4);
         }
         
+        #welcome a {
+            text-decoration: none;
+        }
+        
+        #welcome p:last-child {
+            margin-top: 50px;
+        }
+        
         #factotum {
             
             
@@ -185,13 +193,14 @@
         
         #contact p:last-child
         {
+            margin-top: 50px;
             font-size: small;
         }
         
         @media only screen and (max-width: 740px) {
             
             #video {
-                /* background-image: url("images/loop_landscape.mp4"); */
+                /* background-image: url("https://storage.googleapis.com/charlierobin-1245.appspot.com/pictures//loop_landscape.mp4"); */
             }
             
             #welcome, #factotum, #gallery-intro, #contact {
@@ -213,8 +222,8 @@
     <div id="wrapper">
         <main>
             <section id="video" class="min-height width-half">
-                <video muted playsinline autoplay loop  poster="https://storage.googleapis.com/charlierobin-1245.appspot.com/pictures/loop_portrait_00000.jpg">
-                  <source src="images/loop_portrait.mp4" type="video/mp4">
+                <video muted playsinline autoplay loop poster="https://storage.googleapis.com/charlierobin-1245.appspot.com/pictures/loop_portrait/loop_portrait_00000.jpg">
+                  <source src="https://storage.googleapis.com/charlierobin-1245.appspot.com/pictures/loop_portrait.mp4" type="video/mp4">
                   No video for you! Come back one year!
                 </video>
             </section>
@@ -223,9 +232,9 @@
                 
                 <h1>hello, my name is charlie</h1>
                 
-                <p>this is a single-page experiment with GitHub Pages</p>
+                <p>this was a single-page experiment with <a href="https://pages.github.com" title="">GitHub Pages</a></p>
                 
-                <p class="hideWhenNarrowed"><a href="#gallery" title="Skip straight to the gallery"><img src="images/right-chevron.svg" class="svg-button" alt="Right arrow icon"></a></p>
+                <p class="hideWhenNarrowed"><img src="images/right-chevron.svg" class="svg-button" alt="Right arrow icon"></p>
                 
             </section>
             
@@ -363,7 +372,7 @@
                 <p><a href="mailto:charlie@charlierobin.com" title="email address">charlie@charlierobin.com</a></p>
                 <p><a href="https://github.com/charlierobin" title="github repositories & download links">github.com/charlierobin</a></p>
                 
-                <p>charlie robin 1995-2023</p>
+                <p>charlie robin 1994-2023</p>
                 
             </section>
         </main>

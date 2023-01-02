@@ -49,13 +49,24 @@
             font-weight: 200;
         }
         
-       
+       .svg-button {
+           width: 40px;
+           height: 40px;
+           opacity: 0.5;
+       }
         
         .do-not-break {
             white-space: nowrap;
         }
         
+        .content {
+            padding: var(--contentPadding);
+            font-size: var( --fontSize );
+        }
         
+        section.content {
+            padding-top: calc( var(--oneWidth) / 3.2 );
+        }
         
         article {
             background-image: url('images/black.gif');
@@ -89,20 +100,53 @@
         @media only screen and (max-width: 740px) {
                       
             article {
-                width: 100% !important;
-                max-width: unset !important;
-            }
-            
-            .min-height, article > a {
-                height: var(--minHeight);
-            }
-            
-           .hideWhenNarrowed {
-               display: none;
-           }
+                    width: 100% !important;
+                    max-width: unset !important;
+                }
+                
+                article.linked-with h3::before {
+                     display: none;
+                  }
+                  
+                .min-height, article > a {
+                    height: var(--minHeight);
+                }
+                
+                section.content {
+                    padding-top: 10px;
+                }
+                
+               .hideWhenNarrowed {
+                   display: none;
+               }
         }
         
+        #contact {
+            background-color: rgb(53, 56, 101);
+            
+            background-image: url("images/overlay.png"), linear-gradient(45deg, rgba(114, 97, 147, 0.25) 25%, rgba(227, 123, 124, 0.25) 50%, rgba(255, 228, 180, 0.25));
+            
+            /* background-image: url("images/overlay.png"), linear-gradient(45deg, rgb(115, 111, 119) 25%, rgb(197, 167, 167) 50%, rgb(254, 247, 220)); */
+            /* background-image: url("images/overlay.png"), linear-gradient(45deg, rgba(114, 97, 147, 0.25) 25%, rgba(227, 123, 124, 0.25) 50%, rgba(255, 228, 180, 0.25)); */
+        }
         
+        #contact p:last-child
+        {
+            margin-top: 50px;
+            font-size: small;
+        }
+        
+        @media only screen and (max-width: 740px) {
+            
+            #contact {
+                background-image: none;
+            }
+            
+            #contact p:last-child
+            {
+                text-align: right;
+            }
+        }
         
     </style>
 
@@ -905,6 +949,16 @@
                     
                 </section>
             </section>
+            
+            <section id="contact" class="content">
+                
+                <p><a href="mailto:charlie@charlierobin.com" title="email address">charlie@charlierobin.com</a></p>
+                <p><a href="https://github.com/charlierobin" title="github repositories & download links">github.com/charlierobin</a></p>
+                
+                <p><a href="index.html" title="Back to the home page" style="display: inline-block;"><img src="images/home-icon.svg" style="width: 20px;" class="svg-button" alt="Home icon"></a></p>
+                
+            </section>
+            
         </main>
     </div>
 
