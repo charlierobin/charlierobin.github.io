@@ -7,12 +7,16 @@
     
     <meta charset="utf-8" />
 
-    <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:ital,wght@0,200;0,800&display=swap" rel="stylesheet" />
-
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@200;600&display=swap" rel="stylesheet">
+    <style> @import url('https://fonts.googleapis.com/css2?family=Titillium+Web:wght@200;600&display=swap'); </style>
+    
     <link rel="stylesheet" href="reset.css">
     <link rel="stylesheet" href="page_layout.css">
     <link rel="stylesheet" href="grid_layout.css">
-
+    <link rel="stylesheet" href="styles.css">
+    
     <script src="docready.js"></script>
     
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
@@ -23,198 +27,6 @@
     <meta name="msapplication-TileColor" content="#da532c">
     <meta name="theme-color" content="#ffffff">
     
-    <style>
-    
-        :root {
-            --padding: 100px;
-            
-            --maxHeightVH: 90vh;
-            --maxHeight: 840px;
-            
-            --oneWidth: var( --maxHeightVH );
-            --oneWidthMax: var( --maxHeight );
-            
-            --contentPadding: 20px;
-            
-            --minHeight: 400px;
-            
-            --fontSize: 20px;
-        }
-    
-        body {
-            background: rgb(11, 0, 61);
-            background: linear-gradient(0deg, rgb(11, 0, 61) 0%, rgb(49, 0, 44) 100%);
-            color: rgb(255, 255, 255);
-            font-size: 0;
-            font-family: 'Titillium Web', Verdana, sans-serif;
-            font-weight: 200;
-        }
-        
-        .svg-button {
-            width: 40px;
-            height: 40px;
-            opacity: 0.5;
-        }
-        
-        .do-not-break {
-            white-space: nowrap;
-        }
-        
-        .content {
-            padding: var(--contentPadding);
-            font-size: var( --fontSize );
-        }
-        
-        section.content {
-            padding-top: calc( var(--oneWidth) / 3.2 );
-        }
-        
-        article.linked-with h3::before {
-           content: '';
-           display: inline-block;
-           width: 15px;
-           height: 15px;
-           margin-right: 10px;
-        }
-        
-        article.left h3::before {
-           background-image: url('images/left-arrow.svg');
-        }
-        
-        article.above h3::before {
-           background-image: url('images/up-arrow.svg');
-        }
-        
-        article {
-            background-image: url('images/black.gif');
-            background-color: black;
-        }
-        
-        a {
-            color: white;
-        }
-        
-        article > a, section > a {
-            display: block;
-            height: 100%;
-            border: 0;
-            text-decoration: none;
-        }
-    
-       #welcome p a, article p a {
-           display: inline-flex;
-       }
-        
-        h1::after, h2::after, h3::after {
-            content: '';
-            display: block;
-            width: 25%;
-            padding-bottom: 10px;
-            margin-bottom: 10px;
-            border-bottom: 4px rgba(255, 255, 255, 0.45) solid;
-        }
-        
-        @media only screen and (max-width: 740px) {
-                      
-            article {
-                width: 100% !important;
-                max-width: unset !important;
-            }
-            
-            article.linked-with h3::before {
-                 display: none;
-              }
-              
-            .min-height, article > a {
-                height: var(--minHeight);
-            }
-            
-            section.content {
-                padding-top: 10px;
-            }
-            
-           .hideWhenNarrowed {
-               display: none;
-           }
-        }
-        
-        /* specifics */
-        
-        #video {
-            /* background-image: url("images/loop_portrait.mp4"); */
-        }
-        
-        #video video {
-            object-fit: cover;
-            width: 100%;
-            height: 100%;
-        }
-        
-        #welcome {
-            background-image: url("images/overlay.png"), linear-gradient(45deg, #726193 20%, #e37b7c 60%, #ffe4b4);
-        }
-        
-        #welcome a {
-            text-decoration: none;
-        }
-        
-        #welcome p:last-child {
-            margin-top: 50px;
-        }
-        
-        #factotum {
-            
-            
-            background-image: url("images/overlay.png"), linear-gradient(45deg, rgba(81, 84, 99, 0.93) 20%, #aaabaa 60%, #f0dab9);
-            
-            
-            /* background-image: url("images/pic02.jpg"), linear-gradient(45deg, rgba(114, 97, 147, 0.25) 25%, rgba(227, 123, 124, 0.25) 50%, rgba(255, 228, 180, 0.25)); */
-            
-            /* background-image: url("images/overlay.png"), linear-gradient(45deg, rgba(114, 97, 147, 0.25) 25%, rgba(227, 123, 124, 0.25) 50%, rgba(255, 228, 180, 0.25)); */
-            
-            /* background-image: url("images/pic02.jpg"); */
-        }
-        
-        #gallery-intro {
-            /* background-image: url("images/overlay.png"), linear-gradient(45deg, rgba(114, 97, 147, 0.25) 25%, rgba(227, 123, 124, 0.25) 50%, rgba(255, 228, 180, 0.25)); */
-            
-            background-color: rgb(53, 56, 101);
-            background-image: url("images/overlay.png"), linear-gradient(45deg, rgba(114, 97, 147, 0.25) 25%, rgba(227, 123, 124, 0.25) 50%, rgba(255, 228, 180, 0.25));
-        }
-        
-        #contact {
-            background-color: rgb(53, 56, 101);
-            
-            background-image: url("images/overlay.png"), linear-gradient(45deg, rgba(114, 97, 147, 0.25) 25%, rgba(227, 123, 124, 0.25) 50%, rgba(255, 228, 180, 0.25));
-            
-            /* background-image: url("images/overlay.png"), linear-gradient(45deg, rgb(115, 111, 119) 25%, rgb(197, 167, 167) 50%, rgb(254, 247, 220)); */
-            /* background-image: url("images/overlay.png"), linear-gradient(45deg, rgba(114, 97, 147, 0.25) 25%, rgba(227, 123, 124, 0.25) 50%, rgba(255, 228, 180, 0.25)); */
-        }
-        
-        #contact p:last-child
-        {
-            margin-top: 50px;
-            font-size: small;
-        }
-        
-        @media only screen and (max-width: 740px) {
-            
-            #video {
-                /* background-image: url("https://storage.googleapis.com/charlierobin-1245.appspot.com/pictures//loop_landscape.mp4"); */
-            }
-            
-            #welcome, #factotum, #gallery-intro, #contact {
-                background-image: none;
-            }
-            
-            #contact p:last-child
-            {
-                text-align: right;
-            }
-        }
-        
-    </style>
-
 </head>
 
 <body>
@@ -230,7 +42,7 @@
             
             <section id="welcome" class="width-three-quarters content">
                 
-                <h1>hello, my name is charlie</h1>
+                <h1>hello, my name is <br/><span>charlie</span></h1>
                 
                 <p>this was a single-page experiment with <a href="https://pages.github.com" title="">GitHub Pages</a></p>
                 
