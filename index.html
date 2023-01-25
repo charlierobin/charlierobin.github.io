@@ -211,12 +211,19 @@
         {
             let max = 279;
             
+            let selected = [];
+            
             var s = "";
             
             for ( var i = 0; i < 8; i++ )
             {
                 let x = Math.floor( ( Math.random() * max ) + 1 );
-                
+                  
+                  while( selected.includes( x ) )
+                  {
+                      x = Math.floor( ( Math.random() * max ) + 1 );
+                  }
+                  
                 s = s + x;
                 
                 if ( i < 7 ) s = s + ",";

@@ -104,11 +104,18 @@
         {
             let max = 279;
             
+            let selected = [];
+            
             var s = "";
             
             $( "article" ).each( function( index ) {
                 
                 let x = Math.floor( ( Math.random() * max ) + 1 );
+                  
+                  while( selected.includes( x ) )
+                  {
+                      x = Math.floor( ( Math.random() * max ) + 1 );
+                  }
                 
                 s = s + x;
                 
@@ -183,9 +190,16 @@
             {
                 var s = "";
                 
+                let selected = [];
+                
                 $( "article" ).each( function( index ) {
                     
                     let x = Math.floor( ( Math.random() * max ) + 1 );
+                      
+                      while( selected.includes( x ) )
+                      {
+                          x = Math.floor( ( Math.random() * max ) + 1 );
+                      }
                     
                     $( this ).css( 'background-image', "url('https://storage.googleapis.com/charlierobin-1245.appspot.com/panoramio/" + x + "-thumbnail.jpg')" );
                     
