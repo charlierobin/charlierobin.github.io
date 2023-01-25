@@ -234,6 +234,11 @@
             $( "#gallery1" ).find( 'a' ).attr( "href", "gallery.html?s=" + s );
             $( "#gallery2" ).find( 'a' ).attr( "href", "gallery.html?s=" + s );
             
+            function isMobileSafari() 
+            {
+                return navigator.userAgent.match(/(iPod|iPhone|iPad)/) && navigator.userAgent.match(/AppleWebKit/)
+            }
+            
             if ( isMobileSafari() )
             {
                 var scheduled;
