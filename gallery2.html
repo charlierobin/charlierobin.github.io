@@ -91,7 +91,7 @@
                 
                 <p><a href="index.html" title="Back to the home page" style="display: inline-block;"><img src="images/home-icon.svg" style="width: 20px;" class="svg-button" alt="Home icon"></a></p>
                 
-                <p><a href="" title="More pictures" style="display: inline-block;"><img src="images/more-pics-icon.svg" style="width: 20px;" class="svg-button" alt="More pictures icon"></a></p>
+                <p><a href="gallery2.html" title="More pictures" style="display: inline-block;"><img src="images/more-pics-icon.svg" style="width: 20px;" class="svg-button" alt="More pictures icon"></a></p>
                 
             </section>
             
@@ -138,7 +138,6 @@
       
                     vars[ hash[ 0 ] ] = hash[ 1 ];
                 }
-                
                 return vars;
             }
             
@@ -146,67 +145,52 @@
             
             let params = getUrlGetParams();
             
-            params.start = parseInt( params.start );
-            
-           if ( params.start )
-           {
-               var x = params.start > max ? 1 : params.start;
-               
-               $( "article" ).each( function( index ) {
-                 
-                 $( this ).css( 'background-image', "url('https://storage.googleapis.com/charlierobin-1245.appspot.com/panoramio/" + x + "-thumbnail.jpg')" );
-                 
-                 $( this ).find( 'a' ).attr( "href", "https://storage.googleapis.com/charlierobin-1245.appspot.com/panoramio/" + x + ".jpg" );
-                 
-                 x++;
-                 
-                 if ( x > max ) x = 1;
-                 
-               });
-           }
-           else if ( params.selection )
-           {
-               let selection = params.selection.split( ',' );
-               
-               if ( selection.length == 8 )
-               {
-                   var x = 0;
+            if ( params.s )
+            {
+                params.s = decodeURIComponent( params.s );
+                
+                let selection = params.s.split( ',' );
                    
-                   $( "article" ).each( function( index ) {
-                        
-                        $( this ).css( 'background-image', "url('https://storage.googleapis.com/charlierobin-1245.appspot.com/panoramio/" + selection[ x ] + "-thumbnail.jpg')" );
-                        
-                        $( this ).find( 'a' ).attr( "href", "https://storage.googleapis.com/charlierobin-1245.appspot.com/panoramio/" + selection[ x ] + ".jpg" );
-                        
-                        x++;
-                        
-                      });
-               }
-               else 
-               {
-                   // random
-               }
-           }
+                   if ( selection.length == 8 )
+                   {
+                       var x = 0;
+                       
+                       $( "article" ).each( function( index ) {
+                            
+                            $( this ).css( 'background-image', "url('https://storage.googleapis.com/charlierobin-1245.appspot.com/panoramio/" + selection[ x ] + "-thumbnail.jpg')" );
+                            
+                            $( this ).find( 'a' ).attr( "href", "https://storage.googleapis.com/charlierobin-1245.appspot.com/panoramio/" + selection[ x ] + ".jpg" );
+                            
+                            x++;
+                            
+                          });
+                   }
+            }
             else 
             {
-                let selected = [];
+                var s = "";
                 
                 $( "article" ).each( function( index ) {
-                  
-                  let x = Math.floor( ( Math.random() * max ) + 1 );
-                  
-                  while( selected.includes( x ) )
-                  {
-                      x = Math.floor( ( Math.random() * max ) + 1 );
-                  }
-                  
-                  selected.push( x );
-                  
-                  $( this ).css( 'background-image', "url('https://storage.googleapis.com/charlierobin-1245.appspot.com/panoramio/" + x + "-thumbnail.jpg')" );
-                  
-                  $( this ).find( 'a' ).attr( "href", "https://storage.googleapis.com/charlierobin-1245.appspot.com/panoramio/" + x + ".jpg" );
-                  
-                });
+                    
+                    let x = Math.floor( ( Math.random() * max ) + 1 );
+                    
+                    $( this ).css( 'background-image', "url('https://storage.googleapis.com/charlierobin-1245.appspot.com/panoramio/" + x + "-thumbnail.jpg')" );
+                    
+                    $( this ).find( 'a' ).attr( "href", "https://storage.googleapis.com/charlierobin-1245.appspot.com/panoramio/" + x + ".jpg" );
+                    
+                    s = s + x;
+                    
+                    var isLastElement = index == $( "article" ).length - 1;
+                    
+                    if ( ! isLastElement ) s = s + ",";
+                    
+                  });
+                
+                const url = new URL( window.location );
+                
+                url.searchParams.set( 's', s );
+                
+                window.history.pushState( {}, 'Hello', url );
             }
         });
     
