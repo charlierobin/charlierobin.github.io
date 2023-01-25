@@ -10,16 +10,17 @@
     <link rel="preconnect" href="https://storage.googleapis.com" crossorigin>
     <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://ajax.googleapis.com" crossorigin>
     
     <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@200;600&display=swap" rel="stylesheet">
     <style> @import url('https://fonts.googleapis.com/css2?family=Titillium+Web:wght@200;600&display=swap'); </style>
     
     <link rel="stylesheet" href="reset.css">
     <link rel="stylesheet" href="page_layout.css">
-    <link rel="stylesheet" href="grid_layout.css">
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="grid_layout.css">
     
-    <script src="docready.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.slim.min.js"></script>
     
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -111,16 +112,20 @@
                          <a href="https://storage.googleapis.com/charlierobin-1245.appspot.com/videos/work/charlie_robin.mp4" title="An old video work showreel"></a>
                      </article>
                         
+                    <article id="gallery1" class="width-half" style="background-image: url('https://storage.googleapis.com/charlierobin-1245.appspot.com/panoramio/221-thumbnail.jpg');">
+                         <a href="gallery.html" title="Gallery of old photos"></a>
+                    </article>
+                    
                     <article id="mongo" class="width-one" style="background-image: url('https://storage.googleapis.com/charlierobin-1245.appspot.com/videos/work/MongoDB_Candids.jpg');">
                         <a href="https://storage.googleapis.com/charlierobin-1245.appspot.com/videos/work/MongoDB_Candids.mp4" title="MongoDB 2013 event video edit"></a>
                     </article>
                     
                     <article id="old-showreel" class="width-half" style="background-image: url('https://storage.googleapis.com/charlierobin-1245.appspot.com/videos/work/charlie_robin_old_showreel.jpg');">
-                        <a href="https://storage.googleapis.com/charlierobin-1245.appspot.com/videos/work/charlie_robin_old_showreel.mp4" title="A REALLY old showreel (goes on for way too long!)"></a>
+                        <a href="https://storage.googleapis.com/charlierobin-1245.appspot.com/videos/work/charlie_robin_old_showreel.mp4" title="A REALLY old showreel (goes on for way too long)"></a>
                     </article>
                     
                     <article id="dell-candids" class="width-one" style="background-image: url('https://storage.googleapis.com/charlierobin-1245.appspot.com/videos/work/dell_gig_edit.jpg');">
-                        <a href="https://storage.googleapis.com/charlierobin-1245.appspot.com/videos/work/dell_gig_edit.mp4" title="Dell Poland Event: Manufactoring Plant Opening"></a>
+                        <a href="https://storage.googleapis.com/charlierobin-1245.appspot.com/videos/work/dell_gig_edit.mp4" title="Dell Poland Event: Manufacturing Plant Opening"></a>
                     </article>
                     
                     <article id="asteroids2" class="width-half" style="background-image: url('https://storage.googleapis.com/charlierobin-1245.appspot.com/videos/work/asteroids-gameplay-2.jpg');">
@@ -144,6 +149,10 @@
                     </article>
                     
                     <!-- lower row -->
+                    
+                    <article id="gallery2" class="width-half" style="background-image: url('https://storage.googleapis.com/charlierobin-1245.appspot.com/panoramio/227-thumbnail.jpg');">
+                         <a href="gallery.html" title="Gallery of old photos"></a>
+                    </article>
                     
                     <article id="dell-intro" class="width-half" style="background-image: url('https://storage.googleapis.com/charlierobin-1245.appspot.com/videos/work/dell_2008.jpg');">
                         <a href="https://storage.googleapis.com/charlierobin-1245.appspot.com/videos/work/dell_2008.mp4" title="Dell Press Launch Welcome Video"></a>
@@ -198,9 +207,7 @@
 
     <script>
     
-        // ipad only !
-        
-        docReady(function() 
+        $(function()
         {
             if (! isMobileSafari()) return;
             
