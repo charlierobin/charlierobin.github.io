@@ -91,7 +91,7 @@
                 
                 <p><a href="index.html" title="Back to the home page" style="display: inline-block;"><img src="images/home-icon.svg" style="width: 20px;" class="svg-button" alt="Home icon"></a></p>
                 
-                <p><a href="gallery2.html" title="More pictures" style="display: inline-block;"><img src="images/more-pics-icon.svg" style="width: 20px;" class="svg-button" alt="More pictures icon"></a></p>
+                <p><a href="gallery2.html" title="More pictures" style="display: inline-block;" id="more"><img src="images/more-pics-icon.svg" style="width: 20px;" class="svg-button" alt="More pictures icon"></a></p>
                 
             </section>
             
@@ -102,9 +102,23 @@
     
         $(function() 
         {
-            window.addEventListener('popstate', function(event) {
-              console.log( event );
-            });
+            let max = 278;
+            
+            var s = "";
+            
+            $( "article" ).each( function( index ) {
+                
+                let x = Math.floor( ( Math.random() * max ) + 1 );
+                
+                s = s + x;
+                
+                var isLastElement = index == $( "article" ).length - 1;
+                
+                if ( ! isLastElement ) s = s + ",";
+                
+              });
+            
+            $( "a#more" ).attr( "href", "gallery2.html?s=" + s );
             
             function isMobileSafari() 
             {
@@ -145,8 +159,6 @@
                 return vars;
             }
             
-            let max = 278;
-            
             let params = getUrlGetParams();
             
             if ( params.s )
@@ -155,17 +167,13 @@
                 
                 let selection = params.s.split( ',' );
                    
-                   if ( selection.length == 8 )
+                   if ( selection.length == $( "article" ).length )
                    {
-                       var x = 0;
-                       
-                       $( "article" ).each( function( index ) {
+                       $( "article" ).each( function( x ) {
                             
                             $( this ).css( 'background-image', "url('https://storage.googleapis.com/charlierobin-1245.appspot.com/panoramio/" + selection[ x ] + "-thumbnail.jpg')" );
                             
                             $( this ).find( 'a' ).attr( "href", "https://storage.googleapis.com/charlierobin-1245.appspot.com/panoramio/" + selection[ x ] + ".jpg" );
-                            
-                            x++;
                             
                           });
                    }
@@ -190,11 +198,7 @@
                     
                   });
                 
-                const url = new URL( window.location );
-                
-                url.searchParams.set( 's', s );
-                
-                window.history.replaceState( {}, '', url );
+                window.history.replaceState( {}, "", "?s=" + s );
             }
         });
     
