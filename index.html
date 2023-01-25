@@ -113,7 +113,7 @@
                      </article>
                         
                     <article id="gallery1" class="width-half" style="background-image: url('https://storage.googleapis.com/charlierobin-1245.appspot.com/panoramio/221-thumbnail.jpg');">
-                         <a href="gallery.html" title="Gallery of old photos"></a>
+                         <a href="gallery.html?s=1,2,3,4,5,6,7,8" title="Gallery of old photos"></a>
                     </article>
                     
                     <article id="mongo" class="width-one" style="background-image: url('https://storage.googleapis.com/charlierobin-1245.appspot.com/videos/work/MongoDB_Candids.jpg');">
@@ -151,7 +151,7 @@
                     <!-- lower row -->
                     
                     <article id="gallery2" class="width-half" style="background-image: url('https://storage.googleapis.com/charlierobin-1245.appspot.com/panoramio/25-thumbnail.jpg');">
-                         <a href="gallery.html" title="Gallery of old photos"></a>
+                         <a href="gallery.html?s=1,2,3,4,5,6,7,8" title="Gallery of old photos"></a>
                     </article>
                     
                     <article id="dell-intro" class="width-half" style="background-image: url('https://storage.googleapis.com/charlierobin-1245.appspot.com/videos/work/dell_2008.jpg');">
@@ -209,27 +209,39 @@
     
         $(function()
         {
-            if (! isMobileSafari()) return;
+            let max = 279;
             
-            var scheduled;
+            var s = "";
             
-            update();
-            
-            window.addEventListener('resize', () => 
+            for ( var i = 0; i < 8; i++ )
             {
-                clearTimeout( scheduled );
-                scheduled = window.setTimeout ( update, 500 );
-            });
-            
-            function update()
-            {
-                let vh = window.innerHeight * 0.01;
-                document.documentElement.style.setProperty('--vh', `${vh}px`);
+                let x = Math.floor( ( Math.random() * max ) + 1 );
+                
+                s = s + x;
+                
+                if ( i < 7 ) s = s + ",";
             }
             
-            function isMobileSafari() 
+            $( "#gallery1" ).find( 'a' ).attr( "href", "gallery.html?s=" + s );
+            $( "#gallery2" ).find( 'a' ).attr( "href", "gallery.html?s=" + s );
+            
+            if ( isMobileSafari() )
             {
-                return navigator.userAgent.match(/(iPod|iPhone|iPad)/) && navigator.userAgent.match(/AppleWebKit/)
+                var scheduled;
+                
+                update();
+                
+                window.addEventListener( 'resize', () => 
+                {
+                    clearTimeout( scheduled );
+                    scheduled = window.setTimeout ( update, 500 );
+                });
+                
+                function update()
+                {
+                    let vh = window.innerHeight * 0.01;
+                    document.documentElement.style.setProperty( '--vh', `${vh}px` );
+                }
             }
         });
     </script>
