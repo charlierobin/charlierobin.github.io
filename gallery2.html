@@ -190,7 +190,7 @@
                 
                 url.searchParams.set( 's', s );
                 
-                window.history.pushState( {}, 'Hello', url );
+                window.history.replaceState( {}, '', url );
             }
         });
     
