@@ -117,6 +117,8 @@
                       x = Math.floor( ( Math.random() * max ) + 1 );
                   }
                 
+                selected.push( x );
+                
                 s = s + x;
                 
                 var isLastElement = index == $( "article" ).length - 1;
@@ -185,35 +187,6 @@
                             
                           });
                    }
-            }
-            else 
-            {
-                var s = "";
-                
-                let selected = [];
-                
-                $( "article" ).each( function( index ) {
-                    
-                    let x = Math.floor( ( Math.random() * max ) + 1 );
-                      
-                      while( selected.includes( x ) )
-                      {
-                          x = Math.floor( ( Math.random() * max ) + 1 );
-                      }
-                    
-                    $( this ).css( 'background-image', "url('https://storage.googleapis.com/charlierobin-1245.appspot.com/panoramio/" + x + "-thumbnail.jpg')" );
-                    
-                    $( this ).find( 'a' ).attr( "href", "https://storage.googleapis.com/charlierobin-1245.appspot.com/panoramio/" + x + ".jpg" );
-                    
-                    s = s + x;
-                    
-                    var isLastElement = index == $( "article" ).length - 1;
-                    
-                    if ( ! isLastElement ) s = s + ",";
-                    
-                  });
-                
-                window.history.replaceState( {}, "", "?s=" + s );
             }
         });
     
