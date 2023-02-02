@@ -19,11 +19,6 @@ function selectRandomPics()
     return selected;
 }
 
-function isMobileSafari() 
-{
-    return navigator.userAgent.match(/(iPod|iPhone|iPad)/) && navigator.userAgent.match(/AppleWebKit/)
-}
-
 function getUrlGetParams()
 {
     var vars = {};
