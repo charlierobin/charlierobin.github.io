@@ -107,25 +107,6 @@
             
             $( "a#more" ).attr( "href", "gallery.html?s=" + pics.join( ',' ) );
             
-            // if ( isMobileSafari() )
-            // {
-            //     var scheduled;
-                
-            //     update();
-                
-            //     window.addEventListener('resize', () => 
-            //     {
-            //         clearTimeout( scheduled );
-            //         scheduled = window.setTimeout ( update, 500 );
-            //     });
-                
-            //     function update()
-            //     {
-            //         let vh = window.innerHeight * 0.01;
-            //         document.documentElement.style.setProperty('--vh', `${vh}px`);
-            //     }
-            // }
-            
             let params = getUrlGetParams();
             
             if ( params.s )

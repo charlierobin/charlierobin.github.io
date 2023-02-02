@@ -935,35 +935,6 @@
         </main>
     </div>
 
-    <script>
-    
-        $(function()
-        {
-            if (! isMobileSafari()) return;
-            
-            var scheduled;
-            
-            update();
-            
-            window.addEventListener('resize', () => 
-            {
-                clearTimeout( scheduled );
-                scheduled = window.setTimeout ( update, 500 );
-            });
-            
-            function update()
-            {
-                let vh = window.innerHeight * 0.01;
-                document.documentElement.style.setProperty('--vh', `${vh}px`);
-            }
-            
-            function isMobileSafari() 
-            {
-                return navigator.userAgent.match(/(iPod|iPhone|iPad)/) && navigator.userAgent.match(/AppleWebKit/)
-            }
-        });
-    </script>
-    
 </body>
 
 </html>
