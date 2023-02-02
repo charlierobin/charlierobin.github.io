@@ -3,6 +3,7 @@
 	display: inline-flex;
 	align-items: center;
 	height: 100vh;
+	background: linear-gradient(0deg, rgb(11, 0, 61) 0%, rgb(49, 0, 44) 100%);
 }
 
 main {
