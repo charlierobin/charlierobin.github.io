@@ -21,6 +21,7 @@
     <link rel="stylesheet" href="grid_layout.css">
     
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.slim.min.js"></script>
+    <script src="common.js"></script>
     
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -29,6 +30,48 @@
     <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#000000">
     <meta name="msapplication-TileColor" content="#da532c">
     <meta name="theme-color" content="#ffffff">
+    
+    <style>
+        
+        /* #gallery1
+        {
+            position: relative;
+        }
+        
+        #gallery1:after 
+        {
+          content: "";
+          position: absolute;
+          top: 0;
+          left: 0;
+          opacity: .7;
+          z-index: 10;
+          width: 100%;
+          height: 100%;   
+          background-image: url( "https://storage.googleapis.com/charlierobin-1245.appspot.com/panoramio/200-thumbnail.jpg" );
+          background-size: cover;
+         }
+        
+        #gallery2
+        {
+            position: relative;
+        }
+        
+        #gallery2:after 
+        {
+          content: "";
+          position: absolute;
+          top: 0;
+          left: 0;
+          opacity: .7;
+          z-index: 10;
+          width: 100%;
+          height: 100%;   
+          background-image: url( "https://storage.googleapis.com/charlierobin-1245.appspot.com/panoramio/100-thumbnail.jpg" );
+          background-size: cover;
+         } */
+        
+    </style>
     
 </head>
 
@@ -209,54 +252,33 @@
     
         $(function()
         {
-            let max = 279;
+            let pics = selectRandomPics();
             
-            let selected = [];
+            $( "#gallery1" ).find( 'a' ).attr( "href", "gallery.html?s=" + pics.join( ',' ) );
+            $( "#gallery2" ).find( 'a' ).attr( "href", "gallery.html?s=" + pics.join( ',' ) );
             
-            var s = "";
+
             
-            for ( var i = 0; i < 8; i++ )
-            {
-                let x = Math.floor( ( Math.random() * max ) + 1 );
-                  
-                  while( selected.includes( x ) )
-                  {
-                      x = Math.floor( ( Math.random() * max ) + 1 );
-                  }
-                  
-                  selected.push( x );
-                  
-                s = s + x;
+            // if ( isMobileSafari() )
+            // {
+            //     var scheduled;
                 
-                if ( i < 7 ) s = s + ",";
-            }
-            
-            $( "#gallery1" ).find( 'a' ).attr( "href", "gallery.html?s=" + s );
-            $( "#gallery2" ).find( 'a' ).attr( "href", "gallery.html?s=" + s );
-            
-            function isMobileSafari() 
-            {
-                return navigator.userAgent.match(/(iPod|iPhone|iPad)/) && navigator.userAgent.match(/AppleWebKit/)
-            }
-            
-            if ( isMobileSafari() )
-            {
-                var scheduled;
+            //     update();
                 
-                update();
+            //     window.addEventListener( 'resize', () => 
+            //     {
+            //         clearTimeout( scheduled );
+            //         scheduled = window.setTimeout ( update, 500 );
+            //     });
                 
-                window.addEventListener( 'resize', () => 
-                {
-                    clearTimeout( scheduled );
-                    scheduled = window.setTimeout ( update, 500 );
-                });
-                
-                function update()
-                {
-                    let vh = window.innerHeight * 0.01;
-                    document.documentElement.style.setProperty( '--vh', `${vh}px` );
-                }
-            }
+            //     function update()
+            //     {
+            //         let vh = window.innerHeight * 0.01;
+            //         document.documentElement.style.setProperty( '--vh', `${vh}px` );
+            //     }
+            // }
+
+
         });
     </script>
 

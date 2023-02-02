@@ -21,7 +21,8 @@
     
     
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.slim.min.js"></script>
-    
+    <script src="common.js"></script>
+
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -102,72 +103,28 @@
     
         $(function() 
         {
-            let max = 279;
+            let pics = selectRandomPics();
             
-            let selected = [];
+            $( "a#more" ).attr( "href", "gallery.html?s=" + pics.join( ',' ) );
             
-            var s = "";
-            
-            $( "article" ).each( function( index ) {
+            // if ( isMobileSafari() )
+            // {
+            //     var scheduled;
                 
-                let x = Math.floor( ( Math.random() * max ) + 1 );
-                  
-                  while( selected.includes( x ) )
-                  {
-                      x = Math.floor( ( Math.random() * max ) + 1 );
-                  }
+            //     update();
                 
-                selected.push( x );
+            //     window.addEventListener('resize', () => 
+            //     {
+            //         clearTimeout( scheduled );
+            //         scheduled = window.setTimeout ( update, 500 );
+            //     });
                 
-                s = s + x;
-                
-                var isLastElement = index == $( "article" ).length - 1;
-                
-                if ( ! isLastElement ) s = s + ",";
-                
-              });
-            
-            $( "a#more" ).attr( "href", "gallery.html?s=" + s );
-            
-            function isMobileSafari() 
-            {
-                return navigator.userAgent.match(/(iPod|iPhone|iPad)/) && navigator.userAgent.match(/AppleWebKit/)
-            }
-            
-            if ( isMobileSafari() )
-            {
-                var scheduled;
-                
-                update();
-                
-                window.addEventListener('resize', () => 
-                {
-                    clearTimeout( scheduled );
-                    scheduled = window.setTimeout ( update, 500 );
-                });
-                
-                function update()
-                {
-                    let vh = window.innerHeight * 0.01;
-                    document.documentElement.style.setProperty('--vh', `${vh}px`);
-                }
-            }
-            
-            function getUrlGetParams()
-            {
-                var vars = {};
-                
-                var hashes = window.location.href.slice( window.location.href.indexOf( '?' ) + 1 ).split( '&' );
-                
-                for ( var i = 0; i < hashes.length; i++ )
-                {
-                    let hash = hashes[ i ].split( '=' );
-      
-                    vars[ hash[ 0 ] ] = hash[ 1 ];
-                }
-                
-                return vars;
-            }
+            //     function update()
+            //     {
+            //         let vh = window.innerHeight * 0.01;
+            //         document.documentElement.style.setProperty('--vh', `${vh}px`);
+            //     }
+            // }
             
             let params = getUrlGetParams();
             
