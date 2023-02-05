@@ -1,8 +1,8 @@
 #gallery-content {
 	
 	grid-template-areas: 
-	"oscar  oscar-detail  asteroids       toasters         showreel  gallery1  mongo       mongo      old-showreel  dell-candids  asteroids2  hitachi-compilation  hitachi-compilation  imazin  imazin       hitachi-budapest  hitachi-teamwork  hitachi-teamwork"
-	"oscar  hitachi       hitachi-detail  toasters-detail  showreel  gallery2  dell-intro  dell-loop  dell-loop     dell-candids  salvo       helicopter           clint                zandip  mongo-intro  mongo-intro       outline           timelapse";
+	"oscar  oscar-detail  asteroids       toasters         showreel  oldwork1  mongo       mongo      old-showreel  dell-candids  asteroids2  hitachi-compilation  hitachi-compilation  imazin  imazin       hitachi-budapest  hitachi-teamwork  hitachi-teamwork"
+	"oscar  hitachi       hitachi-detail  toasters-detail  showreel  oldwork2  dell-intro  dell-loop  dell-loop     dell-candids  photos1     photos2              clint                zandip  mongo-intro  mongo-intro       outline           timelapse";
 }
 
 /* for gallery grid in landscape ... */
@@ -39,12 +39,12 @@
 	grid-area: showreel;
 }
 
-#gallery1 {
-	grid-area: gallery1;
+#oldwork1 {
+	grid-area: oldwork1;
 }
 
-#gallery2 {
-	grid-area: gallery2;
+#oldwork2 {
+	grid-area: oldwork2;
 }
 
 #mongo {
@@ -67,8 +67,8 @@
 	grid-area: asteroids2;
 }
 
-#salvo {
-	grid-area: salvo;
+#photos1 {
+	grid-area: photos1;
 }
 
 #dell-candids {
@@ -91,8 +91,8 @@
 	grid-area: hitachi-teamwork;
 }
 
-#helicopter {
-	grid-area: helicopter;
+#photos2 {
+	grid-area: photos2;
 }
 
 #clint {

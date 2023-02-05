@@ -44,12 +44,27 @@ section.content {
   padding-top: calc(var(--oneWidth) / 3.2);
 }
 
-article.linked-with h3::before {
+.content p {
+  margin-bottom: 8px;
+}
+
+
+
+
+article.linked-with.left h3::before, article.linked-with.above h3::before {
   content: "";
   display: inline-block;
   width: 15px;
   height: 15px;
   margin-right: 10px;
+}
+
+article.linked-with.right h3::after {
+  content: "";
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  margin-left: 10px;
 }
 
 article.left h3::before {
@@ -59,6 +74,13 @@ article.left h3::before {
 article.above h3::before {
   background-image: url("images/up-arrow.svg");
 }
+
+article.right h3::after {
+  background-image: url("images/right-arrow.svg");
+}
+
+
+
 
 article {
   background-image: url("images/black.gif");
@@ -77,11 +99,6 @@ section > a {
   text-decoration: none;
 }
 
-#welcome p a,
-article p a {
-  display: inline-flex;
-}
-
 h1,
 h2,
 h3,
@@ -91,17 +108,6 @@ h4 {
 
 h3 {
   font-weight: var(--boldWeight);
-}
-
-h1::after,
-h2::after,
-h3::after {
-  content: "";
-  display: block;
-  width: 25%;
-  padding-bottom: 10px;
-  margin-bottom: 10px;
-  border-bottom: 4px rgba(255, 255, 255, 0.45) solid;
 }
 
 h1::after {
@@ -120,8 +126,8 @@ h1 span {
     max-width: unset !important;
   }
 
-  article.linked-with h3::before {
-    display: none;
+  article.linked-with h3::before, article.linked-with h3::after {
+    display: none !important;
   }
 
   .min-height,
@@ -140,10 +146,6 @@ h1 span {
 
 /* specifics */
 
-#video {
-  /* background-image: url("images/loop_portrait.mp4"); */
-}
-
 #video video {
   object-fit: cover;
   width: 100%;
@@ -161,6 +163,15 @@ h1 span {
 
 #welcome p:last-child {
   margin-top: 50px;
+}
+
+#welcome h1::after {
+  content: "";
+  display: block;
+  width: 25%;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+  border-bottom: 2px rgba(255, 255, 255, 0.45) solid;
 }
 
 #factotum {
@@ -208,8 +219,13 @@ h1 span {
 }
 
 @media only screen and (max-width: 740px) {
-  #video {
-    /* background-image: url("https://storage.googleapis.com/charlierobin-1245.appspot.com/pictures//loop_landscape.mp4"); */
+  
+  #welcome h1::after {
+    display: none;
+  }
+
+  #welcome p:last-child {
+    margin-top: 0;
   }
 
   #welcome,
