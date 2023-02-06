@@ -224,7 +224,10 @@
                             
                             <h3>photographs</h3>
                             <p>all the pictures that used to be on Panoramio before it got shut down</p>
-                            <p>a mixture of normal photography and <a href="http://www.marsdenarchive.com" title="Simon Marsden, best for his infra red photographs of haunted houses and landscape throughout Europe">infrared photography</a></p>
+                            <p>a mixture of normal photography and <a href="http://www.marsdenarchive.com" title="Simon Marsden, best known for his infra red photographs of haunted houses and landscapes throughout Europe">infrared photography</a></p>
+                            <p>(<a href="https://www.youtube.com/watch?v=iJqC6hTB83M" title="Clive Barker'S A-Z Of Horror, piece on Simon Marsden">This was the Clive Barker documentary</a> I was watching late one night in the 90s where I learnt about Simon Marsden for the first time.)</p>
+
+                            <!-- <p>https://www.youtube.com/watch?v=q6h0YKkm9kE</p> -->
                         
                         </div>
 
@@ -269,7 +272,7 @@
     
         $(function()
         {
-            let pics = selectRandomPics();
+            let pics = com.charlierobin.selectRandomPics();
             
             $( "#photos2" ).find( 'a' ).attr( "href", "gallery.html?s=" + pics.join( ',' ) );
         });

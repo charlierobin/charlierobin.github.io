@@ -104,11 +104,11 @@
     
         $(function() 
         {
-            let pics = selectRandomPics();
+            let pics = com.charlierobin.selectRandomPics();
             
             $( "a#more" ).attr( "href", "gallery.html?s=" + pics.join( ',' ) );
             
-            let params = getUrlGetParams();
+            let params = com.charlierobin.getUrlGetParams();
             
             if ( params.s )
             {
