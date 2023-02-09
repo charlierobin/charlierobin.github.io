@@ -4,7 +4,7 @@ var com = {
 
         selectRandomPics: function () 
         {
-            let max = 279;
+            let max = 285;
 
             let selected = [];
 
