@@ -127,6 +127,18 @@
                           });
                    }
             }
+            else
+            {
+                let pics = com.charlierobin.selectRandomPics();
+
+                $( "article" ).each( function( index ) {
+                  
+                  $( this ).css( 'background-image', "url('https://storage.googleapis.com/charlierobin-1245.appspot.com/panoramio/" + pics[ index ] + "-thumbnail.jpg')" );
+                  
+                  $( this ).find( 'a' ).attr( "href", "https://storage.googleapis.com/charlierobin-1245.appspot.com/panoramio/" + pics[ index ] + ".jpg" );
+                  
+                });
+            }
         });
     
     </script>
