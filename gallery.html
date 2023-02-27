@@ -91,9 +91,11 @@
                 <p><a href="mailto:charlie@charlierobin.com" title="email address">charlie@charlierobin.com</a></p>
                 <p><a href="https://github.com/charlierobin" title="github repositories & download links">github.com/charlierobin</a></p>
                 
-                <p><a href="index.html" title="Back to the home page" style="display: inline-block;"><img src="images/home-icon.svg" style="width: 20px;" class="svg-button" alt="Home icon"></a></p>
+                <p><a href="index.html" title="Back to the home page" style="display: inline-block; cursor: pointer;"><img src="images/home-icon.svg" style="width: 20px;" class="svg-button" alt="Home icon"></a></p>
                 
-                <p><a href="gallery.html" title="More pictures" style="display: inline-block;" id="more"><img src="images/more-pics-icon.svg" style="width: 20px;" class="svg-button" alt="More pictures icon"></a></p>
+                <p><a href="gallery.html?p=1" title="Previous page of pictures" style="display: inline-block; cursor: pointer; margin-right: 10px;" id="previous"><img src="images/left-chevron.svg" style="width: 20px;" class="svg-button" alt="Previous page icon"></a> <a href="gallery.html?p=1" title="Next page of pictures" style="display: inline-block; cursor: pointer;" id="next"><img src="images/right-chevron.svg" style="width: 20px;" class="svg-button" alt="Next page icon"></a></p>
+
+                <p><a href="gallery.html" title="More random pictures" style="display: inline-block; cursor: pointer;" id="more"><img src="images/more-pics-icon.svg" style="width: 20px;" class="svg-button" alt="More pictures icon"></a></p>
                 
             </section>
             
@@ -118,25 +120,59 @@
                    
                    if ( selection.length == $( "article" ).length )
                    {
-                       $( "article" ).each( function( x ) {
-                            
+                       $( "article" ).each( function( x ) 
+                       {
                             $( this ).css( 'background-image', "url('https://storage.googleapis.com/charlierobin-1245.appspot.com/panoramio/" + selection[ x ] + "-thumbnail.jpg')" );
                             
                             $( this ).find( 'a' ).attr( "href", "https://storage.googleapis.com/charlierobin-1245.appspot.com/panoramio/" + selection[ x ] + ".jpg" );
-                            
-                          });
+                        });
                    }
+            }
+            else if ( params.p )
+            {
+                params.p = decodeURIComponent( params.p );
+
+                let page = parseInt( params.p );
+
+                page = page ? page : 1;
+
+                let maxNumberOfPages = Math.floor( com.charlierobin.numberOfPics / com.charlierobin.picsPerPage );
+
+                if ( page > maxNumberOfPages ) page = maxNumberOfPages;
+                if ( page < 1 ) page = 1;
+
+                let offset = ( page - 1 ) * com.charlierobin.picsPerPage;
+
+                $( "article" ).each( function( index ) 
+                {
+                    let pic = offset + index + 1;
+
+                    $( this ).css( 'background-image', "url('https://storage.googleapis.com/charlierobin-1245.appspot.com/panoramio/" + pic + "-thumbnail.jpg')" );
+                  
+                    $( this ).find( 'a' ).attr( "href", "https://storage.googleapis.com/charlierobin-1245.appspot.com/panoramio/" + pic + ".jpg" );
+                });
+
+                let nextPage = page + 1;
+
+                if ( nextPage > maxNumberOfPages ) nextPage = 1;
+
+                let previousPage = page - 1;
+
+                if ( previousPage < 1 ) previousPage = maxNumberOfPages;
+                
+                $( "a#previous" ).attr( "href", "gallery.html?p=" + previousPage );
+
+                $( "a#next" ).attr( "href", "gallery.html?p=" + nextPage );
             }
             else
             {
                 let pics = com.charlierobin.selectRandomPics();
 
-                $( "article" ).each( function( index ) {
-                  
+                $( "article" ).each( function( index ) 
+                {
                   $( this ).css( 'background-image', "url('https://storage.googleapis.com/charlierobin-1245.appspot.com/panoramio/" + pics[ index ] + "-thumbnail.jpg')" );
                   
                   $( this ).find( 'a' ).attr( "href", "https://storage.googleapis.com/charlierobin-1245.appspot.com/panoramio/" + pics[ index ] + ".jpg" );
-                  
                 });
             }
         });
