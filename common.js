@@ -1,11 +1,10 @@
-var com = {
+var com = com === undefined ? {} : com;
 
-    charlierobin: {
+com.charlierobin = com.charlierobin === undefined ? {} : com.charlierobin;
 
-        numberOfPics : 287,
-        picsPerPage : 8
-    }
-};
+com.charlierobin.numberOfPics = 287;
+
+com.charlierobin.picsPerPage = 8;
 
 com.charlierobin.randomPic = function () 
 {
@@ -46,3 +45,4 @@ com.charlierobin.getUrlGetParams = function ()
 
     return vars;
 };
+
