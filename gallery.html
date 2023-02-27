@@ -122,9 +122,22 @@
                    {
                        $( "article" ).each( function( x ) 
                        {
-                            $( this ).css( 'background-image', "url('https://storage.googleapis.com/charlierobin-1245.appspot.com/panoramio/" + selection[ x ] + "-thumbnail.jpg')" );
+                            let pic = parseInt( selection[ x ] );
+
+                            pic = pic ? pic : com.charlierobin.randomPic();
+
+                            if ( pic < 1 )
+                            {
+                                pic = 1;
+                            }
+                            else if ( pic > com.charlierobin.numberOfPics )
+                            {
+                                pic = com.charlierobin.numberOfPics;
+                            }
+
+                            $( this ).css( 'background-image', "url('https://storage.googleapis.com/charlierobin-1245.appspot.com/panoramio/" + pic + "-thumbnail.jpg')" );
                             
-                            $( this ).find( 'a' ).attr( "href", "https://storage.googleapis.com/charlierobin-1245.appspot.com/panoramio/" + selection[ x ] + ".jpg" );
+                            $( this ).find( 'a' ).attr( "href", "https://storage.googleapis.com/charlierobin-1245.appspot.com/panoramio/" + pic + ".jpg" );
                         });
                    }
             }

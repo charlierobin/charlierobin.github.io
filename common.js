@@ -7,19 +7,22 @@ var com = {
     }
 };
 
+com.charlierobin.randomPic = function () 
+{
+    return Math.floor((Math.random() * com.charlierobin.numberOfPics) + 1);
+};
+
 com.charlierobin.selectRandomPics = function () 
 {
-    let max = com.charlierobin.numberOfPics;
-
     let selected = [];
 
     for (var i = 0; i < com.charlierobin.picsPerPage; i++) 
     {
-        let x = Math.floor((Math.random() * max) + 1);
+        let x = com.charlierobin.randomPic();
 
         while (selected.includes(x)) 
         {
-            x = Math.floor((Math.random() * max) + 1);
+            x = com.charlierobin.randomPic();
         }
 
         selected.push(x);
