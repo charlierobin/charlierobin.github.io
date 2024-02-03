@@ -62,7 +62,7 @@ article.linked-with.left h3::before, article.linked-with.above h3::before {
   margin-right: 10px;
 }
 
-article.linked-with.right h3::after {
+article.linked-with.right h3::after, article.linked-with.below h3::after {
   content: "";
   display: inline-block;
   width: 15px;
@@ -82,7 +82,9 @@ article.right h3::after {
   background-image: url("images/right-arrow.svg");
 }
 
-
+article.below h3::after {
+  background-image: url("images/down-arrow.svg");
+}
 
 
 article {

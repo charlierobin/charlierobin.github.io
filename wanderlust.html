@@ -1,0 +1,42 @@
+<!doctype html>
+
+<html lang="en">
+
+<head>
+  <title>charlie robin - wanderlust</title>
+
+  <meta charset="utf-8" />
+
+  <meta name="description" content="Gone sailing…" />
+
+  <link rel="preconnect" href="https://unpkg.com" crossorigin>
+
+  <link rel="stylesheet" href="reset.css?v=10">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#000000">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+
+  <script src="https://unpkg.com/globe.gl"></script>
+  <script src="routes.js?v=10"></script>
+
+</head>
+
+<body>
+
+  <div id="globe"></div>
+
+  <script>
+
+    var globe = Globe()
+      .globeImageUrl('https://unpkg.com/three-globe/example/img/earth-dark.jpg')
+      .pathsData(routes)
+      .pathColor(() => 'rgba( 255, 255, 255, 0.5 )')
+      (document.getElementById('globe'));
+
+  </script>
+</body>

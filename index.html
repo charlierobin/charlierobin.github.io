@@ -18,14 +18,14 @@
     <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@200;600&display=swap" rel="stylesheet">
     <style> @import url('https://fonts.googleapis.com/css2?family=Titillium+Web:wght@200;600&display=swap'); </style>
     
-    <link rel="stylesheet" href="reset.css?v=3">
-    <link rel="stylesheet" href="page_layout.css?v=6">
-    <link rel="stylesheet" href="styles.css?v=6">
+    <link rel="stylesheet" href="reset.css?v=10">
+    <link rel="stylesheet" href="page_layout.css?v=10">
+    <link rel="stylesheet" href="styles.css?v=10">
     
-    <link rel="stylesheet" href="grid_layout.css?v=3">
+    <link rel="stylesheet" href="grid_layout.css?v=10">
     
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.slim.min.js"></script>
-    <script src="common.js?v=4"></script>
+    <script src="common.js?v=10"></script>
     
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -34,6 +34,11 @@
     <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#000000">
     <meta name="msapplication-TileColor" content="#da532c">
     <meta name="theme-color" content="#ffffff">
+    
+    <link rel="preconnect" href="https://unpkg.com" crossorigin>
+    
+    <script src="https://unpkg.com/globe.gl"></script>
+    <script src="routes.js?v=10"></script>
     
 </head>
 
@@ -185,11 +190,10 @@
                             
                             <h3 class="preload">photographs</h3>
                             <p class="preload">all the pictures that used to be on Panoramio before it got shut down</p>
-                            <p class="preload">a mixture of normal photography and <a href="http://www.marsdenarchive.com" title="Simon Marsden, best known for his infra red photographs of haunted houses and landscapes throughout Europe">infrared photography</a></p>
-                            <p class="preload">(<a href="https://www.youtube.com/watch?v=iJqC6hTB83M" title="Clive Barker'S A-Z Of Horror, piece on Simon Marsden">This was the Clive Barker documentary</a> I was watching late one night in the 90s where I learnt about Simon Marsden for the first time.)</p>
-
-                            <!-- <p>https://www.youtube.com/watch?v=q6h0YKkm9kE</p> -->
-                        
+                            <p class="preload">a mixture of normal and <a href="http://www.marsdenarchive.com" title="Simon Marsden, best known for his infra red photographs of haunted houses and landscapes throughout Europe">infrared photography</a></p>
+                            <p class="preload" style="font-size: smaller;">(<a href="https://www.youtube.com/watch?v=iJqC6hTB83M" title="Clive Barker'S A-Z Of Horror, piece on Simon Marsden">Clive Barker'S A-Z Of Horror: Simon Marsden</a>)</p>
+                            <p class="preload" style="font-size: smaller;">(<a href="https://www.youtube.com/watch?v=q6h0YKkm9kE" title="The Twilight Hour Visions Of Ireland's Haunted Past">The Twilight Hour Visions Of Ireland's Haunted Past</a>)</p>
+                            
                         </div>
 
                     </article>
@@ -214,6 +218,21 @@
                         <a href="https://storage.googleapis.com/charlierobin-1245.appspot.com/videos/timelapse/gharb_final.mp4" title="Adventures in the Land of Lapsed Time With a Homemade Robot Camera"></a>
                     </article>
                     
+                    <article id="sailing1" class="width-half linked-with below">
+
+                        <a href="wanderlust.html" title="I want my Starlink Marine…"><div class="content">
+
+                            <h3 class="preload">wanderlust</h3>
+                            <p class="preload">gone sailing…</p>
+
+                        </div></a>
+                        
+                    </article>
+                    
+                    <article id="sailing2" class="width-half">
+                        <div id="globe"></div>
+                    </article>
+                    
                 </section>
                 
             </section>
@@ -223,7 +242,7 @@
                 <p><a href="mailto:charlierobin@protonmail.com" title="email address">charlierobin@protonmail.com</a></p>
                 <p><a href="https://github.com/charlierobin" title="github repositories &amp; download links">github.com/charlierobin</a></p>
                 
-                <p>1994-2023</p>
+                <p>1994-2024</p>
                 
             </section>
         </main>
@@ -231,6 +250,18 @@
 
     <script>
     
+        addEventListener("resize", (event) => {
+            
+            // console.log("resize");
+            
+            var calcWidth = globeArticle.width();
+            
+            globe.width(calcWidth).height(calcWidth);
+        });
+        
+        var globe;
+        var globeArticle;
+        
         $(function()
         {
             // console.log("ready");
@@ -245,8 +276,19 @@
             let pics = com.charlierobin.selectRandomPics();
             
             $( "#photos2" ).find( 'a' ).attr( "href", "gallery.html?s=" + pics.join( ',' ) );
-
             
+            globeArticle = $( "#sailing2" );
+            var calcWidth = globeArticle.width();
+            
+            // console.log(calcWidth);
+            
+            globe = Globe()
+              .globeImageUrl('https://unpkg.com/three-globe/example/img/earth-dark.jpg')
+              .pathsData(routes)
+              .width(calcWidth)
+              .height(calcWidth)
+              .pathColor(() => 'rgba( 255, 255, 255, 0.5 )')
+              (document.getElementById('globe'));
         });
         
         document.fonts.ready.then(function () 
