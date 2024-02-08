@@ -71,24 +71,24 @@ article.linked-with.right h3::after, article.linked-with.below h3::after {
 }
 
 article.left h3::before {
-  background-image: url("images/left-arrow.svg");
+  background-image: url("../images/left-arrow.svg");
 }
 
 article.above h3::before {
-  background-image: url("images/up-arrow.svg");
+  background-image: url("../images/up-arrow.svg");
 }
 
 article.right h3::after {
-  background-image: url("images/right-arrow.svg");
+  background-image: url("../images/right-arrow.svg");
 }
 
 article.below h3::after {
-  background-image: url("images/down-arrow.svg");
+  background-image: url("../images/down-arrow.svg");
 }
 
 
 article {
-  background-image: url("images/black.gif");
+  background-image: url("../images/black.gif");
   background-color: black;
 }
 
@@ -160,7 +160,7 @@ h1 span {
 }
 
 #welcome {
-  background-image: url("images/overlay.png"),
+  background-image: url("../images/overlay.png"),
     linear-gradient(45deg, #726193 20%, #e37b7c 60%, #ffe4b4);
 }
 
@@ -183,21 +183,21 @@ h1 span {
 }
 
 #factotum {
-  background-image: url("images/overlay.png"),
+  background-image: url("../images/overlay.png"),
     linear-gradient(45deg, rgba(81, 84, 99, 0.93) 20%, #aaabaa 60%, #f0dab9);
 
-  /* background-image: url("images/pic02.jpg"), linear-gradient(45deg, rgba(114, 97, 147, 0.25) 25%, rgba(227, 123, 124, 0.25) 50%, rgba(255, 228, 180, 0.25)); */
+  /* background-image: url("../images/pic02.jpg"), linear-gradient(45deg, rgba(114, 97, 147, 0.25) 25%, rgba(227, 123, 124, 0.25) 50%, rgba(255, 228, 180, 0.25)); */
 
-  /* background-image: url("images/overlay.png"), linear-gradient(45deg, rgba(114, 97, 147, 0.25) 25%, rgba(227, 123, 124, 0.25) 50%, rgba(255, 228, 180, 0.25)); */
+  /* background-image: url("../images/overlay.png"), linear-gradient(45deg, rgba(114, 97, 147, 0.25) 25%, rgba(227, 123, 124, 0.25) 50%, rgba(255, 228, 180, 0.25)); */
 
-  /* background-image: url("images/pic02.jpg"); */
+  /* background-image: url("../images/pic02.jpg"); */
 }
 
 #gallery-intro {
   /* background-image: url("images/overlay.png"), linear-gradient(45deg, rgba(114, 97, 147, 0.25) 25%, rgba(227, 123, 124, 0.25) 50%, rgba(255, 228, 180, 0.25)); */
 
   background-color: rgb(53, 56, 101);
-  background-image: url("images/overlay.png"),
+  background-image: url("../images/overlay.png"),
     linear-gradient(
       45deg,
       rgba(114, 97, 147, 0.25) 25%,
@@ -209,7 +209,7 @@ h1 span {
 #contact {
   background-color: rgb(53, 56, 101);
 
-  background-image: url("images/overlay.png"),
+  background-image: url("../images/overlay.png"),
     linear-gradient(
       45deg,
       rgba(114, 97, 147, 0.25) 25%,
@@ -217,8 +217,8 @@ h1 span {
       rgba(255, 228, 180, 0.25)
     );
 
-  /* background-image: url("images/overlay.png"), linear-gradient(45deg, rgb(115, 111, 119) 25%, rgb(197, 167, 167) 50%, rgb(254, 247, 220)); */
-  /* background-image: url("images/overlay.png"), linear-gradient(45deg, rgba(114, 97, 147, 0.25) 25%, rgba(227, 123, 124, 0.25) 50%, rgba(255, 228, 180, 0.25)); */
+  /* background-image: url("../images/overlay.png"), linear-gradient(45deg, rgb(115, 111, 119) 25%, rgb(197, 167, 167) 50%, rgb(254, 247, 220)); */
+  /* background-image: url("../images/overlay.png"), linear-gradient(45deg, rgba(114, 97, 147, 0.25) 25%, rgba(227, 123, 124, 0.25) 50%, rgba(255, 228, 180, 0.25)); */
 }
 
 #contact p:last-child {
