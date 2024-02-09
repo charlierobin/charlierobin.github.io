@@ -25,6 +25,10 @@ body {
   font-weight: var(--normalWeight);
 }
 
+.black {
+  background-color: black;
+}
+
 .svg-button {
   width: 40px;
   height: 40px;
