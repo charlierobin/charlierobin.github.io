@@ -45,7 +45,7 @@ com.charlierobin.getUrlGetParams = function () {
 
 com.charlierobin.loadKML = function (number) {
 
-    $.get("https://storage.googleapis.com/charlierobin-1245.appspot.com/kmls/" + number + ".kml", function (xmlDoc) {
+    $.get("kmls/" + number + ".kml", function (xmlDoc) {
 
         var data = xmlDoc.getElementsByTagName("coordinates")[0].textContent;
 
