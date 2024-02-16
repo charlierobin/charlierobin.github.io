@@ -124,4 +124,9 @@ com.charlierobin.loadKMLFiles = function () {
     com.charlierobin.loadKML("6");
     com.charlierobin.loadKML("7");
     com.charlierobin.loadKML("8");
+    com.charlierobin.loadKML("9");
+    com.charlierobin.loadKML("10");
+    com.charlierobin.loadKML("11");
+    com.charlierobin.loadKML("12");
+    com.charlierobin.loadKML("13");
 };
