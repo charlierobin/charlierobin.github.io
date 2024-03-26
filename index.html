@@ -21,14 +21,14 @@
         @import url('https://fonts.googleapis.com/css2?family=Titillium+Web:wght@200;600&display=swap');
     </style>
 
-    <link rel="stylesheet" href="css/reset.css?v=10">
-    <link rel="stylesheet" href="css/page_layout.css?v=10">
-    <link rel="stylesheet" href="css/styles.css?v=10">
+    <link rel="stylesheet" href="css/reset.css?v=11">
+    <link rel="stylesheet" href="css/page_layout.css?v=11">
+    <link rel="stylesheet" href="css/styles.css?v=11">
 
-    <link rel="stylesheet" href="css/grid_layout.css?v=10">
+    <link rel="stylesheet" href="css/grid_layout.css?v=11">
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-    <script src="js/common.js?v=10"></script>
+    <script src="js/common.js?v=11"></script>
 
     <link rel="stylesheet" type="text/css" href="https://x3dom.org/release/x3dom.css" />
     <script type="text/javascript" src="https://x3dom.org/release/x3dom-full.js"></script>
@@ -47,12 +47,12 @@
 
     <div id="wrapper">
         <main>
-            <section id="video" class="min-height width-half" style="background-color: black;">
+            <section id="video" class="min-height width-half" style="background-color: black; object-fit: fit;">
                 <video muted playsinline autoplay loop
                     poster="https://storage.googleapis.com/charlierobin-1245.appspot.com/pictures/loop_poster.jpg"
-                    style="background-color: black;">
+                    style="background-color: black; object-fit: fit;">
                     <source src="https://storage.googleapis.com/charlierobin-1245.appspot.com/pictures/loop.mp4"
-                        type="video/mp4">
+                        type="video/mp4" style="object-fit: fit;">
                     No video for you! Come back one year!
                 </video>
             </section>
@@ -68,10 +68,20 @@
 
                 <section id="gallery-content">
 
-                    <article id="oscar" class="width-three-quarters"
-                        style="background-image: url('https://storage.googleapis.com/charlierobin-1245.appspot.com/oscar/oscar-the-grouch.mp4'), url('https://storage.googleapis.com/charlierobin-1245.appspot.com/oscar/oscar-the-grouch.jpg');">
+                    <article id="oscar" class="width-three-quarters">
                         <a href="https://github.com/charlierobin/oscar-the-grouch-version-1"
-                            title="A new version of Oscar the Grouch for macOS/OSX (Github source code and precompiled downloadable binaries)"></a>
+                            title="A new version of Oscar the Grouch for macOS/OSX (Github source code and precompiled downloadable binaries)">
+
+                            <video muted playsinline autoplay loop
+                                poster="https://storage.googleapis.com/charlierobin-1245.appspot.com/oscar/oscar-the-grouch.jpg"
+                                style="background-color: black; object-fit: cover; width: 100%; height: 100%">
+                                <source
+                                    src="https://storage.googleapis.com/charlierobin-1245.appspot.com/oscar/oscar-the-grouch.mp4"
+                                    type="video/mp4" style="object-fit: cover;">
+                                No video for you! Come back one year!
+                            </video>
+
+                        </a>
                     </article>
 
                     <article id="oscar-detail" class="width-half linked-with left">
@@ -101,10 +111,20 @@
                             title="A version of the arcade classic ”Asteroids“, but with more weapons and big explosions">asteroids</a>
                     </article>
 
-                    <article id="toasters" class="width-half"
-                        style="background-image: url('https://storage.googleapis.com/charlierobin-1245.appspot.com/flying-toasters/flying-toaster-loop.mp4'), url('https://storage.googleapis.com/charlierobin-1245.appspot.com/flying-toasters/flying-toaster-loop.jpg');">
+                    <article id="toasters" class="width-half">
                         <a href="https://github.com/charlierobin/flying-toasters-live-desktop-xojo-opengl"
-                            title="An update to the classic Macintosh screensaver, Flying Toasters: Github source code and precompiled downloadable binary for Macintosh"></a>
+                            title="An update to the classic Macintosh screensaver, Flying Toasters: Github source code and precompiled downloadable binary for Macintosh">
+
+                            <video muted playsinline autoplay loop
+                                poster="https://storage.googleapis.com/charlierobin-1245.appspot.com/flying-toasters/flying-toaster-loop.jpg"
+                                style="background-color: black; object-fit: fill;">
+                                <source
+                                    src="https://storage.googleapis.com/charlierobin-1245.appspot.com/flying-toasters/flying-toaster-loop.mp4"
+                                    type="video/mp4" style="object-fit: fill;">
+                                No video for you! Come back one year!
+                            </video>
+
+                        </a>
                     </article>
 
                     <article id="toasters-detail" class="width-half linked-with above">
@@ -289,19 +309,24 @@
                             title="Adventures in the Land of Lapsed Time With a Homemade Robot Camera"></a>
                     </article>
 
-                    <article id="sailing1" class="width-half linked-with below">
+                    <article id="square-loop" class="width-half">
 
-                        <a href="wanderlust.html" title="I want my Starlink Maritime…">
-                            <div class="content">
+                        <a href="https://github.com/charlierobin" title="github repositories &amp; download links">
 
-                                <h3 class="preload">wanderlust</h3>
-                                
-                            </div>
+                            <video muted playsinline autoplay loop
+                                poster="https://storage.googleapis.com/charlierobin-1245.appspot.com/square-loop.jpg"
+                                style="background-color: black; object-fit: fill;">
+                                <source
+                                    src="https://storage.googleapis.com/charlierobin-1245.appspot.com/square-loop.mp4"
+                                    type="video/mp4" style="object-fit: fill;">
+                                No video for you! Come back one year!
+                            </video>
+
                         </a>
 
                     </article>
 
-                    <article id="sailing2" class="width-half">
+                    <article id="sailing" class="width-half">
                         <x3d width="100%" height="100%">
                             <scene>
 
