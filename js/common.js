@@ -79,12 +79,14 @@ com.charlierobin.loadKML = function (number) {
     }
 
     function lnglat_to_globe(lnglat, opts = {}) {
+        
         let { r = 1.01, mode = "degrees" } = opts;
         let lat = lnglat[1];
         let lng = lnglat[0];
         let R;
 
         // Third component represents elevation, if it exists
+
         if (lnglat.length > 2) {
             R = 1.001 + 0.000005 * lnglat[2];
         } else {
@@ -96,17 +98,23 @@ com.charlierobin.loadKML = function (number) {
         }
 
         // Convert latitude to spherical phi
+
         let phi = Math.PI / 2 - lat;
         let theta = lng;
         let x = R * Math.sin(phi) * Math.cos(theta);
+
         if (Math.abs(x) < 0.000001) {
             x = 0;
         }
+
         let y = R * Math.sin(phi) * Math.sin(theta);
+
         if (Math.abs(y) < 0.000001) {
             y = 0;
         }
+
         let z = R * Math.cos(phi);
+
         if (Math.abs(z) < 0.000001) {
             z = 0;
         }
