@@ -48,13 +48,7 @@ section.content {
   padding-top: calc(var(--oneWidth) / 3.2);
 }
 
-.preload {
-  opacity: 0 !important;
-}
-
 .content p {
-  opacity: 1;
-  transition: all 1s ease-in;
   margin-bottom: 8px;
 }
 
@@ -115,8 +109,6 @@ h2,
 h3,
 h4 {
   font-weight: var(--normalWeight);
-  opacity: 1;
-  transition: all 1s ease-in;
 }
 
 h3 {
