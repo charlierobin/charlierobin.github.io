@@ -21,14 +21,14 @@
         @import url('https://fonts.googleapis.com/css2?family=Titillium+Web:wght@200;600&display=swap');
     </style>
 
-    <link rel="stylesheet" href="css/reset.css?v=11">
-    <link rel="stylesheet" href="css/page_layout.css?v=11">
-    <link rel="stylesheet" href="css/styles.css?v=11">
+    <link rel="stylesheet" href="css/reset.css?v=12">
+    <link rel="stylesheet" href="css/page_layout.css?v=12">
+    <link rel="stylesheet" href="css/styles.css?v=12">
 
-    <link rel="stylesheet" href="css/grid_layout.css?v=11">
+    <link rel="stylesheet" href="css/grid_layout.css?v=12">
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-    <script src="js/common.js?v=11"></script>
+    <script src="js/common.js?v=12"></script>
 
     <link rel="stylesheet" type="text/css" href="https://x3dom.org/release/x3dom.css" />
     <script type="text/javascript" src="https://x3dom.org/release/x3dom-full.js"></script>
@@ -41,41 +41,23 @@
     <meta name="msapplication-TileColor" content="#da532c">
     <meta name="theme-color" content="#ffffff">
 
+    <link rel="prefetch" href="https://storage.googleapis.com/charlierobin-1245.appspot.com/pictures/loop.mp4" />
+
 </head>
 
 <body>
 
     <div id="wrapper">
         <main>
-            <section id="video" class="min-height width-half" style="background-color: black; object-fit: fit;">
-                <video muted playsinline autoplay loop
-                    poster="https://storage.googleapis.com/charlierobin-1245.appspot.com/pictures/loop_poster.jpg"
-                    style="background-color: black; object-fit: fit;">
-                    <source src="https://storage.googleapis.com/charlierobin-1245.appspot.com/pictures/loop.mp4"
-                        type="video/mp4" style="object-fit: fit;">
-                    No video for you! Come back one year!
-                </video>
-            </section>
+            <section id="video" class="min-height width-half"></section>
 
             <section id="welcome" class="width-three-quarters content">
-                <h1 class="preload">hello, my name is <br /><span>charlie</span></h1>
+                <h1 class="preload">hello, my name is <br /><span id="testButton">charlie</span></h1>
                 <p class="preload test">this was originally a single-page experiment with <a
                         href="https://pages.github.com" title="Learn more about GitHub Pages">GitHub Pages</a>, <br>
-                    now it&rsquo;s a four page experiment</p>
+                    now it&rsquo;s a four page experiment with <a href="https://pages.github.com"
+                        title="Learn more about GitHub Pages">GitHub Pages</a></p>
             </section>
-
-            <!-- <section class="min-height width-three-quarters content" style="background-image: url(images/factotum.jpg); background-repeat: no-repeat; background-size: cover;">
-                <div id="chinaski" class="image span-2-5" style="position: relative;">
-                    <div style="width: 100%; position: absolute; bottom: 0; background-color: rgb(187, 0, 0); padding: 10px;">TEST
-                        <p
-                            style="text-align: center; margin: 0; padding: 0; font-size: 3em; font-weight: bold; line-height: 1; margin-bottom: 0.1em;">
-                            fac⋅tō⋅tum</p>
-                        <p
-                            style="text-align: center; margin: 0; padding: 0; font-size: 1em; line-height: 1; margin-bottom: 0.2em;">
-                            n. A man who never had a job he liked, <br>and never kept a job he had</p>
-                    </div>
-                </div>
-            </section> -->
 
             <section id="gallery">
 
@@ -382,18 +364,42 @@
 
         $(window).on('load', function (e) {
 
-            $(".preload").removeClass("preload");
-        });
+            const isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
 
-        $(function () {
+            if (isSafari) {
+
+                buggyBrowsersInOtherWordsMyVersionOfSafariThankYouSoMuchApple();
+
+                // or is it thankYouVeryMuchTheOtherBrowsersThatDontSupportVideoInBackgroundImages? ... the great philosophical questions of life ...
+
+            } else {
+
+                unbuggyBrowsers();
+            }
+
+            $(".preload").removeClass("preload");
 
             com.charlierobin.loadKMLFiles();
 
             let pics = com.charlierobin.selectRandomPics();
 
             $("#photos2").find('a').attr("href", "gallery.html?s=" + pics.join(','));
+
         });
 
+        function unbuggyBrowsers() {
+
+            $("#video").append("<video muted playsinline autoplay loop><source src='https://storage.googleapis.com/charlierobin-1245.appspot.com/pictures/loop.mp4' type='video/mp4'>No video for you! Come back one year!</video>");
+
+            $("#video").removeClass("videoForSafari");
+        }
+
+        function buggyBrowsersInOtherWordsMyVersionOfSafariThankYouSoMuchApple() {
+
+            $("#video").empty();
+
+            $("#video").addClass("videoForSafari");
+        }
     </script>
 
 </body>

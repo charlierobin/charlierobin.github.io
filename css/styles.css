@@ -12,7 +12,7 @@
   --minHeight: 400px;
 
   --fontSize: 20px;
-  
+
   --normalWeight: 200;
   --boldWeight: 600;
 }
@@ -58,7 +58,8 @@ section.content {
   margin-bottom: 8px;
 }
 
-article.linked-with.left h3::before, article.linked-with.above h3::before {
+article.linked-with.left h3::before,
+article.linked-with.above h3::before {
   content: "";
   display: inline-block;
   width: 15px;
@@ -66,7 +67,8 @@ article.linked-with.left h3::before, article.linked-with.above h3::before {
   margin-right: 10px;
 }
 
-article.linked-with.right h3::after, article.linked-with.below h3::after {
+article.linked-with.right h3::after,
+article.linked-with.below h3::after {
   content: "";
   display: inline-block;
   width: 15px;
@@ -100,8 +102,8 @@ a {
   color: white;
 }
 
-article > a,
-section > a {
+article>a,
+section>a {
   display: block;
   height: 100%;
   border: 0;
@@ -137,12 +139,13 @@ h1 span {
     max-width: unset !important;
   }
 
-  article.linked-with h3::before, article.linked-with h3::after {
+  article.linked-with h3::before,
+  article.linked-with h3::after {
     display: none !important;
   }
 
   .min-height,
-  article > a {
+  article>a {
     height: var(--minHeight);
   }
 
@@ -157,11 +160,21 @@ h1 span {
 
 /* specifics */
 
+#video {
+  background-color: rgb(21, 17, 81);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+
 #video video {
   object-fit: fill;
   width: 100%;
   height: 100%;
   min-height: 100%;
+}
+
+.videoForSafari {
+  background-image: url(https://storage.googleapis.com/charlierobin-1245.appspot.com/pictures/loop.mp4);
 }
 
 #welcome {
@@ -190,40 +203,25 @@ h1 span {
 #factotum {
   background-image: url("../images/overlay.png"),
     linear-gradient(45deg, rgba(81, 84, 99, 0.93) 20%, #aaabaa 60%, #f0dab9);
-
-  /* background-image: url("../images/pic02.jpg"), linear-gradient(45deg, rgba(114, 97, 147, 0.25) 25%, rgba(227, 123, 124, 0.25) 50%, rgba(255, 228, 180, 0.25)); */
-
-  /* background-image: url("../images/overlay.png"), linear-gradient(45deg, rgba(114, 97, 147, 0.25) 25%, rgba(227, 123, 124, 0.25) 50%, rgba(255, 228, 180, 0.25)); */
-
-  /* background-image: url("../images/pic02.jpg"); */
 }
 
 #gallery-intro {
-  /* background-image: url("images/overlay.png"), linear-gradient(45deg, rgba(114, 97, 147, 0.25) 25%, rgba(227, 123, 124, 0.25) 50%, rgba(255, 228, 180, 0.25)); */
-
   background-color: rgb(53, 56, 101);
   background-image: url("../images/overlay.png"),
-    linear-gradient(
-      45deg,
+    linear-gradient(45deg,
       rgba(114, 97, 147, 0.25) 25%,
       rgba(227, 123, 124, 0.25) 50%,
-      rgba(255, 228, 180, 0.25)
-    );
+      rgba(255, 228, 180, 0.25));
 }
 
 #contact {
   background-color: rgb(53, 56, 101);
 
   background-image: url("../images/overlay.png"),
-    linear-gradient(
-      45deg,
+    linear-gradient(45deg,
       rgba(114, 97, 147, 0.25) 25%,
       rgba(227, 123, 124, 0.25) 50%,
-      rgba(255, 228, 180, 0.25)
-    );
-
-  /* background-image: url("../images/overlay.png"), linear-gradient(45deg, rgb(115, 111, 119) 25%, rgb(197, 167, 167) 50%, rgb(254, 247, 220)); */
-  /* background-image: url("../images/overlay.png"), linear-gradient(45deg, rgba(114, 97, 147, 0.25) 25%, rgba(227, 123, 124, 0.25) 50%, rgba(255, 228, 180, 0.25)); */
+      rgba(255, 228, 180, 0.25));
 }
 
 #contact p:last-child {
@@ -232,7 +230,7 @@ h1 span {
 }
 
 @media only screen and (max-width: 740px) {
-  
+
   #welcome h1::after {
     display: none;
   }
