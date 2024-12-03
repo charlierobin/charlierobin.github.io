@@ -30,6 +30,16 @@ main {
 	max-width: calc( var(--oneWidthMax) / 2 );
 }
 
+.width-quarter {
+	width: calc( var(--oneWidth) / 4 );
+	max-width: calc( var(--oneWidthMax) / 4 );
+}
+
+.width-third {
+	width: calc( var(--oneWidth) / 3 );
+	max-width: calc( var(--oneWidthMax) / 3 );
+}
+
 #gallery {
 	display: inline-flex;
 }

@@ -7,13 +7,14 @@
 
     <meta charset="utf-8" />
 
-    <meta name="description" content="Old work" />
-
-    <link rel="preconnect" href="https://vjs.zencdn.net" crossorigin>
+    <meta name="description" content="The video gallery" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preconnect" href="https://ajax.googleapis.com" crossorigin>
+    <link rel="preconnect" href="https://charlie-videos.s3.us-east-1.amazonaws.com" crossorigin>
+
+    <link rel="preconnect" href="https://vjs.zencdn.net" crossorigin>
 
     <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@200;600&display=swap" rel="stylesheet">
 
@@ -45,7 +46,6 @@
             background-position-x: 50%;
             background-position-y: 0%;
             background-size: cover;
-
             font-size: 20px;
         }
 
@@ -61,12 +61,18 @@
             padding-top: 50px;
             width: 60%;
             margin: auto;
+            padding-left: 50px;
+            padding-right: 50px;
         }
 
         .col {
             width: 49%;
             display: inline-block;
             vertical-align: top;
+        }
+
+        .hasAudio::after {
+            content: " 🔈";
         }
     </style>
 
@@ -77,7 +83,7 @@
     <div>
         <video class="video-js" muted controls preload="auto" width="720" height="480"
             poster="pictures/charlie_robin.jpg" data-setup='{ "disablePictureInPicture": true }'>
-            <source src="https://patrona-immo.com/videos/charlie_robin.mp4" type="video/mp4" />
+            <source src="https://charlie-videos.s3.us-east-1.amazonaws.com/charlie_robin.mp4" type="video/mp4" />
             <p class="vjs-no-js"></p>
         </video>
 
@@ -88,51 +94,51 @@
                 <p><a href="standalone-video-gallery.html?video=asteroids-gameplay.mp4" title="Gameplay">Asteroids Gameplay</a>
                 </p>
 
-                <p><a href="standalone-video-gallery.html?video=charlie_robin.mp4" title="Old Showreel">Charlie Robin Showreel</a> (&#127925;)
+                <p><a href="standalone-video-gallery.html?video=charlie_robin.mp4" title="Old Showreel" class="hasAudio">Charlie Robin Showreel</a>
                 </p>
 
-                <p><a href="standalone-video-gallery.html?video=MongoDB_Candids.mp4" title="Event Candids">MongoDB Candids</a> (&#127925;)</p>
+                <p><a href="standalone-video-gallery.html?video=MongoDB_Candids.mp4" title="Event Candids" class="hasAudio">MongoDB Candids</a></p>
 
-                <p><a href="standalone-video-gallery.html?video=charlie_robin_old_showreel.mp4" title="Very Old, Very Terrible">Very Old
-                        Showreel</a> (&#127925;)</p>
+                <p><a href="standalone-video-gallery.html?video=charlie_robin_old_showreel.mp4" title="Very Old, Very Terrible" class="hasAudio">Very Old
+                        Showreel</a></p>
 
-                <p><a href="standalone-video-gallery.html?video=dell_gig_edit.mp4" title="Gig Edit">Dell Gig Edit</a> (&#127925;)</p>
+                <p><a href="standalone-video-gallery.html?video=dell_gig_edit.mp4" title="Gig Edit" class="hasAudio">Dell Gig Edit</a></p>
 
                 <p><a href="standalone-video-gallery.html?video=asteroids-gameplay-2.mp4" title="Gameplay">Asteroids Gameplay
                         2</a></p>
 
-                <p><a href="standalone-video-gallery.html?video=hitachi_edit.mp4" title="Hitachi Edit">Hitachi Edit</a> (&#127925;)</p>
+                <p><a href="standalone-video-gallery.html?video=hitachi_edit.mp4" title="Hitachi Edit" class="hasAudio">Hitachi Edit</a></p>
 
-                <p><a href="standalone-video-gallery.html?video=NAPP_Imazin.mp4" title="NAPP Imazin Launch">Imazin
-                        Launch</a> (&#127925;)</p>
+                <p><a href="standalone-video-gallery.html?video=NAPP_Imazin.mp4" title="NAPP Imazin Launch" class="hasAudio">Imazin
+                        Launch</a></p>
 
-                <p><a href="standalone-video-gallery.html?video=Hitachi_Budapest.mp4" title="Hitachi Budapest Opening">Hitachi Budapest</a> (&#127925;)</p>
+                <p><a href="standalone-video-gallery.html?video=Hitachi_Budapest.mp4" title="Hitachi Budapest Opening" class="hasAudio">Hitachi Budapest</a></p>
 
-                <p><a href="standalone-video-gallery.html?video=Teamwork.mp4" title="Teamwork">Teamwork</a> (&#127925;)</p>
+                <p><a href="standalone-video-gallery.html?video=Teamwork.mp4" title="Teamwork" class="hasAudio">Teamwork</a></p>
 
             </div>
 
             <div class="col">
 
-                <p><a href="standalone-video-gallery.html?video=dell_2008.mp4" title="Dell 2008 Intro">Dell 2008</a> (&#127925;)</p>
+                <p><a href="standalone-video-gallery.html?video=dell_2008.mp4" title="Dell 2008 Intro" class="hasAudio">Dell 2008</a></p>
 
-                <p><a href="standalone-video-gallery.html?video=Dell_Loop.mp4" title="Dell Loop Conference Opening">Dell Loop</a> (&#127925;)</p>
+                <p><a href="standalone-video-gallery.html?video=Dell_Loop.mp4" title="Dell Loop Conference Opening">Dell Loop</a></p>
 
-                <p><a href="standalone-video-gallery.html?video=NAPP_Loop.mp4" title="Loop For Screensaver">NAPP Loop</a> (&#127925;)</p>
+                <p><a href="standalone-video-gallery.html?video=NAPP_Loop.mp4" title="Loop For Screensaver">NAPP Loop</a></p>
 
-                <p><a href="standalone-video-gallery.html?video=MongoDB_London_2013.mp4" title="MongoDB Evewnt">MongoDB London
-                        2013</a> (&#127925;)</p>
+                <p><a href="standalone-video-gallery.html?video=MongoDB_London_2013.mp4" title="MongoDB Evewnt" class="hasAudio">MongoDB London
+                        2013</a></p>
 
-                <p><a href="standalone-video-gallery.html?video=Outline_logo.mp4" title="Outline Logo Animation">Outline Logo</a> (&#127925;)</p>
+                <p><a href="standalone-video-gallery.html?video=Outline_logo.mp4" title="Outline Logo Animation" class="hasAudio">Outline Logo</a></p>
 
-                <p><a href="standalone-video-gallery.html?video=hollywood-white-hunter-black-heart.mp4" title="Thoughts On Hollywood">White
-                        Hunter Black Heart</a> (&#127925;)</p>
+                <p><a href="standalone-video-gallery.html?video=hollywood-white-hunter-black-heart.mp4" title="Thoughts On Hollywood" class="hasAudio">White
+                        Hunter Black Heart</a></p>
 
                 <p><a href="standalone-video-gallery.html?video=gharb_final.mp4" title="Experiments In the Realm of Lapsed Time">Timelapse Experiments</a></p>
 
-                <p><a href="standalone-video-gallery.html?video=novartis.mp4" title="Well Ain’t This a Hoot? 1">Novartis CD-ROM</a> (&#127925;)</p>
+                <p><a href="standalone-video-gallery.html?video=novartis.mp4" title="Well Ain’t This a Hoot? 1" class="hasAudio">Novartis CD-ROM</a></p>
 
-                <p><a href="standalone-video-gallery.html?video=saur.mp4" title="Well Ain’t This a Hoot? 2">SAUR</a> (&#127925;)</p>
+                <p><a href="standalone-video-gallery.html?video=saur.mp4" title="Well Ain’t This a Hoot? 2" class="hasAudio">SAUR</a></p>
 
                 <p><a href="standalone-video-gallery.html?video=gameplay-experiments.mp4" title="Well Ain’t This a Hoot? 3">Gameplay Experiments,<br> General Goofing Off,<br> &amp; Other Dumpster Fires</a></p>
 
@@ -177,7 +183,7 @@
 
         player.poster('pictures/' + name + '.jpg');
 
-        player.src({ type: 'video/mp4', src: 'https://patrona-immo.com/videos/' + name + '.' + ext });
+        player.src({ type: 'video/mp4', src: 'https://charlie-videos.s3.us-east-1.amazonaws.com/' + name + '.' + ext });
 
     </script>
 
