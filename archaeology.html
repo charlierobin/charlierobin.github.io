@@ -37,7 +37,7 @@
     <meta name="theme-color" content="#ffffff">
 
     <style>
-        /* body {
+        body.locked {
             overflow: hidden;
             user-select: none;
             pointer-events: none;
@@ -57,19 +57,34 @@
 
             font-size: 100px;
 
-            opacity: 0.5;
-        } */
+            opacity: 0.8;
+        }
+
+        #overlay div {
+
+            opacity: 1;
+
+            width: 250px;
+            height: 150px;
+
+        }
+
+        #test1, #test2 {
+            background-size: cover;
+            background-position: bottom;
+            font-size: 0;
+            line-height: 0;
+        }
+
     </style>
 </head>
 
 <body>
 
     <!-- <div id="overlay">
-        
 
+        <div style="background-image: url('pictures/quick-bizz-card-1995.jpg');"></div>
 
-
-        
     </div> -->
 
     <div id="wrapper">
@@ -80,835 +95,853 @@
                 <section id="gallery-content">
 
                     <article class="width-half" style="background-image: url('pictures/interactive/agfa.jpg');">
-                        <a href="pictures/interactive/agfa.jpg" title=""></a>
+                        <!-- <a href="pictures/interactive/agfa.jpg" title=""></a> -->
                     </article>
 
                     <article class="width-half" style="background-image: url('pictures/interactive/ba.jpg');">
-                        <a href="pictures/interactive/ba.jpg" title=""></a>
+                        <!-- <a href="pictures/interactive/ba.jpg" title=""></a> -->
                     </article>
 
                     <article class="width-half" style="background-image: url('pictures/interactive/bp/screen_01.jpg');">
-                        <a href="pictures/interactive/bp/screen_01.jpg" title=""></a>
+                        <!-- <a href="pictures/interactive/bp/screen_01.jpg" title=""></a> -->
                     </article>
 
                     <article class="width-half" style="background-image: url('pictures/interactive/bp/screen_02.jpg');">
-                        <a href="pictures/interactive/bp/screen_02.jpg" title=""></a>
+                        <!-- <a href="pictures/interactive/bp/screen_02.jpg" title=""></a> -->
                     </article>
 
                     <article class="width-half" style="background-image: url('pictures/interactive/bp/screen_03.jpg');">
-                        <a href="pictures/interactive/bp/screen_03.jpg" title=""></a>
+                        <!-- <a href="pictures/interactive/bp/screen_03.jpg" title=""></a> -->
                     </article>
 
                     <article class="width-half" style="background-image: url('pictures/interactive/bp/screen_04.jpg');">
-                        <a href="pictures/interactive/bp/screen_04.jpg" title=""></a>
+                        <!-- <a href="pictures/interactive/bp/screen_04.jpg" title=""></a> -->
                     </article>
 
                     <article class="width-half" style="background-image: url('pictures/interactive/bt/screen_01.jpg');">
-                        <a href="pictures/interactive/bt/screen_01.jpg" title=""></a>
+                        <!-- <a href="pictures/interactive/bt/screen_01.jpg" title=""></a> -->
                     </article>
 
                     <article class="width-half" style="background-image: url('pictures/interactive/bt/screen_02.jpg');">
-                        <a href="pictures/interactive/bt/screen_02.jpg" title=""></a>
+                        <!-- <a href="pictures/interactive/bt/screen_02.jpg" title=""></a> -->
                     </article>
 
                     <article class="width-half" style="background-image: url('pictures/interactive/bt/screen_03.jpg');">
-                        <a href="pictures/interactive/bt/screen_03.jpg" title=""></a>
+                        <!-- <a href="pictures/interactive/bt/screen_03.jpg" title=""></a> -->
                     </article>
 
                     <article class="width-half" style="background-image: url('pictures/interactive/bt/screen_04.jpg');">
-                        <a href="pictures/interactive/bt/screen_04.jpg" title=""></a>
+                        <!-- <a href="pictures/interactive/bt/screen_04.jpg" title=""></a> -->
                     </article>
 
                     <article class="width-half"
                         style="background-image: url('pictures/interactive/esselte/screen_01.jpg');">
-                        <a href="pictures/interactive/esselte/screen_01.jpg" title=""></a>
+                        <!-- <a href="pictures/interactive/esselte/screen_01.jpg" title=""></a> -->
                     </article>
 
                     <article class="width-half"
                         style="background-image: url('pictures/interactive/esselte/screen_02.jpg');">
-                        <a href="pictures/interactive/esselte/screen_02.jpg" title=""></a>
+                        <!-- <a href="pictures/interactive/esselte/screen_02.jpg" title=""></a> -->
                     </article>
 
                     <article class="width-half"
                         style="background-image: url('pictures/interactive/esselte/screen_03.jpg');">
-                        <a href="pictures/interactive/esselte/screen_03.jpg" title=""></a>
+                        <!-- <a href="pictures/interactive/esselte/screen_03.jpg" title=""></a> -->
                     </article>
 
                     <article class="width-half"
                         style="background-image: url('pictures/interactive/esselte/screen_04.jpg');">
-                        <a href="pictures/interactive/esselte/screen_04.jpg" title=""></a>
+                        <!-- <a href="pictures/interactive/esselte/screen_04.jpg" title=""></a> -->
                     </article>
 
                     <article class="width-half"
                         style="background-image: url('pictures/interactive/esselte/screen_05.jpg');">
-                        <a href="pictures/interactive/esselte/screen_05.jpg" title=""></a>
+                        <!-- <a href="pictures/interactive/esselte/screen_05.jpg" title=""></a> -->
                     </article>
 
                     <article class="width-half" style="background-image: url('pictures/zx_spectrum_vu_3d.jpg');">
-                        <a href="pictures/zx_spectrum_vu_3d.jpg" title=""></a>
+                        <!-- <a href="pictures/zx_spectrum_vu_3d.jpg" title=""></a> -->
                     </article>
 
                     <article class="width-half"
                         style="background-image: url('pictures/interactive/firstbase/screen_01.jpg');">
-                        <a href="pictures/interactive/firstbase/screen_01.jpg" title=""></a>
+                        <!-- <a href="pictures/interactive/firstbase/screen_01.jpg" title=""></a> -->
                     </article>
 
                     <article class="width-half"
                         style="background-image: url('pictures/interactive/firstbase/screen_02.jpg');">
-                        <a href="pictures/interactive/firstbase/screen_02.jpg" title=""></a>
+                        <!-- <a href="pictures/interactive/firstbase/screen_02.jpg" title=""></a> -->
                     </article>
 
                     <article class="width-half"
                         style="background-image: url('pictures/interactive/firstbase/screen_03.jpg');">
-                        <a href="pictures/interactive/firstbase/screen_03.jpg" title=""></a>
+                        <!-- <a href="pictures/interactive/firstbase/screen_03.jpg" title=""></a> -->
                     </article>
 
                     <article class="width-half"
                         style="background-image: url('pictures/interactive/firstbase/screen_04.jpg');">
-                        <a href="pictures/interactive/firstbase/screen_04.jpg" title=""></a>
+                        <!-- <a href="pictures/interactive/firstbase/screen_04.jpg" title=""></a> -->
                     </article>
 
                     <article class="width-half"
                         style="background-image: url('pictures/interactive/firstbase/screen_05.jpg');">
-                        <a href="pictures/interactive/firstbase/screen_05.jpg" title=""></a>
+                        <!-- <a href="pictures/interactive/firstbase/screen_05.jpg" title=""></a> -->
                     </article>
 
                     <article class="width-half"
                         style="background-image: url('pictures/interactive/firstbase/screen_06.jpg');">
-                        <a href="pictures/interactive/firstbase/screen_06.jpg" title=""></a>
+                        <!-- <a href="pictures/interactive/firstbase/screen_06.jpg" title=""></a> -->
                     </article>
 
                     <article class="width-half"
                         style="background-image: url('pictures/interactive/firstbase/screen_07.jpg');">
-                        <a href="pictures/interactive/firstbase/screen_07.jpg" title=""></a>
+                        <!-- <a href="pictures/interactive/firstbase/screen_07.jpg" title=""></a> -->
                     </article>
 
                     <article class="width-half" style="background-image: url('pictures/showreel-1996.jpg');">
-                        <a href="standalone-video-gallery.html?video=showreel-1996.mp4" title=""></a>
+                        <!-- <a href="standalone-video-gallery.html?video=showreel-1996.mp4" title=""></a> -->
                     </article>
 
                     <article class="width-half"
                         style="background-image: url('pictures/interactive/kellys/screen_01.jpg');">
-                        <a href="pictures/interactive/kellys/screen_01.jpg" title=""></a>
+                        <!-- <a href="pictures/interactive/kellys/screen_01.jpg" title=""></a> -->
                     </article>
 
                     <article class="width-half"
                         style="background-image: url('pictures/interactive/kellys/screen_02.jpg');">
-                        <a href="pictures/interactive/kellys/screen_02.jpg" title=""></a>
+                        <!-- <a href="pictures/interactive/kellys/screen_02.jpg" title=""></a> -->
                     </article>
 
                     <article class="width-half"
                         style="background-image: url('pictures/interactive/kellys/screen_03.jpg');">
-                        <a href="pictures/interactive/kellys/screen_03.jpg" title=""></a>
+                        <!-- <a href="pictures/interactive/kellys/screen_03.jpg" title=""></a> -->
                     </article>
 
                     <article class="width-half"
                         style="background-image: url('pictures/interactive/kellys/screen_04.jpg');">
-                        <a href="pictures/interactive/kellys/screen_04.jpg" title=""></a>
+                        <!-- <a href="pictures/interactive/kellys/screen_04.jpg" title=""></a> -->
                     </article>
 
                     <article class="width-half"
                         style="background-image: url('pictures/interactive/kellys/screen_05.jpg');">
-                        <a href="pictures/interactive/kellys/screen_05.jpg" title=""></a>
+                        <!-- <a href="pictures/interactive/kellys/screen_05.jpg" title=""></a> -->
                     </article>
 
                     <article class="width-half"
                         style="background-image: url('pictures/interactive/kellys/screen_06.jpg');">
-                        <a href="pictures/interactive/kellys/screen_06.jpg" title=""></a>
+                        <!-- <a href="pictures/interactive/kellys/screen_06.jpg" title=""></a> -->
                     </article>
 
                     <article class="width-half" style="background-image: url('pictures/interactive/mag.jpg');">
-                        <a href="pictures/interactive/mag.jpg" title=""></a>
+                        <!-- <a href="pictures/interactive/mag.jpg" title=""></a> -->
                     </article>
 
                     <article class="width-half" style="background-image: url('pictures/swivel_3d_box.jpg');">
-                        <a href="pictures/swivel_3d_box.jpg" title=""></a>
+                        <!-- <a href="pictures/swivel_3d_box.jpg" title=""></a> -->
                     </article>
 
                     <article class="width-half"
                         style="background-image: url('pictures/interactive/mwb/screen_01.jpg');">
-                        <a href="pictures/interactive/mwb/screen_01.jpg" title=""></a>
+                        <!-- <a href="pictures/interactive/mwb/screen_01.jpg" title=""></a> -->
                     </article>
 
                     <article class="width-half"
                         style="background-image: url('pictures/interactive/mwb/screen_02.jpg');">
-                        <a href="pictures/interactive/mwb/screen_02.jpg" title=""></a>
+                        <!-- <a href="pictures/interactive/mwb/screen_02.jpg" title=""></a> -->
                     </article>
 
                     <article class="width-half"
                         style="background-image: url('pictures/interactive/mwb/screen_03.jpg');">
-                        <a href="pictures/interactive/mwb/screen_03.jpg" title=""></a>
+                        <!-- <a href="pictures/interactive/mwb/screen_03.jpg" title=""></a> -->
                     </article>
 
                     <article class="width-half"
                         style="background-image: url('pictures/interactive/mwb/screen_04.jpg');">
-                        <a href="pictures/interactive/mwb/screen_04.jpg" title=""></a>
+                        <!-- <a href="pictures/interactive/mwb/screen_04.jpg" title=""></a> -->
                     </article>
 
                     <article class="width-half"
                         style="background-image: url('pictures/interactive/nec/screen_01.jpg');">
-                        <a href="pictures/interactive/nec/screen_01.jpg" title=""></a>
+                        <!-- <a href="pictures/interactive/nec/screen_01.jpg" title=""></a> -->
                     </article>
 
                     <article class="width-half"
                         style="background-image: url('pictures/interactive/nec/screen_02.jpg');">
-                        <a href="pictures/interactive/nec/screen_02.jpg" title=""></a>
+                        <!-- <a href="pictures/interactive/nec/screen_02.jpg" title=""></a> -->
                     </article>
 
                     <article class="width-half"
                         style="background-image: url('pictures/interactive/nec/screen_03.jpg');">
-                        <a href="pictures/interactive/nec/screen_03.jpg" title=""></a>
+                        <!-- <a href="pictures/interactive/nec/screen_03.jpg" title=""></a> -->
                     </article>
 
                     <article class="width-half"
                         style="background-image: url('pictures/interactive/nec/screen_04.jpg');">
-                        <a href="pictures/interactive/nec/screen_04.jpg" title=""></a>
+                        <!-- <a href="pictures/interactive/nec/screen_04.jpg" title=""></a> -->
                     </article>
 
                     <article class="width-half"
                         style="background-image: url('pictures/interactive/nec/screen_05.jpg');">
-                        <a href="pictures/interactive/nec/screen_05.jpg" title=""></a>
+                        <!-- <a href="pictures/interactive/nec/screen_05.jpg" title=""></a> -->
                     </article>
 
                     <article class="width-half"
                         style="background-image: url('pictures/interactive/nec/screen_06.jpg');">
-                        <a href="pictures/interactive/nec/screen_06.jpg" title=""></a>
+                        <!-- <a href="pictures/interactive/nec/screen_06.jpg" title=""></a> -->
                     </article>
 
                     <article class="width-half"
                         style="background-image: url('pictures/interactive/nec/screen_07.jpg');">
-                        <a href="pictures/interactive/nec/screen_07.jpg" title=""></a>
+                        <!-- <a href="pictures/interactive/nec/screen_07.jpg" title=""></a> -->
                     </article>
 
                     <article class="width-half"
                         style="background-image: url('pictures/interactive/nec/screen_08.jpg');">
-                        <a href="pictures/interactive/nec/screen_08.jpg" title=""></a>
+                        <!-- <a href="pictures/interactive/nec/screen_08.jpg" title=""></a> -->
                     </article>
 
                     <article class="width-half"
                         style="background-image: url('pictures/interactive/nec/screen_09.jpg');">
-                        <a href="pictures/interactive/nec/screen_09.jpg" title=""></a>
+                        <!-- <a href="pictures/interactive/nec/screen_09.jpg" title=""></a> -->
                     </article>
 
                     <article class="width-half"
                         style="background-image: url('pictures/interactive/nec/screen_10.jpg');">
-                        <a href="pictures/interactive/nec/screen_10.jpg" title=""></a>
+                        <!-- <a href="pictures/interactive/nec/screen_10.jpg" title=""></a> -->
                     </article>
 
                     <article class="width-half"
                         style="background-image: url('pictures/interactive/nec/screen_11.jpg');">
-                        <a href="pictures/interactive/nec/screen_11.jpg" title=""></a>
+                        <!-- <a href="pictures/interactive/nec/screen_11.jpg" title=""></a> -->
                     </article>
 
                     <article class="width-half"
                         style="background-image: url('pictures/interactive/nec/screen_12.jpg');">
-                        <a href="pictures/interactive/nec/screen_12.jpg" title=""></a>
+                        <!-- <a href="pictures/interactive/nec/screen_12.jpg" title=""></a> -->
                     </article>
 
                     <article class="width-half"
                         style="background-image: url('pictures/interactive/novartis/screen_01.jpg');">
-                        <a href="videos/work/novartis.mp4" title="Novartis Screengrab Video Walkthough"></a>
+                        <!-- <a href="videos/work/novartis.mp4" title="Novartis Screengrab Video Walkthough"></a> -->
                     </article>
 
                     <article class="width-half"
                         style="background-image: url('pictures/interactive/novartis/screen_02.jpg');">
-                        <a href="pictures/interactive/novartis/screen_02.jpg" title=""></a>
+                        <!-- <a href="pictures/interactive/novartis/screen_02.jpg" title=""></a> -->
                     </article>
 
                     <article class="width-half"
                         style="background-image: url('pictures/interactive/novartis/screen_03.jpg');">
-                        <a href="pictures/interactive/novartis/screen_03.jpg" title=""></a>
+                        <!-- <a href="pictures/interactive/novartis/screen_03.jpg" title=""></a> -->
                     </article>
 
                     <article class="width-half"
                         style="background-image: url('pictures/interactive/novartis/screen_04.jpg');">
-                        <a href="pictures/interactive/novartis/screen_04.jpg" title=""></a>
+                        <!-- <a href="pictures/interactive/novartis/screen_04.jpg" title=""></a> -->
                     </article>
 
                     <article class="width-half"
                         style="background-image: url('pictures/interactive/novartis/screen_05.jpg');">
-                        <a href="pictures/interactive/novartis/screen_05.jpg" title=""></a>
+                        <!-- <a href="pictures/interactive/novartis/screen_05.jpg" title=""></a> -->
                     </article>
 
                     <article class="width-half"
                         style="background-image: url('pictures/interactive/novartis/screen_06.jpg');">
-                        <a href="pictures/interactive/novartis/screen_06.jpg" title=""></a>
+                        <!-- <a href="pictures/interactive/novartis/screen_06.jpg" title=""></a> -->
                     </article>
 
                     <article class="width-half"
                         style="background-image: url('pictures/interactive/novartis/screen_07.jpg');">
-                        <a href="pictures/interactive/novartis/screen_07.jpg" title=""></a>
+                        <!-- <a href="pictures/interactive/novartis/screen_07.jpg" title=""></a> -->
                     </article>
 
                     <article class="width-half"
                         style="background-image: url('pictures/interactive/novartis/screen_08.jpg');">
-                        <a href="pictures/interactive/novartis/screen_08.jpg" title=""></a>
+                        <!-- <a href="pictures/interactive/novartis/screen_08.jpg" title=""></a> -->
                     </article>
 
                     <article class="width-half"
                         style="background-image: url('pictures/interactive/novartis/screen_09.jpg');">
-                        <a href="pictures/interactive/novartis/screen_09.jpg" title=""></a>
+                        <!-- <a href="pictures/interactive/novartis/screen_09.jpg" title=""></a> -->
                     </article>
 
                     <article class="width-half"
                         style="background-image: url('pictures/interactive/novartis/screen_10.jpg');">
-                        <a href="pictures/interactive/novartis/screen_10.jpg" title=""></a>
+                        <!-- <a href="pictures/interactive/novartis/screen_10.jpg" title=""></a> -->
                     </article>
 
                     <article class="width-half"
                         style="background-image: url('pictures/interactive/novartis/screen_11.jpg');">
-                        <a href="pictures/interactive/novartis/screen_11.jpg" title=""></a>
+                        <!-- <a href="pictures/interactive/novartis/screen_11.jpg" title=""></a> -->
                     </article>
 
                     <article class="width-half"
                         style="background-image: url('pictures/interactive/novartis/screen_12.jpg');">
-                        <a href="pictures/interactive/novartis/screen_12.jpg" title=""></a>
+                        <!-- <a href="pictures/interactive/novartis/screen_12.jpg" title=""></a> -->
                     </article>
 
                     <article class="width-half"
                         style="background-image: url('pictures/interactive/novartis/screen_13.jpg');">
-                        <a href="pictures/interactive/novartis/screen_13.jpg" title=""></a>
+                        <!-- <a href="pictures/interactive/novartis/screen_13.jpg" title=""></a> -->
                     </article>
 
                     <article class="width-half"
                         style="background-image: url('pictures/interactive/novartis/screen_14.jpg');">
-                        <a href="pictures/interactive/novartis/screen_14.jpg" title=""></a>
+                        <!-- <a href="pictures/interactive/novartis/screen_14.jpg" title=""></a> -->
                     </article>
 
                     <article class="width-half"
                         style="background-image: url('pictures/interactive/novartis/screen_15.jpg');">
-                        <a href="pictures/interactive/novartis/screen_15.jpg" title=""></a>
+                        <!-- <a href="pictures/interactive/novartis/screen_15.jpg" title=""></a> -->
                     </article>
 
                     <article class="width-half"
                         style="background-image: url('pictures/interactive/novartis/screen_16.jpg');">
-                        <a href="pictures/interactive/novartis/screen_16.jpg" title=""></a>
+                        <!-- <a href="pictures/interactive/novartis/screen_16.jpg" title=""></a> -->
                     </article>
 
                     <article class="width-half"
                         style="background-image: url('pictures/interactive/novartis/screen_17.jpg');">
-                        <a href="pictures/interactive/novartis/screen_17.jpg" title=""></a>
+                        <!-- <a href="pictures/interactive/novartis/screen_17.jpg" title=""></a> -->
                     </article>
 
                     <article class="width-half"
                         style="background-image: url('pictures/interactive/novartis/screen_18.jpg');">
-                        <a href="pictures/interactive/novartis/screen_18.jpg" title=""></a>
+                        <!-- <a href="pictures/interactive/novartis/screen_18.jpg" title=""></a> -->
                     </article>
 
                     <article class="width-half"
                         style="background-image: url('pictures/interactive/novartis/screen_19.jpg');">
-                        <a href="pictures/interactive/novartis/screen_19.jpg" title=""></a>
+                        <!-- <a href="pictures/interactive/novartis/screen_19.jpg" title=""></a> -->
                     </article>
 
                     <article class="width-half"
                         style="background-image: url('pictures/interactive/novartis/screen_20.jpg');">
-                        <a href="pictures/interactive/novartis/screen_20.jpg" title=""></a>
+                        <!-- <a href="pictures/interactive/novartis/screen_20.jpg" title=""></a> -->
                     </article>
 
                     <article class="width-half"
                         style="background-image: url('pictures/interactive/one2one/screen_01.jpg');">
-                        <a href="pictures/interactive/one2one/screen_01.jpg" title=""></a>
+                        <!-- <a href="pictures/interactive/one2one/screen_01.jpg" title=""></a> -->
                     </article>
 
                     <article class="width-half"
                         style="background-image: url('pictures/interactive/one2one/screen_02.jpg');">
-                        <a href="pictures/interactive/one2one/screen_02.jpg" title=""></a>
+                        <!-- <a href="pictures/interactive/one2one/screen_02.jpg" title=""></a> -->
                     </article>
 
                     <article class="width-half"
                         style="background-image: url('pictures/interactive/one2one/screen_03.jpg');">
-                        <a href="pictures/interactive/one2one/screen_03.jpg" title=""></a>
+                        <!-- <a href="pictures/interactive/one2one/screen_03.jpg" title=""></a> -->
                     </article>
 
                     <article class="width-half"
                         style="background-image: url('pictures/interactive/one2one/screen_04.jpg');">
-                        <a href="pictures/interactive/one2one/screen_04.jpg" title=""></a>
+                        <!-- <a href="pictures/interactive/one2one/screen_04.jpg" title=""></a> -->
                     </article>
 
                     <article class="width-half"
                         style="background-image: url('pictures/interactive/one2one/screen_05.jpg');">
-                        <a href="pictures/interactive/one2one/screen_05.jpg" title=""></a>
+                        <!-- <a href="pictures/interactive/one2one/screen_05.jpg" title=""></a> -->
                     </article>
 
                     <article class="width-half" style="background-image: url('pictures/macrenderman_box.jpg');">
-                        <a href="pictures/macrenderman_box.jpg" title=""></a>
+                        <!-- <a href="pictures/macrenderman_box.jpg" title=""></a> -->
                     </article>
 
                     <article class="width-half"
                         style="background-image: url('pictures/interactive/rics/screen_01.jpg');">
-                        <a href="pictures/interactive/rics/screen_01.jpg" title=""></a>
+                        <!-- <a href="pictures/interactive/rics/screen_01.jpg" title=""></a> -->
                     </article>
 
                     <article class="width-half"
                         style="background-image: url('pictures/interactive/rics/screen_02.jpg');">
-                        <a href="pictures/interactive/rics/screen_02.jpg" title=""></a>
+                        <!-- <a href="pictures/interactive/rics/screen_02.jpg" title=""></a> -->
                     </article>
 
                     <article class="width-half"
                         style="background-image: url('pictures/interactive/rics/screen_03.jpg');">
-                        <a href="pictures/interactive/rics/screen_03.jpg" title=""></a>
+                        <!-- <a href="pictures/interactive/rics/screen_03.jpg" title=""></a> -->
                     </article>
 
                     <article class="width-half"
                         style="background-image: url('pictures/interactive/rics/screen_04.jpg');">
-                        <a href="pictures/interactive/rics/screen_04.jpg" title=""></a>
+                        <!-- <a href="pictures/interactive/rics/screen_04.jpg" title=""></a> -->
                     </article>
 
                     <article class="width-half"
                         style="background-image: url('pictures/interactive/rics/screen_05.jpg');">
-                        <a href="pictures/interactive/rics/screen_05.jpg" title=""></a>
+                        <!-- <a href="pictures/interactive/rics/screen_05.jpg" title=""></a> -->
                     </article>
 
                     <article class="width-half"
                         style="background-image: url('pictures/interactive/rics/screen_06.jpg');">
-                        <a href="pictures/interactive/rics/screen_06.jpg" title=""></a>
+                        <!-- <a href="pictures/interactive/rics/screen_06.jpg" title=""></a> -->
                     </article>
 
                     <article class="width-half"
                         style="background-image: url('pictures/interactive/rics/screen_07.jpg');">
-                        <a href="pictures/interactive/rics/screen_07.jpg" title=""></a>
+                        <!-- <a href="pictures/interactive/rics/screen_07.jpg" title=""></a> -->
                     </article>
 
                     <article class="width-half"
                         style="background-image: url('pictures/interactive/rics/screen_08.jpg');">
-                        <a href="pictures/interactive/rics/screen_08.jpg" title=""></a>
+                        <!-- <a href="pictures/interactive/rics/screen_08.jpg" title=""></a> -->
                     </article>
 
                     <article class="width-half"
                         style="background-image: url('pictures/interactive/roche/screen_01.jpg');">
-                        <a href="pictures/interactive/roche/screen_01.jpg" title=""></a>
+                        <!-- <a href="pictures/interactive/roche/screen_01.jpg" title=""></a> -->
                     </article>
 
                     <article class="width-half"
                         style="background-image: url('pictures/interactive/roche/screen_02.jpg');">
-                        <a href="pictures/interactive/roche/screen_02.jpg" title=""></a>
+                        <!-- <a href="pictures/interactive/roche/screen_02.jpg" title=""></a> -->
                     </article>
 
                     <article class="width-half"
                         style="background-image: url('pictures/interactive/roche/screen_04.jpg');">
-                        <a href="pictures/interactive/roche/screen_04.jpg" title=""></a>
+                        <!-- <a href="pictures/interactive/roche/screen_04.jpg" title=""></a> -->
                     </article>
 
                     <article class="width-half"
                         style="background-image: url('pictures/interactive/roche/screen_05.jpg');">
-                        <a href="pictures/interactive/roche/screen_05.jpg" title=""></a>
+                        <!-- <a href="pictures/interactive/roche/screen_05.jpg" title=""></a> -->
                     </article>
 
                     <article class="width-half"
                         style="background-image: url('pictures/interactive/roche/screen_06.jpg');">
-                        <a href="pictures/interactive/roche/screen_06.jpg" title=""></a>
+                        <!-- <a href="pictures/interactive/roche/screen_06.jpg" title=""></a> -->
                     </article>
 
                     <article class="width-half"
                         style="background-image: url('pictures/interactive/roche/screen_07.jpg');">
-                        <a href="pictures/interactive/roche/screen_07.jpg" title=""></a>
+                        <!-- <a href="pictures/interactive/roche/screen_07.jpg" title=""></a> -->
                     </article>
 
                     <article class="width-half"
                         style="background-image: url('pictures/interactive/roche/screen_08.jpg');">
-                        <a href="pictures/interactive/roche/screen_08.jpg" title=""></a>
+                        <!-- <a href="pictures/interactive/roche/screen_08.jpg" title=""></a> -->
                     </article>
 
                     <article class="width-half"
                         style="background-image: url('pictures/interactive/roche/screen_09.jpg');">
-                        <a href="pictures/interactive/roche/screen_09.jpg" title=""></a>
+                        <!-- <a href="pictures/interactive/roche/screen_09.jpg" title=""></a> -->
                     </article>
 
                     <article class="width-half"
                         style="background-image: url('pictures/interactive/roche/screen_10.jpg');">
-                        <a href="pictures/interactive/roche/screen_10.jpg" title=""></a>
+                        <!-- <a href="pictures/interactive/roche/screen_10.jpg" title=""></a> -->
                     </article>
 
                     <article class="width-half"
                         style="background-image: url('pictures/interactive/roche/screen_11.jpg');">
-                        <a href="pictures/interactive/roche/screen_11.jpg" title=""></a>
+                        <!-- <a href="pictures/interactive/roche/screen_11.jpg" title=""></a> -->
                     </article>
 
                     <article class="width-half"
                         style="background-image: url('pictures/interactive/roche/screen_12.jpg');">
-                        <a href="pictures/interactive/roche/screen_12.jpg" title=""></a>
+                        <!-- <a href="pictures/interactive/roche/screen_12.jpg" title=""></a> -->
                     </article>
 
                     <article class="width-half"
                         style="background-image: url('pictures/interactive/roche/screen_14.jpg');">
-                        <a href="pictures/interactive/roche/screen_14.jpg" title=""></a>
+                        <!-- <a href="pictures/interactive/roche/screen_14.jpg" title=""></a> -->
                     </article>
 
                     <article class="width-half"
                         style="background-image: url('pictures/interactive/sbs/screen_01.jpg');">
-                        <a href="pictures/interactive/sbs/screen_01.jpg" title=""></a>
+                        <!-- <a href="pictures/interactive/sbs/screen_01.jpg" title=""></a> -->
                     </article>
 
                     <article class="width-half"
                         style="background-image: url('pictures/interactive/sbs/screen_02.jpg');">
-                        <a href="pictures/interactive/sbs/screen_02.jpg" title=""></a>
+                        <!-- <a href="pictures/interactive/sbs/screen_02.jpg" title=""></a> -->
                     </article>
 
                     <article class="width-half"
                         style="background-image: url('pictures/interactive/sbs/screen_03.jpg');">
-                        <a href="pictures/interactive/sbs/screen_03.jpg" title=""></a>
+                        <!-- <a href="pictures/interactive/sbs/screen_03.jpg" title=""></a> -->
                     </article>
 
                     <article class="width-half"
                         style="background-image: url('pictures/interactive/sbs/screen_04.jpg');">
-                        <a href="pictures/interactive/sbs/screen_04.jpg" title=""></a>
+                        <!-- <a href="pictures/interactive/sbs/screen_04.jpg" title=""></a> -->
                     </article>
 
                     <article class="width-half"
                         style="background-image: url('pictures/interactive/sbs/screen_05.jpg');">
-                        <a href="pictures/interactive/sbs/screen_05.jpg" title=""></a>
+                        <!-- <a href="pictures/interactive/sbs/screen_05.jpg" title=""></a> -->
                     </article>
 
                     <article class="width-half"
                         style="background-image: url('pictures/interactive/sbs/screen_06.jpg');">
-                        <a href="pictures/interactive/sbs/screen_06.jpg" title=""></a>
+                        <!-- <a href="pictures/interactive/sbs/screen_06.jpg" title=""></a> -->
                     </article>
 
                     <article class="width-half"
                         style="background-image: url('pictures/interactive/sbs/screen_07.jpg');">
-                        <a href="pictures/interactive/sbs/screen_07.jpg" title=""></a>
+                        <!-- <a href="pictures/interactive/sbs/screen_07.jpg" title=""></a> -->
                     </article>
 
                     <article class="width-half"
                         style="background-image: url('pictures/interactive/sbs/screen_08.jpg');">
-                        <a href="pictures/interactive/sbs/screen_08.jpg" title=""></a>
+                        <!-- <a href="pictures/interactive/sbs/screen_08.jpg" title=""></a> -->
                     </article>
 
                     <article class="width-half"
                         style="background-image: url('pictures/interactive/sew/screen_01.jpg');">
-                        <a href="pictures/interactive/sew/screen_01.jpg" title=""></a>
+                        <!-- <a href="pictures/interactive/sew/screen_01.jpg" title=""></a> -->
                     </article>
 
                     <article class="width-half"
                         style="background-image: url('pictures/interactive/sew/screen_02.jpg');">
-                        <a href="pictures/interactive/sew/screen_02.jpg" title=""></a>
+                        <!-- <a href="pictures/interactive/sew/screen_02.jpg" title=""></a> -->
                     </article>
 
                     <article class="width-half"
                         style="background-image: url('pictures/interactive/sew/screen_03.jpg');">
-                        <a href="pictures/interactive/sew/screen_03.jpg" title=""></a>
+                        <!-- <a href="pictures/interactive/sew/screen_03.jpg" title=""></a> -->
                     </article>
 
                     <article class="width-half"
                         style="background-image: url('pictures/interactive/sew/screen_05.jpg');">
-                        <a href="pictures/interactive/sew/screen_05.jpg" title=""></a>
+                        <!-- <a href="pictures/interactive/sew/screen_05.jpg" title=""></a> -->
                     </article>
 
                     <article class="width-half"
                         style="background-image: url('pictures/interactive/stage/screen_01.jpg');">
-                        <a href="pictures/interactive/stage/screen_01.jpg" title=""></a>
+                        <!-- <a href="pictures/interactive/stage/screen_01.jpg" title=""></a> -->
                     </article>
 
                     <article class="width-half"
                         style="background-image: url('pictures/interactive/stage/screen_02.jpg');">
-                        <a href="pictures/interactive/stage/screen_02.jpg" title=""></a>
+                        <!-- <a href="pictures/interactive/stage/screen_02.jpg" title=""></a> -->
                     </article>
 
                     <article class="width-half"
                         style="background-image: url('pictures/interactive/stage/screen_03.jpg');">
-                        <a href="pictures/interactive/stage/screen_03.jpg" title=""></a>
+                        <!-- <a href="pictures/interactive/stage/screen_03.jpg" title=""></a> -->
                     </article>
 
                     <article class="width-half"
                         style="background-image: url('pictures/interactive/stage/screen_04.jpg');">
-                        <a href="pictures/interactive/stage/screen_04.jpg" title=""></a>
+                        <!-- <a href="pictures/interactive/stage/screen_04.jpg" title=""></a> -->
                     </article>
 
                     <article class="width-half"
                         style="background-image: url('pictures/interactive/stage/screen_05.jpg');">
-                        <a href="pictures/interactive/stage/screen_05.jpg" title=""></a>
+                        <!-- <a href="pictures/interactive/stage/screen_05.jpg" title=""></a> -->
                     </article>
 
                     <article class="width-half"
                         style="background-image: url('pictures/interactive/stage/screen_06.jpg');">
-                        <a href="pictures/interactive/stage/screen_06.jpg" title=""></a>
+                        <!-- <a href="pictures/interactive/stage/screen_06.jpg" title=""></a> -->
                     </article>
 
                     <article class="width-half"
                         style="background-image: url('pictures/interactive/stage/screen_07.jpg');">
-                        <a href="pictures/interactive/stage/screen_07.jpg" title=""></a>
+                        <!-- <a href="pictures/interactive/stage/screen_07.jpg" title=""></a> -->
                     </article>
 
                     <article class="width-half"
                         style="background-image: url('pictures/interactive/stage/screen_08.jpg');">
-                        <a href="pictures/interactive/stage/screen_08.jpg" title=""></a>
+                        <!-- <a href="pictures/interactive/stage/screen_08.jpg" title=""></a> -->
                     </article>
 
                     <article class="width-half"
                         style="background-image: url('pictures/interactive/tal/screen_01.jpg');">
-                        <a href="pictures/interactive/tal/screen_01.jpg" title=""></a>
+                        <!-- <a href="pictures/interactive/tal/screen_01.jpg" title=""></a> -->
                     </article>
 
                     <article class="width-half"
                         style="background-image: url('pictures/interactive/tal/screen_02.jpg');">
-                        <a href="pictures/interactive/tal/screen_02.jpg" title=""></a>
+                        <!-- <a href="pictures/interactive/tal/screen_02.jpg" title=""></a> -->
                     </article>
 
                     <article class="width-half"
                         style="background-image: url('pictures/interactive/tal/screen_03.jpg');">
-                        <a href="pictures/interactive/tal/screen_03.jpg" title=""></a>
+                        <!-- <a href="pictures/interactive/tal/screen_03.jpg" title=""></a> -->
                     </article>
 
                     <article class="width-half"
                         style="background-image: url('pictures/interactive/tal/screen_04.jpg');">
-                        <a href="pictures/interactive/tal/screen_04.jpg" title=""></a>
+                        <!-- <a href="pictures/interactive/tal/screen_04.jpg" title=""></a> -->
                     </article>
 
                     <article class="width-half"
                         style="background-image: url('pictures/interactive/tal/screen_05.jpg');">
-                        <a href="pictures/interactive/tal/screen_05.jpg" title=""></a>
+                        <!-- <a href="pictures/interactive/tal/screen_05.jpg" title=""></a> -->
                     </article>
 
                     <article class="width-half"
                         style="background-image: url('pictures/interactive/tal/screen_06.jpg');">
-                        <a href="pictures/interactive/tal/screen_06.jpg" title=""></a>
+                        <!-- <a href="pictures/interactive/tal/screen_06.jpg" title=""></a> -->
                     </article>
 
                     <article class="width-half"
                         style="background-image: url('pictures/interactive/tal/screen_07.jpg');">
-                        <a href="pictures/interactive/tal/screen_07.jpg" title=""></a>
+                        <!-- <a href="pictures/interactive/tal/screen_07.jpg" title=""></a> -->
                     </article>
 
                     <article class="width-half"
                         style="background-image: url('pictures/interactive/tal/screen_08.jpg');">
-                        <a href="pictures/interactive/tal/screen_08.jpg" title=""></a>
+                        <!-- <a href="pictures/interactive/tal/screen_08.jpg" title=""></a> -->
                     </article>
 
                     <article class="width-half"
                         style="background-image: url('pictures/interactive/tal/screen_09.jpg');">
-                        <a href="pictures/interactive/tal/screen_09.jpg" title=""></a>
+                        <!-- <a href="pictures/interactive/tal/screen_09.jpg" title=""></a> -->
                     </article>
 
                     <article class="width-half" style="background-image: url('pictures/interactive/telfast.jpg');">
-                        <a href="pictures/interactive/telfast.jpg" title=""></a>
+                        <!-- <a href="pictures/interactive/telfast.jpg" title=""></a> -->
                     </article>
 
                     <article class="width-half" style="background-image: url('pictures/interactive/wb/screen_01.jpg');">
-                        <a href="pictures/interactive/wb/screen_01.jpg" title=""></a>
+                        <!-- <a href="pictures/interactive/wb/screen_01.jpg" title=""></a> -->
                     </article>
 
                     <article class="width-half" style="background-image: url('pictures/interactive/wb/screen_02.jpg');">
-                        <a href="pictures/interactive/wb/screen_02.jpg" title=""></a>
+                        <!-- <a href="pictures/interactive/wb/screen_02.jpg" title=""></a> -->
                     </article>
 
                     <article class="width-half" style="background-image: url('pictures/interactive/wb/screen_03.jpg');">
-                        <a href="pictures/interactive/wb/screen_03.jpg" title=""></a>
+                        <!-- <a href="pictures/interactive/wb/screen_03.jpg" title=""></a> -->
                     </article>
 
                     <article class="width-half" style="background-image: url('pictures/interactive/wb/screen_04.jpg');">
-                        <a href="pictures/interactive/wb/screen_04.jpg" title=""></a>
+                        <!-- <a href="pictures/interactive/wb/screen_04.jpg" title=""></a> -->
                     </article>
 
                     <article class="width-half"
                         style="background-image: url('pictures/interactive/yamBaus/screen_01.jpg');">
-                        <a href="pictures/interactive/yamBaus/screen_01.jpg" title=""></a>
+                        <!-- <a href="pictures/interactive/yamBaus/screen_01.jpg" title=""></a> -->
                     </article>
 
                     <article class="width-half"
                         style="background-image: url('pictures/interactive/yamBaus/screen_02.jpg');">
-                        <a href="pictures/interactive/yamBaus/screen_02.jpg" title=""></a>
+                        <!-- <a href="pictures/interactive/yamBaus/screen_02.jpg" title=""></a> -->
                     </article>
 
                     <article class="width-half"
                         style="background-image: url('pictures/interactive/yamBaus/screen_03.jpg');">
-                        <a href="pictures/interactive/yamBaus/screen_03.jpg" title=""></a>
+                        <!-- <a href="pictures/interactive/yamBaus/screen_03.jpg" title=""></a> -->
                     </article>
 
                     <article class="width-half"
                         style="background-image: url('pictures/interactive/yamBaus/screen_04.jpg');">
-                        <a href="pictures/interactive/yamBaus/screen_04.jpg" title=""></a>
+                        <!-- <a href="pictures/interactive/yamBaus/screen_04.jpg" title=""></a> -->
                     </article>
 
                     <article class="width-half"
                         style="background-image: url('pictures/interactive/yamBaus/screen_05.jpg');">
-                        <a href="pictures/interactive/yamBaus/screen_05.jpg" title=""></a>
+                        <!-- <a href="pictures/interactive/yamBaus/screen_05.jpg" title=""></a> -->
                     </article>
 
                     <article class="width-half"
                         style="background-image: url('pictures/interactive/yamBaus/screen_06.jpg');">
-                        <a href="pictures/interactive/yamBaus/screen_06.jpg" title=""></a>
+                        <!-- <a href="pictures/interactive/yamBaus/screen_06.jpg" title=""></a> -->
                     </article>
 
                     <article class="width-half"
                         style="background-image: url('pictures/interactive/yamBaus/screen_07.jpg');">
-                        <a href="pictures/interactive/yamBaus/screen_07.jpg" title=""></a>
+                        <!-- <a href="pictures/interactive/yamBaus/screen_07.jpg" title=""></a> -->
                     </article>
 
                     <article class="width-half"
                         style="background-image: url('pictures/interactive/yamBaus/screen_08.jpg');">
-                        <a href="pictures/interactive/yamBaus/screen_08.jpg" title=""></a>
+                        <!-- <a href="pictures/interactive/yamBaus/screen_08.jpg" title=""></a> -->
                     </article>
 
                     <article class="width-half"
                         style="background-image: url('pictures/interactive/yamBaus/screen_09.jpg');">
-                        <a href="pictures/interactive/yamBaus/screen_09.jpg" title=""></a>
+                        <!-- <a href="pictures/interactive/yamBaus/screen_09.jpg" title=""></a> -->
                     </article>
 
                     <article class="width-half"
                         style="background-image: url('pictures/interactive/yamBaus/screen_10.jpg');">
-                        <a href="pictures/interactive/yamBaus/screen_10.jpg" title=""></a>
+                        <!-- <a href="pictures/interactive/yamBaus/screen_10.jpg" title=""></a> -->
                     </article>
 
                     <article class="width-half"
                         style="background-image: url('pictures/interactive/yamBaus/screen_11.jpg');">
-                        <a href="pictures/interactive/yamBaus/screen_11.jpg" title=""></a>
+                        <!-- <a href="pictures/interactive/yamBaus/screen_11.jpg" title=""></a> -->
                     </article>
 
                     <article class="width-half" style="background-image: url('pictures/design/pic_17.jpg');">
-                        <a href="pictures/design/pic_17.jpg" title=""></a>
+                        <!-- <a href="pictures/design/pic_17.jpg" title=""></a> -->
                     </article>
 
                     <article class="width-half" style="background-image: url('pictures/design/pic_01.jpg');">
-                        <a href="pictures/design/pic_01.jpg" title=""></a>
+                        <!-- <a href="pictures/design/pic_01.jpg" title=""></a> -->
                     </article>
 
                     <article class="width-half" style="background-image: url('pictures/design/pic_02.jpg');">
-                        <a href="pictures/design/pic_02.jpg" title=""></a>
+                        <!-- <a href="pictures/design/pic_02.jpg" title=""></a> -->
                     </article>
 
                     <article class="width-half" style="background-image: url('pictures/design/pic_04.jpg');">
-                        <a href="pictures/design/pic_04.jpg" title=""></a>
+                        <!-- <a href="pictures/design/pic_04.jpg" title=""></a> -->
                     </article>
 
                     <article class="width-half" style="background-image: url('pictures/design/pic_05.jpg');">
-                        <a href="pictures/design/pic_05.jpg" title=""></a>
+                        <!-- <a href="pictures/design/pic_05.jpg" title=""></a> -->
                     </article>
 
                     <article class="width-half" style="background-image: url('pictures/design/pic_06.jpg');">
-                        <a href="pictures/design/pic_06.jpg" title=""></a>
+                        <!-- <a href="pictures/design/pic_06.jpg" title=""></a> -->
                     </article>
 
                     <article class="width-half" style="background-image: url('pictures/design/pic_07.jpg');">
-                        <a href="pictures/design/pic_07.jpg" title=""></a>
+                        <!-- <a href="pictures/design/pic_07.jpg" title=""></a> -->
                     </article>
 
                     <article class="width-half" style="background-image: url('pictures/design/pic_09.jpg');">
-                        <a href="pictures/design/pic_09.jpg" title=""></a>
+                        <!-- <a href="pictures/design/pic_09.jpg" title=""></a> -->
                     </article>
 
                     <article class="width-half" style="background-image: url('pictures/design/pic_11.jpg');">
-                        <a href="pictures/design/pic_11.jpg" title=""></a>
+                        <!-- <a href="pictures/design/pic_11.jpg" title=""></a> -->
                     </article>
 
                     <article class="width-half" style="background-image: url('pictures/design/pic_12.jpg');">
-                        <a href="pictures/design/pic_12.jpg" title=""></a>
+                        <!-- <a href="pictures/design/pic_12.jpg" title=""></a> -->
                     </article>
 
                     <article class="width-half" style="background-image: url('pictures/design/pic_13.jpg');">
-                        <a href="pictures/design/pic_13.jpg" title=""></a>
+                        <!-- <a href="pictures/design/pic_13.jpg" title=""></a> -->
                     </article>
 
                     <article class="width-half" style="background-image: url('pictures/design/pic_14.jpg');">
-                        <a href="pictures/design/pic_14.jpg" title=""></a>
+                        <!-- <a href="pictures/design/pic_14.jpg" title=""></a> -->
                     </article>
 
                     <article class="width-half" style="background-image: url('pictures/design/pic_15.jpg');">
-                        <a href="pictures/design/pic_15.jpg" title=""></a>
+                        <!-- <a href="pictures/design/pic_15.jpg" title=""></a> -->
                     </article>
 
                     <article class="width-half" style="background-image: url('pictures/design/pic_16.jpg');">
-                        <a href="pictures/design/pic_16.jpg" title=""></a>
+                        <!-- <a href="pictures/design/pic_16.jpg" title=""></a> -->
                     </article>
 
                     <article class="width-half" style="background-image: url('pictures/design/sea_room_full.jpg');">
-                        <a href="pictures/design/sea_room_full.jpg" title=""></a>
+                        <!-- <a href="pictures/design/sea_room_full.jpg" title=""></a> -->
                     </article>
 
                     <article class="width-half"
                         style="background-image: url('pictures/design/elektrik_effekts_logo_full.jpg');">
-                        <a href="pictures/design/elektrik_effekts_logo_full.jpg" title=""></a>
+                        <!-- <a href="pictures/design/elektrik_effekts_logo_full.jpg" title=""></a> -->
                     </article>
 
                     <article class="width-half"
                         style="background-image: url('pictures/design/into_the_light_full.jpg');">
-                        <a href="pictures/design/into_the_light_full.jpg" title=""></a>
+                        <!-- <a href="pictures/design/into_the_light_full.jpg" title=""></a> -->
                     </article>
 
                     <article class="width-half"
                         style="background-image: url('pictures/web_design/elektrik_effekts_site.jpg');">
-                        <a href="pictures/web_design/elektrik_effekts_site.jpg" title=""></a>
+                        <!-- <a href="pictures/web_design/elektrik_effekts_site.jpg" title=""></a> -->
                     </article>
 
                     <article class="width-half"
                         style="background-image: url('pictures/web_design/equifavourites_site.jpg');">
-                        <a href="pictures/web_design/equifavourites_site.jpg" title=""></a>
+                        <!-- <a href="pictures/web_design/equifavourites_site.jpg" title=""></a> -->
                     </article>
 
                     <article class="width-half" style="background-image: url('pictures/web_design/jack_nadel_uk.jpg');">
-                        <a href="pictures/web_design/jack_nadel_uk.jpg" title=""></a>
+                        <!-- <a href="pictures/web_design/jack_nadel_uk.jpg" title=""></a> -->
                     </article>
 
                     <article class="width-half" style="background-image: url('pictures/web_design/kompassJava.jpg');">
-                        <a href="pictures/web_design/kompassJava.jpg" title=""></a>
+                        <!-- <a href="pictures/web_design/kompassJava.jpg" title=""></a> -->
                     </article>
 
                     <article class="width-half"
                         style="background-image: url('pictures/web_design/pet_favourites_site.jpg');">
-                        <a href="pictures/web_design/pet_favourites_site.jpg" title=""></a>
+                        <!-- <a href="pictures/web_design/pet_favourites_site.jpg" title=""></a> -->
                     </article>
 
                     <article class="width-half"
                         style="background-image: url('pictures/web_design/sarah_aspinall_site.jpg');">
-                        <a href="pictures/web_design/sarah_aspinall_site.jpg" title=""></a>
+                        <!-- <a href="pictures/web_design/sarah_aspinall_site.jpg" title=""></a> -->
                     </article>
 
                     <article class="width-half" style="background-image: url('pictures/web_design/siteAgfaPACS.jpg');">
-                        <a href="pictures/web_design/siteAgfaPACS.jpg" title=""></a>
+                        <!-- <a href="pictures/web_design/siteAgfaPACS.jpg" title=""></a> -->
                     </article>
 
                     <article class="width-half" style="background-image: url('pictures/web_design/siteBP.jpg');">
-                        <a href="pictures/web_design/siteBP.jpg" title=""></a>
+                        <!-- <a href="pictures/web_design/siteBP.jpg" title=""></a> -->
                     </article>
 
                     <article class="width-half" style="background-image: url('pictures/web_design/siteEntOil.jpg');">
-                        <a href="pictures/web_design/siteEntOil.jpg" title=""></a>
+                        <!-- <a href="pictures/web_design/siteEntOil.jpg" title=""></a> -->
                     </article>
 
                     <article class="width-half" style="background-image: url('pictures/web_design/siteFloorit.jpg');">
-                        <a href="pictures/web_design/siteFloorit.jpg" title=""></a>
+                        <!-- <a href="pictures/web_design/siteFloorit.jpg" title=""></a> -->
                     </article>
 
                     <article class="width-half"
                         style="background-image: url('pictures/web_design/siteGarryAndAlex.jpg');">
-                        <a href="pictures/web_design/siteGarryAndAlex.jpg" title=""></a>
+                        <!-- <a href="pictures/web_design/siteGarryAndAlex.jpg" title=""></a> -->
                     </article>
 
                     <article class="width-half" style="background-image: url('pictures/web_design/siteGoweb.jpg');">
-                        <a href="pictures/web_design/siteGoweb.jpg" title=""></a>
+                        <!-- <a href="pictures/web_design/siteGoweb.jpg" title=""></a> -->
                     </article>
 
                     <article class="width-half" style="background-image: url('pictures/web_design/siteJotun.jpg');">
-                        <a href="pictures/web_design/siteJotun.jpg" title=""></a>
+                        <!-- <a href="pictures/web_design/siteJotun.jpg" title=""></a> -->
                     </article>
 
                     <article class="width-half" style="background-image: url('pictures/web_design/siteMatt.jpg');">
-                        <a href="pictures/web_design/siteMatt.jpg" title=""></a>
+                        <!-- <a href="pictures/web_design/siteMatt.jpg" title=""></a> -->
                     </article>
 
                     <article class="width-half" style="background-image: url('pictures/web_design/siteMustard.jpg');">
-                        <a href="pictures/web_design/siteMustard.jpg" title=""></a>
+                        <!-- <a href="pictures/web_design/siteMustard.jpg" title=""></a> -->
                     </article>
 
                     <article class="width-half" style="background-image: url('pictures/web_design/sitePRF.jpg');">
-                        <a href="pictures/web_design/sitePRF.jpg" title=""></a>
+                        <!-- <a href="pictures/web_design/sitePRF.jpg" title=""></a> -->
                     </article>
 
                     <article class="width-half" style="background-image: url('pictures/web_design/siteTBS.jpg');">
-                        <a href="pictures/web_design/siteTBS.jpg" title=""></a>
+                        <!-- <a href="pictures/web_design/siteTBS.jpg" title=""></a> -->
                     </article>
 
                     <article class="width-half"
                         style="background-image: url('pictures/my_attempt/my_attempt_at_city_engine_3.jpg');">
-                        <a href="pictures/my_attempt/my_attempt_at_city_engine_3.jpg" title=""></a>
+                        <!-- <a href="pictures/my_attempt/my_attempt_at_city_engine_3.jpg" title=""></a> -->
                     </article>
 
-                </section>
-                <article class="width-half" style="background-image: url('pictures/bbc-timesheet.jpg');">
-                    <a href="pictures/bbc-timesheet.jpg" title=""></a>
-                </article>
-                <section>
+                    <!-- <a id="test1" href="pictures/my_attempt/my_attempt_at_city_engine_2.jpg" class="width-half" style="background-image: url('pictures/my_attempt/my_attempt_at_city_engine_2.jpg');"></a> -->
+
+                    <!-- <a id="test2" href="pictures/my_attempt/my_attempt_at_city_engine_1.jpg" class="width-half" style="background-image: url('pictures/my_attempt/my_attempt_at_city_engine_1.jpg');"> </a> -->
 
                 </section>
+
+                <section class="width-quarter">
+                    <div style="height: 20%; background-image: url('pictures/macrenderman_box.jpg');"></div>
+                    <div style="height: 20%; background-image: url('pictures/swivel_3d_box.jpg');"></div>
+                    <div style="height: 20%; background-image: url('pictures/zx_spectrum_vu_3d.jpg');"></div>
+                    <div style="height: 20%; background-image: url('pictures/after-effects-1.jpg');"></div>
+                    <div style="height: 20%; background-image: url('pictures/after-effects-2.jpg');"></div>
+                </section>
+
+                <section class="width-half" style="background-image: url('pictures/bbc-timesheet.jpg');">
+                    <a href="pictures/bbc-timesheet.jpg" title=""></a>
+                </section>
+
+                <section class="width-third">
+                    <div style="height: 25%; background-image: url('pictures/quick-bizz-card-1995.jpg');"></div>
+                    <div style="height: 25%; background-image: url('pictures/business-card-2-front.jpg');"></div>
+                    <div style="height: 25%; background-image: url('pictures/business-card-2.jpg');"></div>
+                    <div style="height: 25%; background-image: url('pictures/business-card-3.jpg');"></div>
+                </section>
+
             </section>
 
             <section id="contact" class="content">
@@ -924,6 +957,7 @@
             </section>
 
         </main>
+
     </div>
 
 </body>
