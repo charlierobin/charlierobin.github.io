@@ -42,7 +42,13 @@
     <meta name="msapplication-TileColor" content="#da532c">
     <meta name="theme-color" content="#ffffff">
 
-    <link rel="prefetch" href="pictures/loop.mp4" />
+    <!-- <link rel="prefetch" href="pictures/loop.mp4" /> -->
+
+    <style>
+        #video {
+            background-image: url(pictures/loop_poster.jpg);
+        }
+    </style>
 
 </head>
 
@@ -353,18 +359,18 @@
 
         $(window).on('load', function (e) {
 
-            const isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
+            // const isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
 
-            if (isSafari) {
+            // if (isSafari) {
 
-                buggyBrowsersInOtherWordsMyVersionOfSafariThankYouSoMuchApple();
+            //     buggyBrowsersInOtherWordsMyVersionOfSafariThankYouSoMuchApple();
 
-                // or is it thankYouVeryMuchTheOtherBrowsersThatDontSupportVideoInBackgroundImages? ... the great philosophical questions of life ...
+            //     // or is it thankYouVeryMuchTheOtherBrowsersThatDontSupportVideoInBackgroundImages? ... the great philosophical questions of life ...
 
-            } else {
+            // } else {
 
-                unbuggyBrowsers();
-            }
+            //     unbuggyBrowsers();
+            // }
 
             com.charlierobin.loadKMLFiles();
 
