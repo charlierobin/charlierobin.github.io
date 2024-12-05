@@ -7,12 +7,12 @@
 
     <meta charset="utf-8" />
 
-    <meta name="description" content="Charlie: Old work, old experiments, old software, old photography" />
+    <meta name="description"
+        content="Charlie: Old work, old experiments, old software, old photography - old, old, all old" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preconnect" href="https://ajax.googleapis.com" crossorigin>
-    <link rel="preconnect" href="https://charlie-videos.s3.us-east-1.amazonaws.com" crossorigin>
 
     <link rel="preconnect" href="https://x3dom.org" crossorigin>
 
@@ -22,14 +22,14 @@
         @import url('https://fonts.googleapis.com/css2?family=Titillium+Web:wght@200;600&display=swap');
     </style>
 
-    <link rel="stylesheet" href="css/reset.css?v=15">
-    <link rel="stylesheet" href="css/page_layout.css?v=15">
-    <link rel="stylesheet" href="css/styles.css?v=15">
+    <link rel="stylesheet" href="css/reset.css?v=16">
+    <link rel="stylesheet" href="css/page_layout.css?v=16">
+    <link rel="stylesheet" href="css/styles.css?v=16">
 
-    <link rel="stylesheet" href="css/grid_layout.css?v=15">
+    <link rel="stylesheet" href="css/grid_layout.css?v=16">
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-    <script src="js/common.js?v=15"></script>
+    <script src="js/common.js?v=16"></script>
 
     <link rel="stylesheet" type="text/css" href="https://x3dom.org/release/x3dom.css" />
     <script type="text/javascript" src="https://x3dom.org/release/x3dom-full.js"></script>
@@ -42,11 +42,10 @@
     <meta name="msapplication-TileColor" content="#da532c">
     <meta name="theme-color" content="#ffffff">
 
-    <!-- <link rel="prefetch" href="pictures/loop.mp4" /> -->
-
     <style>
-        #video {
-            background-image: url(pictures/loop_poster.jpg);
+        #canvas {
+            width: 100%;
+            height: 100%;
         }
     </style>
 
@@ -56,14 +55,13 @@
 
     <div id="wrapper">
         <main>
-            <section id="video" class="min-height width-half"></section>
+            <section id="video" class="min-height width-half"><canvas id="canvas"></canvas></section>
 
             <section id="welcome" class="width-three-quarters content">
                 <h1>hello, my name is <br /><span>charlie</span></h1>
                 <p>this was originally a single-page experiment with <a href="https://pages.github.com"
-                        title="Learn more about GitHub Pages">GitHub Pages</a>, <br>
-                    now it&rsquo;s a four page experiment with <a href="https://pages.github.com"
-                        title="Learn more about GitHub Pages">GitHub Pages</a></p>
+                        title="Learn more about GitHub Pages">GitHub Pages</a>, now it&rsquo;s a four page experiment
+                    with <a href="https://pages.github.com" title="Learn more about GitHub Pages">GitHub Pages</a></p>
             </section>
 
             <section id="gallery">
@@ -357,20 +355,7 @@
 
     <script>
 
-        $(window).on('load', function (e) {
-
-            // const isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
-
-            // if (isSafari) {
-
-            //     buggyBrowsersInOtherWordsMyVersionOfSafariThankYouSoMuchApple();
-
-            //     // or is it thankYouVeryMuchTheOtherBrowsersThatDontSupportVideoInBackgroundImages? ... the great philosophical questions of life ...
-
-            // } else {
-
-            //     unbuggyBrowsers();
-            // }
+        $(document).ready(function () {
 
             com.charlierobin.loadKMLFiles();
 
@@ -378,20 +363,147 @@
 
             $("#photos2").find('a').attr("href", "gallery.html?s=" + pics.join(','));
 
+            const canvas = document.getElementById("canvas");
+
+            const scaleFactor = 2;
+
+            canvas.width = canvas.offsetWidth * scaleFactor;
+            canvas.height = canvas.offsetHeight * scaleFactor;
+
+            const ctx = canvas.getContext("2d"); /** @type {CanvasRenderingContext2D} */
+
+            let hero = null;
+
+            // let particles = [];
+
+            setInterval(draw, 30);
+
+            let flipColour = false;
+
+            const colour1 = "rgb(70 50 70)";
+            const colour2 = "rgb(21 17 81)";
+
+            // let startX = 0;
+            // let startY = 0;
+
+            // let endX = canvas.width;
+            // let endY = canvas.height;
+
+            // let emitterX = startX;
+            // let emitterY = startY;
+
+            // let stepX = (endX - startX) / 100;
+            // let stepY = (endY - startY) / 100;
+
+            // let emitter = false;
+
+            let rot = 0;
+
+            function draw() {
+
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+                ctx.fillStyle = flipColour ? colour1 : colour2;
+
+                ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+                ctx.fillStyle = flipColour ? colour2 : colour1;
+
+                // if (emitter) {
+
+                //     // ctx.translate(emitterX, emitterY);
+                //     // let size = 20;
+                //     // ctx.fillRect(-size / 2, -size / 2, size, size);
+                //     // ctx.setTransform(1, 0, 0, 1, 0, 0);
+
+                //     emitterX = emitterX + stepX;
+                //     emitterY = emitterY + stepY;
+
+                //     if (emitterX > endX) emitter = false;
+
+                //     if (Math.random() > 0.8) {
+
+                //         particles.push({ size: (Math.random() * 40) + 5, scale: 0, scaleD: (0.05 * Math.random()) + 0.01, x: emitterX, y: emitterY });
+                //     }
+                // }
+
+                // particles.forEach(element => {
+
+                //     ctx.translate(element.x, element.y);
+                //     ctx.scale(element.scale, element.scale);
+                //     ctx.rotate((Math.PI * 2) * rot);
+
+                //     ctx.fillRect(-element.size / 2, -element.size / 2, element.size, element.size);
+
+                //     ctx.setTransform(1, 0, 0, 1, 0, 0);
+
+
+
+                //     element.scale = element.scale + element.scaleD;
+                // });
+
+                if (hero) {
+
+                    ctx.translate(hero.x, hero.y);
+                    ctx.scale(hero.scale, hero.scale);
+                    ctx.rotate((Math.PI * 2) * rot);
+
+                    let size = 230;
+
+                    ctx.fillRect(-size / 2, -size / 2, size, size);
+
+                    ctx.setTransform(1, 0, 0, 1, 0, 0);
+
+                    hero.scale = hero.scale + 0.1;
+
+                    if (hero.scale > 15) {
+
+                        hero = null;
+                        flipColour = !flipColour;
+
+                        // particles = [];
+                    }
+                }
+                else {
+
+                    var p = randomPositionAroundEdge(canvas);
+
+                    hero = { scale: 0, x: p.x, y: p.y };
+                }
+
+                rot = rot + (1 / 720);
+            }
         });
 
-        function unbuggyBrowsers() {
+        function randomPositionAroundEdge(element) {
 
-            $("#video").append("<video muted playsinline autoplay loop><source src='pictures/loop.mp4' type='video/mp4'>No video for you! Come back one year!</video>");
+            let x = 0;
+            let y = 0;
 
-            $("#video").removeClass("videoForSafari");
-        }
+            const r = Math.random();
 
-        function buggyBrowsersInOtherWordsMyVersionOfSafariThankYouSoMuchApple() {
+            const totalBoundary = element.width + element.height + element.width + element.height;
 
-            $("#video").empty();
+            const pos = r * totalBoundary;
 
-            $("#video").addClass("videoForSafari");
+            if (pos > (canvas.width + canvas.height + canvas.width)) {
+
+                x = canvas.width;
+            }
+            else if (pos > (canvas.width + canvas.height)) {
+
+                y = canvas.height;
+            }
+            else if (pos > canvas.width) {
+
+                x = canvas.width;
+                y = canvas.height;
+            }
+            else {
+                // nothing
+            }
+
+            return { x: x, y: y };
         }
     </script>
 
