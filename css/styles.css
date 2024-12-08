@@ -193,8 +193,15 @@ h1 span {
 }
 
 #factotum {
-  background-image: url("../images/overlay.png"),
-    linear-gradient(45deg, rgba(81, 84, 99, 0.93) 20%, #aaabaa 60%, #f0dab9);
+  background-image: url("../images/overlay.png") linear-gradient(45deg, rgba(81, 84, 99, 0.93) 20%, #aaabaa 60%, #f0dab9);
+}
+
+#oscar {
+  background-image: url(../pictures/oscar/oscar-the-grouch.jpg);
+}
+
+#toasters {
+  background-image: url(../pictures/flying-toasters/flying-toaster-loop.jpg);
 }
 
 #gallery-intro {
@@ -204,6 +211,10 @@ h1 span {
       rgba(114, 97, 147, 0.25) 25%,
       rgba(227, 123, 124, 0.25) 50%,
       rgba(255, 228, 180, 0.25));
+}
+
+#square-loop {
+  background-image: url(../pictures/square-loop.jpg);
 }
 
 #contact {
