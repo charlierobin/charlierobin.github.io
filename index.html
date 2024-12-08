@@ -70,7 +70,8 @@
                         <a href="https://github.com/charlierobin/oscar-the-grouch-version-1"
                             title="A new version of Oscar the Grouch for macOS/OSX (Github source code and precompiled downloadable binaries)">
 
-                            // TODO strip out all video, do them as progressive enhancement a few seconds after page has loaded and displayed
+                            // TODO strip out all video, do them as progressive enhancement a few seconds after page has
+                            loaded and displayed
 
                             <!-- <video muted playsinline autoplay loop poster="pictures/oscar/oscar-the-grouch.jpg"
                                 style="background-color: black; object-fit: cover; width: 100%; height: 100%">
@@ -361,6 +362,11 @@
 
         $(document).ready(function () {
 
+            setTimeout(launch, 1000 * 10);
+        });
+
+        function launch() {
+
             com.charlierobin.loadKMLFiles();
 
             let pics = com.charlierobin.selectRandomPics();
@@ -380,7 +386,7 @@
 
             // let particles = [];
 
-            setInterval(draw, 30);
+            setInterval(draw, 40);
 
             let flipColour = false;
 
@@ -477,7 +483,10 @@
 
                 rot = rot + (1 / 720);
             }
-        });
+
+
+
+        }
 
         function randomPositionAroundEdge(element) {
 
