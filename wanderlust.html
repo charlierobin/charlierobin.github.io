@@ -9,8 +9,8 @@
 
     <meta name="description" content="Gone sailing…" />
 
-    <link rel="preconnect" href="https://ajax.googleapis.com" crossorigin>
     <link rel="preconnect" href="https://x3dom.org" crossorigin>
+    <link rel="preconnect" href="https://ajax.googleapis.com" crossorigin>
 
     <link rel="stylesheet" href="css/reset.css?v=16">
     <link rel="stylesheet" href="css/page_layout.css?v=16">
@@ -20,7 +20,7 @@
     <script src="js/common.js?v=16"></script>
 
     <link rel="stylesheet" type="text/css" href="https://x3dom.org/release/x3dom.css" />
-    <script type="text/javascript" src="https://x3dom.org/release/x3dom-full.js"></script>
+    <script type="text/javascript" src="https://x3dom.org/release/x3dom.js"></script>
 
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -56,7 +56,7 @@
 
     <script>
 
-        $(function () {
+        $(document).ready(function () {
 
             com.charlierobin.loadKMLFiles();
         });
