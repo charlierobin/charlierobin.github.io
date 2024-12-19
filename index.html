@@ -365,7 +365,8 @@
 
                             </scene>
                         </x3d>
-                        <div id="wanderlust"><a href="wanderlust.html">go <span style="font-size: 60%">▶︎</span></a></div>
+                        <div id="wanderlust"><a href="wanderlust.html">go <span style="font-size: 60%">▶︎</span></a>
+                        </div>
                     </article>
 
                 </section>
@@ -393,18 +394,35 @@
 
         $(document).ready(function () {
 
-            setTimeout(launch, 1000 * 10);
+            setTimeout(launch, 1000 * 5);
+
+            setTimeout(() => {
+
+                com.charlierobin.loadKMLFiles();
+
+                let pics = com.charlierobin.selectRandomPics();
+
+                $("#photos2").find('a').attr("href", "gallery.html?s=" + pics.join(','));
+
+            }, 1000 * 10);
         });
 
         function launch() {
 
-            com.charlierobin.loadKMLFiles();
-
-            let pics = com.charlierobin.selectRandomPics();
-
-            $("#photos2").find('a').attr("href", "gallery.html?s=" + pics.join(','));
+            let mouseDown = false;
+            let mouseX = 0;
+            let mouseY = 0;
 
             const canvas = document.getElementById("canvas");
+
+            $(canvas).on('mousedown', function (e) {
+
+                mouseDown = true;
+
+                mouseX = e.pageX - $(canvas).offset().left;
+                mouseY = e.pageY - $(canvas).offset().top;
+
+            });
 
             const scaleFactor = 2;
 
@@ -413,34 +431,42 @@
 
             const ctx = canvas.getContext("2d"); /** @type {CanvasRenderingContext2D} */
 
-            let hero = null;
+            var init = true;
 
-            // let particles = [];
+            let startX = 0;
+            let startY = 0;
 
-            setInterval(draw, 40);
+            let endX = canvas.width;
+            let endY = canvas.height;
+
+            let emitterX = startX;
+            let emitterY = startY;
+
+            let particles = [];
 
             let flipColour = false;
 
             const colour1 = "rgb(70 50 70)";
             const colour2 = "rgb(21 17 81)";
 
-            // let startX = 0;
-            // let startY = 0;
-
-            // let endX = canvas.width;
-            // let endY = canvas.height;
-
-            // let emitterX = startX;
-            // let emitterY = startY;
-
-            // let stepX = (endX - startX) / 100;
-            // let stepY = (endY - startY) / 100;
-
-            // let emitter = false;
+            let points = [];
+            let pointer = 0;
 
             let rot = 0;
+            let rotΔ = 0;
 
-            function draw() {
+            let hero = null;
+
+            const heroDelay = 10;
+            const heroSize = 230;
+            const heroCutOffScale = 15;
+            const heroScaleΔ = 0.1;
+
+            const chanceEmitterSpawns = 0.7;
+
+            setInterval(update, (1 / 20) * 1000);
+
+            function update() {
 
                 ctx.clearRect(0, 0, canvas.width, canvas.height);
 
@@ -450,105 +476,204 @@
 
                 ctx.fillStyle = flipColour ? colour2 : colour1;
 
-                // if (emitter) {
+                if (init) {
 
-                //     // ctx.translate(emitterX, emitterY);
-                //     // let size = 20;
-                //     // ctx.fillRect(-size / 2, -size / 2, size, size);
-                //     // ctx.setTransform(1, 0, 0, 1, 0, 0);
+                    init = false;
 
-                //     emitterX = emitterX + stepX;
-                //     emitterY = emitterY + stepY;
+                    [startX, startY, endX, endY] = randomStartAndEnd(canvas);
 
-                //     if (emitterX > endX) emitter = false;
+                    points = niceCurvedPath(startX, startY, endX, endY);
 
-                //     if (Math.random() > 0.8) {
+                    pointer = 0;
 
-                //         particles.push({ size: (Math.random() * 40) + 5, scale: 0, scaleD: (0.05 * Math.random()) + 0.01, x: emitterX, y: emitterY });
-                //     }
-                // }
+                    emitterX = startX;
+                    emitterY = startY;
 
-                // particles.forEach(element => {
+                    hero = null;
+                    particles = [];
 
-                //     ctx.translate(element.x, element.y);
-                //     ctx.scale(element.scale, element.scale);
-                //     ctx.rotate((Math.PI * 2) * rot);
+                    rotΔ = ((Math.random() * 0.3) + 0.1) * (Math.PI / 180);
 
-                //     ctx.fillRect(-element.size / 2, -element.size / 2, element.size, element.size);
+                    if (Math.random() > 0.5) rotΔ = -rotΔ;
 
-                //     ctx.setTransform(1, 0, 0, 1, 0, 0);
+                    setTimeout(startTheHero, heroDelay * 1000);
+                }
 
+                if (points.length > 0) {
 
+                    // drawEmitter();
 
-                //     element.scale = element.scale + element.scaleD;
-                // });
+                    const progressAlongPath = pointer / points.length;
 
-                if (hero) {
+                    emitterX = points[pointer].x;
+                    emitterY = points[pointer].y;
 
-                    ctx.translate(hero.x, hero.y);
-                    ctx.scale(hero.scale, hero.scale);
+                    if (Math.random() > chanceEmitterSpawns) {
+
+                        particles.push({ size: (Math.random() * 40) + 5, scale: 0, scaleΔ: (0.05 * Math.random()) + (progressAlongPath / 20), x: emitterX, y: emitterY });
+                    }
+
+                    pointer = pointer + 1;
+
+                    if (pointer >= points.length) points = [];
+
+                    if (mouseDown) {
+
+                        mouseDown = false;
+
+                        particles.push({ size: (Math.random() * 40) + 5, scale: 0, scaleΔ: (0.05 * Math.random()) + (progressAlongPath / 10), x: mouseX * scaleFactor, y: mouseY * scaleFactor });
+                    }
+                }
+
+                particles.forEach(element => {
+
+                    ctx.translate(element.x, element.y);
+                    ctx.scale(element.scale, element.scale);
                     ctx.rotate((Math.PI * 2) * rot);
 
-                    let size = 230;
-
-                    ctx.fillRect(-size / 2, -size / 2, size, size);
+                    ctx.fillRect(-element.size / 2, -element.size / 2, element.size, element.size);
 
                     ctx.setTransform(1, 0, 0, 1, 0, 0);
 
-                    hero.scale = hero.scale + 0.1;
+                    element.scale = element.scale + element.scaleΔ;
+                });
 
-                    if (hero.scale > 15) {
+                rot = rot + rotΔ;
 
-                        hero = null;
-                        flipColour = !flipColour;
+                if (hero && hero.scale > heroCutOffScale) {
 
-                        // particles = [];
-                    }
+                    flipColour = !flipColour;
+
+                    init = true;
+                }
+
+                function startTheHero() {
+
+                    var [x, y] = randomPositionAroundEdge();
+
+                    hero = { size: heroSize, scale: 0, scaleΔ: heroScaleΔ, x: x, y: y };
+
+                    particles.push(hero);
+                }
+            }
+
+            function drawEmitter() {
+
+                ctx.translate(emitterX, emitterY);
+                let size = 20;
+                ctx.fillRect(-size / 2, -size / 2, size, size);
+                ctx.setTransform(1, 0, 0, 1, 0, 0);
+            }
+
+            function randomPositionAroundEdge() {
+
+                let x = 0;
+                let y = 0;
+
+                const r = Math.random();
+
+                const totalBoundary = canvas.width + canvas.height + canvas.width + canvas.height;
+
+                const pos = r * totalBoundary;
+
+                if (pos > (canvas.width + canvas.height + canvas.width)) {
+
+                    x = canvas.width;
+                }
+                else if (pos > (canvas.width + canvas.height)) {
+
+                    y = canvas.height;
+                }
+                else if (pos > canvas.width) {
+
+                    x = canvas.width;
+                    y = canvas.height;
+                }
+                else {
+                    // nothing
+                }
+
+                return [x, y];
+            }
+
+            function randomStartAndEnd() {
+
+                let startX = 0;
+                let startY = 0;
+
+                let endX = canvas.width;
+                let endY = canvas.height;
+
+                [startX, startY] = randomPositionAroundEdge();
+
+                if (startX > 0 && startY > 0) {
+
+                    // console.log("bottom right");
+
+                    endX = 0;
+                    endY = 0;
+                }
+                else if (startX > 0) {
+
+                    // console.log("top right");
+
+                    endX = 0;
+                    endY = canvas.height;
+                }
+                else if (startY > 0) {
+
+                    // console.log("bottom left");
+
+                    endX = canvas.width;
+                    endY = 0;
                 }
                 else {
 
-                    var p = randomPositionAroundEdge(canvas);
+                    // console.log("top left");
 
-                    hero = { scale: 0, x: p.x, y: p.y };
+                    endX = canvas.width;
+                    endY = canvas.height;
                 }
 
-                rot = rot + (1 / 720);
+                return [startX, startY, endX, endY];
             }
 
+            function niceCurvedPath(x1, y1, x2, y2) {
 
+                var startX = x1;
+                var startY = y1;
 
+                var endX = x2;
+                var endY = y2;
+
+                var diff_x = x2 - x1;
+                var diff_y = y2 - y1;
+
+                var xy = [];
+                var xy_count = -1;
+
+                var bezierX = startX + (diff_x * Math.random());
+                var bezierY = startY + (diff_y * Math.random());
+
+                for (let t = 0.0; t <= 1; t += 0.01) {
+                    xy_count++;
+                    xy[xy_count] = {};
+                    xy[xy_count].x = Math.round((1 - t) * (1 - t) * startX + 2 * (1 - t) * t * bezierX + t * t * endX);
+                    xy[xy_count].y = Math.round((1 - t) * (1 - t) * startY + 2 * (1 - t) * t * bezierY + t * t * endY);
+                }
+
+                return xy;
+            }
+
+            function getMousePos(canvas, evt) {
+                var rect = canvas.getBoundingClientRect();
+                return {
+                    x: evt.clientX - rect.left,
+                    y: evt.clientY - rect.top
+                };
+            }
         }
 
-        function randomPositionAroundEdge(element) {
-
-            let x = 0;
-            let y = 0;
-
-            const r = Math.random();
-
-            const totalBoundary = element.width + element.height + element.width + element.height;
-
-            const pos = r * totalBoundary;
-
-            if (pos > (canvas.width + canvas.height + canvas.width)) {
-
-                x = canvas.width;
-            }
-            else if (pos > (canvas.width + canvas.height)) {
-
-                y = canvas.height;
-            }
-            else if (pos > canvas.width) {
-
-                x = canvas.width;
-                y = canvas.height;
-            }
-            else {
-                // nothing
-            }
-
-            return { x: x, y: y };
-        }
     </script>
 
 </body>
