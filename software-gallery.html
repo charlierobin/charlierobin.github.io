@@ -1,0 +1,186 @@
+<!doctype html>
+
+<html lang="en">
+
+<head>
+    <title>charlie robin - github projects</title>
+
+    <meta charset="utf-8" />
+
+    <meta name="description" content="a few open source tools, old projects, scripts, and plugins on github" />
+
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com" crossorigin>
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="dns-prefetch" href="https://github.com" crossorigin>
+ 
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://github.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@200;600&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/reset.css?v=16">
+    <link rel="stylesheet" href="css/styles.css">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#000000">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+
+    <style>
+        body {
+            background: linear-gradient(0deg, rgb(11, 0, 61) 0%, rgb(49, 0, 44) 100%);
+            color: white;
+            font-size: 1em;
+        }
+
+        h1 {
+            padding-top: 1em;
+            padding-left: 2em;
+            margin-bottom: 1em;
+        }
+
+        article {
+            margin-bottom: 2em;
+            padding: 2em;
+        }
+
+        footer {
+            padding-left: 2em;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <!-- <section>
+
+        <h1>Github projects</h1>
+
+        <article>
+
+            <h2>Cinema 4D (C4D) Automatic Texture Updater & Reloader Plugin (+ Photoshop Save All)</h2>
+
+            <p>A Cinema 4D 2023 (Mac-tested only) plugin that acts as a simple live link between Photoshop and C4D. It
+                automatically updates (or refreshes, reloads &mdash; whatever word you use!) any bitmap texture files
+                used in your Cinema 4D materials whenever they are saved or modified by an external app.</p>
+
+            <p>As a bonus, it’s paired with an Adobe Photoshop extension that adds a “Save All” function to Photoshop:
+                on a command S, all open Photoshop documents are saved.</p>
+
+            <p>The assumed workflow behind all of this was:</p>
+
+            <ul>
+
+                <li>Cinema 4D in the background, TextureAutoReload running</li>
+                <li>Photoshop in the foreground, textures opening for editing</li>
+                <li>Make changes to open textures</li>
+                <li>Command S saves frontmost texture and then saves all the other textures</li>
+                <li>TextureAutoReload detects updated files, reloads them</li>
+                <li>Cinema 4D updates</li>
+
+            </ul>
+
+            <p><a href="https://github.com/charlierobin/cinema-4d-bitmap-files-texture-auto-reloader-with-photoshop-save-all-plugin"
+                    title="Project source etc on GitHub">GitHub Link</a></p>
+
+        </article>
+
+        <article>
+
+            <h2>Adobe Photoshop Auto-Save Script on Painting & Brush Strokes (for Cinema 4D / 3D Texturing)</h2>
+
+            <p>Adobe Photoshop Script Events Manager script to automatically save the active document on brush strokes,
+                adjustments, and layer changes &mdash; ideal for live-updating textures in Cinema 4D.</p>
+
+            <p>The workflow for this is pretty much the same as the previous one, except instead of assuming that you
+                are editing multiple textures and then want them all saved together without the hassle of constantly
+                battering command S, it assumes you want a save after every action in Photoshop: brush strokes, layer
+                changes, adjustments, etc.</p>
+
+            <p>The TextureAutoReload install in Cinema 4D remains the same, you just substitute this script on the
+                Photoshop side of of things.</p>
+
+            <p><a href="https://github.com/charlierobin/photoshop-autosave-on-painting-brush-stokes-etc"
+                    title="Project source etc on GitHub">GitHub Link</a></p>
+
+        </article>
+
+        <article>
+
+            <h2>Unity Input Manager Settings Editor</h2>
+
+            <p>Pretty much deprecated as we’re not supposed to the use the old Unity input system any more. But it got a
+                lot of use in its time.</p>
+
+            <p><a href="https://github.com/charlierobin/unity-input-manager" title="Project source etc on GitHub">GitHub
+                    Link</a></p>
+
+        </article>
+
+        <article>
+
+            <h2>Utilities for cleaning out old Unity project folders (usually prior to archiving them)</h2>
+
+            <p>A couple of ideas &mdash; one a Python script, the other Go source command line apps &mdash; for finding
+                and cleaning out Unity project folders on local hard drives.</p>
+
+            <p>Cleaning out in this context meaning: getting rid of all the temporary and other files that Unity creates
+                when opening and editing projects, leaving just the Assets and other essential stuff.</p>
+
+            <p>Usually greatly reduces the size of Unity projects, with one caveat: if (when?) you come back to open the
+                project in Unity, it will take longer than usual, as Unity has to re-create all that temp stuff.</p>
+
+            <p>Hence best used on projects that are destined for archive or any other form of long term cold storage.
+            </p>
+
+            <p><a href="https://github.com/charlierobin/clean-unity-projects"
+                    title="Project source etc on GitHub">GitHub Link</a></p>
+            <p><a href="https://github.com/charlierobin/cleaning-unity-projects-using-go"
+                    title="Project source etc on GitHub">GitHub Link</a></p>
+
+        </article>
+
+    </section> -->
+
+    <section>
+
+        <h1>GitHub projects</h1>
+
+        <article>
+            <h2>Cinema 4D (C4D) Automatic Texture Updater &amp; Reloader Plugin (+ Photoshop Save All)</h2>
+            <p>A Cinema 4D 2023 (Mac-tested) plugin that acts as a simple live link between Photoshop and C4D, automatically reloading bitmap textures used in materials whenever they are saved by an external app. Paired with a Photoshop extension that adds a “Save All” command.</p>
+            <p><a href="https://github.com/charlierobin/cinema-4d-bitmap-files-texture-auto-reloader-with-photoshop-save-all-plugin">View Cinema 4D Texture Auto-Reloader on GitHub</a></p>
+        </article>
+
+        <article>
+            <h2>Adobe Photoshop Auto-Save Script on Painting &amp; Brush Strokes</h2>
+            <p>A Photoshop Script Events Manager script that automatically saves the active document after brush strokes, adjustments, and layer changes—designed as an alternative workflow for live-updating textures in Cinema 4D.</p>
+            <p><a href="https://github.com/charlierobin/photoshop-autosave-on-painting-brush-stokes-etc">View Photoshop Auto-Save Script on GitHub</a></p>
+        </article>
+
+        <article>
+            <h2>Unity Input Manager Settings Editor</h2>
+            <p>A Mac utility for browsing, copying, and editing Unity Input Manager asset files. Pretty much deprecated now that Unity has moved on to the new input system, though it got plenty of use in its day.</p>
+            <p><a href="https://github.com/charlierobin/unity-input-manager">View Unity Input Manager Editor on GitHub</a></p>
+        </article>
+
+        <article>
+            <h2>Utilities for Cleaning Out Old Unity Project Folders</h2>
+            <p>Command-line tools (one in Python, one in Go) that scan local drives for Unity projects and clear out temporary folders like Library, Logs, and obj to free up disk space before archiving.</p>
+            <p><a href="https://github.com/charlierobin/clean-unity-projects">View Python version on GitHub</a> &bull; <a href="https://github.com/charlierobin/cleaning-unity-projects-using-go">View Go version on GitHub</a></p>
+        </article>
+
+        <footer>
+            <p><a href="index.html">Home</a> &bull; <a href="https://github.com/charlierobin">charlierobin on GitHub</a></p>
+        </footer>
+
+    </section>
+
+</body>
+
+</html>
