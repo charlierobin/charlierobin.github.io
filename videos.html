@@ -10,7 +10,6 @@
     <meta name="description" content="videos directory" />
 
     <link rel="dns-prefetch" href="https://charlie-videos.s3.us-east-1.amazonaws.com" crossorigin>
-
     <link rel="preconnect" href="https://charlie-videos.s3.us-east-1.amazonaws.com" crossorigin>
 
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
@@ -62,6 +61,19 @@
 
         .simple-list {
             display: none;
+            padding-bottom: 2em;
+        }
+
+        .simple-list > div {
+            margin-bottom: 1em;
+        }
+
+        p {
+                text-align: center;
+        }
+
+        #home {
+            font-size: 2em;
         }
 
         @media only screen and (max-width: 740px) {
@@ -71,12 +83,17 @@
                 padding: 1em;
             }
 
-            svg {
+            #map {
                 display: none;
             }
 
             .simple-list {
                 display: block;
+            }
+
+            #home {
+                font-size: 1em;
+                padding-bottom: 2em;
             }
         }
     </style>
@@ -85,9 +102,9 @@
 
 <body>
 
-    <svg viewBox="0 0 2500 1700" width="100%" xmlns="http://www.w3.org/2000/svg">
+    <svg id="map" viewBox="0 0 2500 1700" width="100%" xmlns="http://www.w3.org/2000/svg">
 
-        <image href="images/background.jpg" x="0" y="0" width="2500" height="1700" />
+        <image href="images/background-videos.jpg" x="0" y="0" width="2500" height="1700" />
 
         <g id="row-1" class="row" transform="translate(0, 1044)">
 
@@ -458,71 +475,45 @@
 
     <div class="simple-list">
 
-        <div><a href="https://charlie-videos.s3.us-east-1.amazonaws.com/asteroids-gameplay-2.mp4" title=""
-                aria-label="">Asteroids Gameplay 2</a></div>
-        <div><a href="https://charlie-videos.s3.us-east-1.amazonaws.com/asteroids-gameplay.mp4" title=""
-                aria-label="">Asteroids Gameplay</a></div>
-        <div><a href="https://charlie-videos.s3.us-east-1.amazonaws.com/bay_timelapse.mp4" title="" aria-label="">Bay
-                Timelapse</a></div>
-        <div><a href="https://charlie-videos.s3.us-east-1.amazonaws.com/brians-novel.mp4" title="" aria-label="">Brian’s
-                Novel</a></div>
-        <div><a href="https://charlie-videos.s3.us-east-1.amazonaws.com/charlie_robin_old_showreel.mp4" title=""
-                aria-label="">Old Showreel</a></div>
-        <div><a href="https://charlie-videos.s3.us-east-1.amazonaws.com/charlie_robin.mp4" title=""
-                aria-label="">Charlie Robin</a></div>
+        <div><svg viewBox="0 0 2500 1000" width="100%" xmlns="http://www.w3.org/2000/svg"><image href="images/background-videos.jpg" x="0" y="0" width="2500" height="1700" /></svg></div>
 
-        <div><a href="https://charlie-videos.s3.us-east-1.amazonaws.com/cinder-and-reactphysics3d.mp4" title=""
-                aria-label="">Cinder and ReactPhysics3D</a></div>
-        <div><a href="https://charlie-videos.s3.us-east-1.amazonaws.com/cinder-lens-flares.mp4" title=""
-                aria-label="">Cinder Lens Flares</a></div>
-        <div><a href="https://charlie-videos.s3.us-east-1.amazonaws.com/dell_2008.mp4" title="" aria-label="">Dell
-                2008</a></div>
-        <div><a href="https://charlie-videos.s3.us-east-1.amazonaws.com/dell_gig_edit.mp4" title="" aria-label="">Dell
-                Gig Edit</a></div>
-        <div><a href="https://charlie-videos.s3.us-east-1.amazonaws.com/Dell_Loop.mp4" title="" aria-label="">Dell
-                Loop</a></div>
-        <div><a href="https://charlie-videos.s3.us-east-1.amazonaws.com/dune.mp4" title="" aria-label="">Dune
-                Production</a></div>
+        <p><a href="https://charlie-videos.s3.us-east-1.amazonaws.com/asteroids-gameplay-2.mp4">Asteroids Gameplay 2</a></p>
+        <p><a href="https://charlie-videos.s3.us-east-1.amazonaws.com/asteroids-gameplay.mp4">Asteroids Gameplay</a></p>
+        <p><a href="https://charlie-videos.s3.us-east-1.amazonaws.com/bay_timelapse.mp4" >Bay Timelapse</a></p>
+        <p><a href="https://charlie-videos.s3.us-east-1.amazonaws.com/brians-novel.mp4" >Brian’s Novel</a></p>
+        <p><a href="https://charlie-videos.s3.us-east-1.amazonaws.com/charlie_robin_old_showreel.mp4">Old Showreel</a></p>
+        <p><a href="https://charlie-videos.s3.us-east-1.amazonaws.com/charlie_robin.mp4">Charlie Robin</a></p>
 
-        <div><a href="https://charlie-videos.s3.us-east-1.amazonaws.com/final_trimmed.mp4" title="" aria-label="">Final
-                Trimmed Timelapse</a></div>
-        <div><a href="https://charlie-videos.s3.us-east-1.amazonaws.com/gameplay-experiments.mp4" title=""
-                aria-label="">Gameplay Experiments</a></div>
-        <div><a href="https://charlie-videos.s3.us-east-1.amazonaws.com/gharb_final.mp4" title="" aria-label="">Gharb
-                Final</a></div>
-        <div><a href="https://charlie-videos.s3.us-east-1.amazonaws.com/Hitachi_Budapest.mp4" title=""
-                aria-label="">Hitachi Budapest</a></div>
-        <div><a href="https://charlie-videos.s3.us-east-1.amazonaws.com/hitachi_edit.mp4" title="" aria-label="">Hitachi
-                Edit</a></div>
-        <div><a href="https://charlie-videos.s3.us-east-1.amazonaws.com/hollywood-white-hunter-black-heart.mp4" title=""
-                aria-label="">Hollywood</a></div>
+        <p><a href="https://charlie-videos.s3.us-east-1.amazonaws.com/cinder-and-reactphysics3d.mp4">Cinder and ReactPhysics3D</a></p>
+        <p><a href="https://charlie-videos.s3.us-east-1.amazonaws.com/cinder-lens-flares.mp4">Cinder Lens Flares</a></p>
+        <p><a href="https://charlie-videos.s3.us-east-1.amazonaws.com/dell_2008.mp4">Dell 2008</a></p>
+        <p><a href="https://charlie-videos.s3.us-east-1.amazonaws.com/dell_gig_edit.mp4">Dell Gig Edit</a></p>
+        <p><a href="https://charlie-videos.s3.us-east-1.amazonaws.com/Dell_Loop.mp4">Dell Loop</a></p>
+        <p><a href="https://charlie-videos.s3.us-east-1.amazonaws.com/dune.mp4">Dune Production</a></p>
 
-        <div><a href="https://charlie-videos.s3.us-east-1.amazonaws.com/MongoDB_Candids.mp4" title=""
-                aria-label="">MongoDB Candids</a></div>
-        <div><a href="https://charlie-videos.s3.us-east-1.amazonaws.com/MongoDB_London_2013.mp4" title=""
-                aria-label="">MongoDB London 2013</a></div>
-        <div><a href="https://charlie-videos.s3.us-east-1.amazonaws.com/NAPP_Imazin.mp4" title="" aria-label="">NAPP
-                Imazin Launch</a></div>
-        <div><a href="https://charlie-videos.s3.us-east-1.amazonaws.com/NAPP_Loop.mp4" title="" aria-label="">NAPP
-                Imazin Loop</a></div>
-        <div><a href="https://charlie-videos.s3.us-east-1.amazonaws.com/novartis.mp4" title="" aria-label="">Novartis
-                CD</a></div>
-        <div><a href="https://charlie-videos.s3.us-east-1.amazonaws.com/Outline_logo.mp4"
-                title="With apologies to Pixar" aria-label="">Outline Logo</a></div>
+        <p><a href="https://charlie-videos.s3.us-east-1.amazonaws.com/final_trimmed.mp4">Final Trimmed Timelapse</a></p>
+        <p><a href="https://charlie-videos.s3.us-east-1.amazonaws.com/gameplay-experiments.mp4">Gameplay Experiments</a></p>
+        <p><a href="https://charlie-videos.s3.us-east-1.amazonaws.com/gharb_final.mp4">Gharb Final</a></p>
+        <p><a href="https://charlie-videos.s3.us-east-1.amazonaws.com/Hitachi_Budapest.mp4">Hitachi Budapest</a></p>
+        <p><a href="https://charlie-videos.s3.us-east-1.amazonaws.com/hitachi_edit.mp4">Hitachi Edit</a></p>
+        <p><a href="https://charlie-videos.s3.us-east-1.amazonaws.com/hollywood-white-hunter-black-heart.mp4">Hollywood</a></p>
 
-        <div><a href="https://charlie-videos.s3.us-east-1.amazonaws.com/pier_house.mp4" title="" aria-label="">Pier
-                House 1995</a></div>
-        <div><a href="https://charlie-videos.s3.us-east-1.amazonaws.com/salvo.mp4" title="" aria-label="">Salvo
-                Tanks Gameplay</a></div>
-        <div><a href="https://charlie-videos.s3.us-east-1.amazonaws.com/saur.mp4" title="" aria-label="">SAUR</a>
-        </div>
-        <div><a href="https://charlie-videos.s3.us-east-1.amazonaws.com/second.mp4" title="" aria-label="">Second
-                Gharb Timelapse</a></div>
-        <div><a href="https://charlie-videos.s3.us-east-1.amazonaws.com/showreel-1996.mp4" title=""
-                aria-label="">Showreel 1996</a></div>
-        <div><a href="https://charlie-videos.s3.us-east-1.amazonaws.com/Teamwork.mp4" title=""
-                aria-label="">Teamwork</a></div>
+        <p><a href="https://charlie-videos.s3.us-east-1.amazonaws.com/MongoDB_Candids.mp4">MongoDB Candids</a></p>
+        <p><a href="https://charlie-videos.s3.us-east-1.amazonaws.com/MongoDB_London_2013.mp4">MongoDB London 2013</a></p>
+        <p><a href="https://charlie-videos.s3.us-east-1.amazonaws.com/NAPP_Imazin.mp4">NAPP Imazin Launch</a></p>
+        <p><a href="https://charlie-videos.s3.us-east-1.amazonaws.com/NAPP_Loop.mp4">NAPP Imazin Loop</a></p>
+        <p><a href="https://charlie-videos.s3.us-east-1.amazonaws.com/novartis.mp4">Novartis CD</a></p>
+        <p><a href="https://charlie-videos.s3.us-east-1.amazonaws.com/Outline_logo.mp4" title="With apologies to Pixar">Outline Logo</a></p>
+
+        <p><a href="https://charlie-videos.s3.us-east-1.amazonaws.com/pier_house.mp4">Pier House 1995</a></p>
+        <p><a href="https://charlie-videos.s3.us-east-1.amazonaws.com/salvo.mp4">Salvo Tanks Gameplay</a></p>
+        <p><a href="https://charlie-videos.s3.us-east-1.amazonaws.com/saur.mp4">SAUR</a></p>
+        <p><a href="https://charlie-videos.s3.us-east-1.amazonaws.com/second.mp4">Second Gharb Timelapse</a></p>
+        <p><a href="https://charlie-videos.s3.us-east-1.amazonaws.com/showreel-1996.mp4">Showreel 1996</a></p>
+        <p><a href="https://charlie-videos.s3.us-east-1.amazonaws.com/Teamwork.mp4">Teamwork</a></p>
     </div>
+
+    <p id="home"><a href="index.html">home</a></p>
 
 </body>
 

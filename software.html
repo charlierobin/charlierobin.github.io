@@ -1,0 +1,217 @@
+<!doctype html>
+
+<html lang="en">
+
+<head>
+    <title>infinite loops, magic numbers, dangling pointers, and always but ALWAYS off by one</title>
+
+    <meta charset="utf-8" />
+
+    <meta name="description" content="videos directory" />
+
+    <link rel="dns-prefetch" href="https://github.com" crossorigin>
+    <link rel="preconnect" href="https://github.com" crossorigin>
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#000000">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+
+    <link rel="stylesheet" href="css/reset.css?v=16">
+
+    <style>
+        body {
+            background-color: rgb(238, 212, 147);
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            font-weight: bold;
+            color: rgb(18, 18, 9);
+            font-size: calc(1vw / 1.5);
+        }
+
+        svg {
+            max-width: 2500px;
+            height: auto;
+            display: block;
+            margin: auto;
+        }
+
+        .video-link {
+            cursor: pointer;
+        }
+
+        .video-link .hit-area {
+            fill: transparent;
+            transition: fill 150ms ease;
+        }
+
+        .video-link:hover .hit-area {
+            fill: rgba(255, 255, 255, 0.38);
+        }
+
+        .video-link text {
+            font-family: Georgia, serif;
+            font-size: 25px;
+            font-weight: bold;
+            fill: rgba(36, 28, 4, 0.84);
+            pointer-events: none;
+        }
+
+        .simple-list {
+            display: none;
+            padding-bottom: 2em;
+        }
+
+        .simple-list > div {
+            margin-bottom: 1em;
+        }
+
+        p {
+            text-align: center;
+            margin-bottom: 1em;
+        }
+
+        #home {
+            font-size: 2em;
+        }
+
+        @media only screen and (max-width: 740px) {
+
+            body {
+                font-size: 1em;
+                padding: 1em;
+            }
+
+            #map {
+                display: none;
+            }
+
+            .simple-list {
+                display: block;
+            }
+
+            #home {
+                font-size: 1em;
+                padding-bottom: 2em;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <svg id="map" viewBox="0 0 2500 1700" width="100%" xmlns="http://www.w3.org/2000/svg">
+
+        <image href="images/background-github.jpg" x="0" y="0" width="2500" height="1700" />
+
+        <g id="row-1" class="row" transform="translate(0, 1018)">
+
+            <a href="https://github.com/charlierobin/cinema-4d-bitmap-files-texture-auto-reloader-with-photoshop-save-all-plugin">
+
+                <g class="video-link">
+                    <rect x="370" width="228" height="71" rx="5" class="hit-area" />
+
+                    <text x="484" y="25" text-anchor="middle">
+                        <tspan x="484" dy="0">Cinema 4D</tspan>
+                        <tspan x="484" dy="28">Texture Updater</tspan>
+                    </text>
+
+                </g>
+
+            </a>
+
+            <a href="https://github.com/charlierobin/photoshop-autosave-on-painting-brush-stokes-etc">
+
+                <g class="video-link">
+                    <rect x="684" width="211" height="71" rx="5" class="hit-area" />
+
+                    <text x="789" y="25" text-anchor="middle">
+                        <tspan x="789" dy="0">Photoshop</tspan>
+                        <tspan x="789" dy="28">Paint Autosave</tspan>
+                    </text>
+
+                </g>
+
+            </a>
+
+            <a href="https://github.com/charlierobin/unity-input-manager">
+
+                <g class="video-link">
+                    <rect x="990" width="222" height="71" rx="5" class="hit-area" />
+
+                    <text x="1101" y="25" text-anchor="middle">
+                        <tspan x="1101" dy="0">Unity Input</tspan>
+                        <tspan x="1101" dy="28">Settings Editor</tspan>
+                    </text>
+
+                </g>
+
+            </a>
+
+            <a href="https://github.com/charlierobin/clean-unity-projects">
+
+                <g class="video-link">
+                    <rect x="1307" width="216" height="71" rx="5" class="hit-area" />
+
+                    <text x="1415" y="25" text-anchor="middle">
+                        <tspan x="1415" dy="0">Cleaning Out</tspan>
+                        <tspan x="1415" dy="28">Unity Projects</tspan>
+                    </text>
+
+                </g>
+
+            </a>
+
+            <a href="https://github.com/charlierobin/oscar-the-grouch-version-2">
+
+                <g class="video-link">
+                    <rect x="1614" width="216" height="71" rx="5" class="hit-area" />
+
+                    <text x="1722" y="25" text-anchor="middle">
+                        <tspan x="1722" dy="0">Oscar</tspan>
+                        <tspan x="1722" dy="28">the Grouch</tspan>
+                    </text>
+
+                </g>
+
+            </a>
+
+            <a href="https://github.com/charlierobin/perceptrons-first-pass-messing-around">
+
+                <g class="video-link">
+                    <rect x="1921" width="216" height="71" rx="5" class="hit-area" />
+
+                    <text x="2029" y="25" text-anchor="middle">
+                        <tspan x="2029" dy="0">Perceptron</tspan>
+                        <tspan x="2029" dy="28">Playgounds</tspan>
+                    </text>
+
+                </g>
+
+            </a>
+
+        </g>
+
+    </svg>
+
+    <div class="simple-list">
+
+        <div><svg viewBox="0 0 2500 1000" width="100%" xmlns="http://www.w3.org/2000/svg"><image href="images/background-github.jpg" x="0" y="0" width="2500" height="1700" /></svg></div>
+
+        <p><a href="https://github.com/charlierobin/cinema-4d-bitmap-files-texture-auto-reloader-with-photoshop-save-all-plugin">Cinema 4D (C4D) Automatic Texture Updater &amp; Reloader Plugin (+ Photoshop Save All)</a></p>
+        <p><a href="https://github.com/charlierobin/photoshop-autosave-on-painting-brush-stokes-etc">Adobe Photoshop Auto-Save Script on Painting &amp; Brush Strokes</a></p>
+        <p><a href="https://github.com/charlierobin/unity-input-manager">Unity Input Manager Settings Editor</a></p>
+        <p><a href="https://github.com/charlierobin/clean-unity-projects">Utilities for Cleaning Out Old Unity Project Folders</a></p>
+        <p><a href="https://github.com/charlierobin/oscar-the-grouch-version-2">Oscar the Grouch</a></p>
+        <p><a href="https://github.com/charlierobin/perceptrons-first-pass-messing-around">Perceptron Playgounds</a></p>
+
+    </div>
+
+    <p id="home"><a href="index.html">home</a></p>
+
+</body>
+
+</html>
