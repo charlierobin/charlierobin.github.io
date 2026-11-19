@@ -32,142 +32,496 @@
             font-size: calc(1vw / 1.5);
         }
 
-        .emporium {
-            position: relative;
-            width: 100%;
+        svg {
             max-width: 2500px;
-            margin: 0 auto;
-        }
-
-        .emporium img {
-            display: block;
-            width: 100%;
             height: auto;
+            display: block;
+            margin: auto;
         }
 
-        .video-grid {
-            position: absolute;
-            left: 14.2%;
-            right: 14%;
-            top: 60.5%;
-            bottom: 8.7%;
-
-            display: grid;
-            grid-template-columns: repeat(6, 1fr);
-            grid-template-rows: repeat(5, 1fr);
-            column-gap: 1.7%;
-            row-gap: 2.2%;
+        .video-link {
+            cursor: pointer;
         }
 
-        .video-grid div {
-            transition: background-color .15s ease;
-            border-radius: 3px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding-left: 1em;
-            padding-right: 1em;
+        .video-link .hit-area {
+            fill: transparent;
+            transition: fill 150ms ease;
         }
 
-        .video-grid div:hover {
-            background: rgba(255, 255, 255, 0.376);
+        .video-link:hover .hit-area {
+            fill: rgba(255, 255, 255, 0.38);
         }
 
-        .video-grid div a {
-            text-decoration: none;
-            text-align: center;
-            color: rgba(36, 28, 4, 0.838);
+        .video-link text {
+            font-family: Georgia, serif;
+            font-size: 25px;
+            font-weight: bold;
+            fill: rgba(36, 28, 4, 0.84);
+            pointer-events: none;
         }
 
-        @media screen and (max-width: 768px) {
+        .simple-list {
+            display: none;
+        }
+
+        @media only screen and (max-width: 740px) {
 
             body {
-                font-size: unset;
+                font-size: 1em;
+                padding: 1em;
             }
 
-            .emporium img {
+            svg {
                 display: none;
             }
 
-            .video-grid {
-                display: unset;
+            .simple-list {
+                display: block;
             }
         }
-
     </style>
 
 </head>
 
 <body>
 
-    <div class="emporium"><img src="images/background.jpg" alt="Mr Charlie Robin’s Travelling Video Emporium">
-        <div class="video-grid">
+    <svg viewBox="0 0 2500 1700" width="100%" xmlns="http://www.w3.org/2000/svg">
 
-            <div><a href="https://charlie-videos.s3.us-east-1.amazonaws.com/asteroids-gameplay-2.mp4" title=""
-                    aria-label="">Asteroids Gameplay 2</a></div>
-            <div><a href="https://charlie-videos.s3.us-east-1.amazonaws.com/asteroids-gameplay.mp4" title=""
-                    aria-label="">Asteroids Gameplay</a></div>
-            <div><a href="https://charlie-videos.s3.us-east-1.amazonaws.com/bay_timelapse.mp4" title=""
-                    aria-label="">Bay Timelapse</a></div>
-            <div><a href="https://charlie-videos.s3.us-east-1.amazonaws.com/brians-novel.mp4" title=""
-                    aria-label="">Brian’s Novel</a></div>
-            <div><a href="https://charlie-videos.s3.us-east-1.amazonaws.com/charlie_robin_old_showreel.mp4" title=""
-                    aria-label="">Old Showreel</a></div>
-            <div><a href="https://charlie-videos.s3.us-east-1.amazonaws.com/charlie_robin.mp4" title=""
-                    aria-label="">Charlie Robin</a></div>
+        <image href="images/background.jpg" x="0" y="0" width="2500" height="1700" />
 
-            <div><a href="https://charlie-videos.s3.us-east-1.amazonaws.com/cinder-and-reactphysics3d.mp4" title=""
-                    aria-label="">Cinder and ReactPhysics3D</a></div>
-            <div><a href="https://charlie-videos.s3.us-east-1.amazonaws.com/cinder-lens-flares.mp4" title=""
-                    aria-label="">Cinder Lens Flares</a></div>
-            <div><a href="https://charlie-videos.s3.us-east-1.amazonaws.com/dell_2008.mp4" title="" aria-label="">Dell
-                    2008</a></div>
-            <div><a href="https://charlie-videos.s3.us-east-1.amazonaws.com/dell_gig_edit.mp4" title=""
-                    aria-label="">Dell Gig Edit</a></div>
-            <div><a href="https://charlie-videos.s3.us-east-1.amazonaws.com/Dell_Loop.mp4" title="" aria-label="">Dell
-                    Loop</a></div>
-            <div><a href="https://charlie-videos.s3.us-east-1.amazonaws.com/dune.mp4" title="" aria-label="">Dune
-                    Production</a></div>
+        <g id="row-1" class="row" transform="translate(0, 1044)">
 
-            <div><a href="https://charlie-videos.s3.us-east-1.amazonaws.com/final_trimmed.mp4" title=""
-                    aria-label="">Final Trimmed Timelapse</a></div>
-            <div><a href="https://charlie-videos.s3.us-east-1.amazonaws.com/gameplay-experiments.mp4" title=""
-                    aria-label="">Gameplay Experiments</a></div>
-            <div><a href="https://charlie-videos.s3.us-east-1.amazonaws.com/gharb_final.mp4" title=""
-                    aria-label="">Gharb Final</a></div>
-            <div><a href="https://charlie-videos.s3.us-east-1.amazonaws.com/Hitachi_Budapest.mp4" title=""
-                    aria-label="">Hitachi Budapest</a></div>
-            <div><a href="https://charlie-videos.s3.us-east-1.amazonaws.com/hitachi_edit.mp4" title=""
-                    aria-label="">Hitachi Edit</a></div>
-            <div><a href="https://charlie-videos.s3.us-east-1.amazonaws.com/hollywood-white-hunter-black-heart.mp4"
-                    title="" aria-label="">Hollywood</a></div>
+            <a href="https://charlie-videos.s3.us-east-1.amazonaws.com/asteroids-gameplay-2.mp4">
 
-            <div><a href="https://charlie-videos.s3.us-east-1.amazonaws.com/MongoDB_Candids.mp4" title=""
-                    aria-label="">MongoDB Candids</a></div>
-            <div><a href="https://charlie-videos.s3.us-east-1.amazonaws.com/MongoDB_London_2013.mp4" title=""
-                    aria-label="">MongoDB London 2013</a></div>
-            <div><a href="https://charlie-videos.s3.us-east-1.amazonaws.com/NAPP_Imazin.mp4" title="" aria-label="">NAPP
-                    Imazin Launch</a></div>
-            <div><a href="https://charlie-videos.s3.us-east-1.amazonaws.com/NAPP_Loop.mp4" title="" aria-label="">NAPP
-                    Imazin Loop</a></div>
-            <div><a href="https://charlie-videos.s3.us-east-1.amazonaws.com/novartis.mp4" title=""
-                    aria-label="">Novartis CD</a></div>
-            <div><a href="https://charlie-videos.s3.us-east-1.amazonaws.com/Outline_logo.mp4"
-                    title="With apologies to Pixar" aria-label="">Outline Logo</a></div>
+                <g class="video-link">
+                    <rect x="370" width="236" height="67" rx="5" class="hit-area" />
 
-            <div><a href="https://charlie-videos.s3.us-east-1.amazonaws.com/pier_house.mp4" title="" aria-label="">Pier
-                    House 1995</a></div>
-            <div><a href="https://charlie-videos.s3.us-east-1.amazonaws.com/salvo.mp4" title="" aria-label="">Salvo
-                    Tanks Gameplay</a></div>
-            <div><a href="https://charlie-videos.s3.us-east-1.amazonaws.com/saur.mp4" title="" aria-label="">SAUR</a>
-            </div>
-            <div><a href="https://charlie-videos.s3.us-east-1.amazonaws.com/second.mp4" title="" aria-label="">Second
-                    Gharb Timelapse</a></div>
-            <div><a href="https://charlie-videos.s3.us-east-1.amazonaws.com/showreel-1996.mp4" title=""
-                    aria-label="">Showreel 1996</a></div>
-            <div><a href="https://charlie-videos.s3.us-east-1.amazonaws.com/Teamwork.mp4" title=""
-                    aria-label="">Teamwork</a></div>
+                    <text x="488" y="25" text-anchor="middle">
+                        <tspan x="488" dy="0">Asteroids</tspan>
+                        <tspan x="488" dy="28">Gameplay 2</tspan>
+                    </text>
+
+                </g>
+
+            </a>
+
+            <a href="https://charlie-videos.s3.us-east-1.amazonaws.com/asteroids-gameplay.mp4">
+
+                <g class="video-link">
+                    <rect x="671" width="236" height="67" rx="5" class="hit-area" />
+
+                    <text x="789" y="25" text-anchor="middle">
+                        <tspan x="789" dy="0">Asteroids</tspan>
+                        <tspan x="789" dy="28">Gameplay</tspan>
+                    </text>
+
+                </g>
+
+            </a>
+
+            <a href="https://charlie-videos.s3.us-east-1.amazonaws.com/bay_timelapse.mp4">
+
+                <g class="video-link">
+                    <rect x="974" width="235" height="67" rx="5" class="hit-area" />
+
+                    <text x="1092" y="40" text-anchor="middle">Bay Timelapse</text>
+                </g>
+
+            </a>
+
+            <a href="https://charlie-videos.s3.us-east-1.amazonaws.com/brians-novel.mp4">
+
+                <g class="video-link">
+                    <rect x="1285" width="226" height="67" rx="5" class="hit-area" />
+
+                    <text x="1398" y="40" text-anchor="middle">Brian’s Novel</text>
+                </g>
+
+            </a>
+
+            <a href="https://charlie-videos.s3.us-east-1.amazonaws.com/charlie_robin_old_showreel.mp4">
+
+                <g class="video-link">
+                    <rect x="1588" width="237" height="67" rx="5" class="hit-area" />
+
+                    <text x="1706" y="40" text-anchor="middle">Old Showreel</text>
+                </g>
+
+            </a>
+
+            <a href="https://charlie-videos.s3.us-east-1.amazonaws.com/charlie_robin.mp4">
+
+                <g class="video-link">
+                    <rect x="1891" width="242" height="67" rx="5" class="hit-area" />
+
+                    <text x="2012" y="40" text-anchor="middle">Charlie Robin</text>
+                </g>
+
+            </a>
+
+        </g>
+
+        <g id="row-2" class="row" transform="translate(0, 1151)">
+
+            <a href="https://charlie-videos.s3.us-east-1.amazonaws.com/cinder-and-reactphysics3d.mp4">
+
+                <g class="video-link">
+                    <rect x="370" width="236" height="67" rx="5" class="hit-area" />
+
+                    <text x="488" y="25" text-anchor="middle">
+                        <tspan x="488" dy="0">Cinder and</tspan>
+                        <tspan x="488" dy="28">ReactPhysics3D</tspan>
+                    </text>
+
+                </g>
+
+            </a>
+
+            <a href="https://charlie-videos.s3.us-east-1.amazonaws.com/cinder-lens-flares.mp4">
+
+                <g class="video-link">
+                    <rect x="671" width="236" height="67" rx="5" class="hit-area" />
+
+                    <text x="789" y="25" text-anchor="middle">
+                        <tspan x="789" dy="0">Cinder</tspan>
+                        <tspan x="789" dy="28">Lens Flares</tspan>
+                    </text>
+
+                </g>
+
+            </a>
+
+            <a href="https://charlie-videos.s3.us-east-1.amazonaws.com/dell_2008.mp4">
+
+                <g class="video-link">
+                    <rect x="974" width="235" height="67" rx="5" class="hit-area" />
+
+                    <text x="1092" y="40" text-anchor="middle">Dell 2008</text>
+                </g>
+
+            </a>
+
+            <a href="https://charlie-videos.s3.us-east-1.amazonaws.com/dell_gig_edit.mp4">
+
+                <g class="video-link">
+                    <rect x="1285" width="226" height="67" rx="5" class="hit-area" />
+
+                    <text x="1398" y="40" text-anchor="middle">Dell Gig Edit</text>
+                </g>
+
+            </a>
+
+            <a href="https://charlie-videos.s3.us-east-1.amazonaws.com/Dell_Loop.mp4">
+
+                <g class="video-link">
+                    <rect x="1588" width="237" height="67" rx="5" class="hit-area" />
+
+                    <text x="1706" y="40" text-anchor="middle">Dell Loop</text>
+                </g>
+
+            </a>
+
+            <a href="https://charlie-videos.s3.us-east-1.amazonaws.com/dune.mp4">
+
+                <g class="video-link">
+                    <rect x="1891" width="242" height="67" rx="5" class="hit-area" />
+
+                    <text x="2012" y="40" text-anchor="middle">Dune Production</text>
+                </g>
+
+            </a>
+
+        </g>
+
+        <g id="row-3" class="row" transform="translate(0, 1258)">
+
+            <a href="https://charlie-videos.s3.us-east-1.amazonaws.com/final_trimmed.mp4">
+
+                <g class="video-link">
+                    <rect x="370" width="236" height="67" rx="5" class="hit-area" />
+
+                    <text x="488" y="25" text-anchor="middle">
+                        <tspan x="488" dy="0">Final Trimmed</tspan>
+                        <tspan x="488" dy="28">Timelapse</tspan>
+                    </text>
+
+                </g>
+
+            </a>
+
+            <a href="https://charlie-videos.s3.us-east-1.amazonaws.com/gameplay-experiments.mp4">
+
+                <g class="video-link">
+                    <rect x="671" width="236" height="67" rx="5" class="hit-area" />
+
+                    <text x="789" y="25" text-anchor="middle">
+                        <tspan x="789" dy="0">Gameplay</tspan>
+                        <tspan x="789" dy="28">Experiments</tspan>
+                    </text>
+
+                </g>
+
+            </a>
+
+            <a href="https://charlie-videos.s3.us-east-1.amazonaws.com/gharb_final.mp4">
+
+                <g class="video-link">
+                    <rect x="974" width="235" height="67" rx="5" class="hit-area" />
+
+                    <text x="1092" y="40" text-anchor="middle">Gharb Final</text>
+                </g>
+
+            </a>
+
+            <a href="https://charlie-videos.s3.us-east-1.amazonaws.com/Hitachi_Budapest.mp4">
+
+                <g class="video-link">
+                    <rect x="1285" width="235" height="67" rx="5" class="hit-area" />
+
+                    <text x="1398" y="40" text-anchor="middle">Hitachi Budapest</text>
+                </g>
+
+            </a>
+
+            <a href="https://charlie-videos.s3.us-east-1.amazonaws.com/hitachi_edit.mp4">
+
+                <g class="video-link">
+                    <rect x="1588" width="235" height="67" rx="5" class="hit-area" />
+
+                    <text x="1706" y="40" text-anchor="middle">Hitachi Edit</text>
+                </g>
+
+            </a>
+
+            <a href="https://charlie-videos.s3.us-east-1.amazonaws.com/hollywood-white-hunter-black-heart.mp4">
+
+                <g class="video-link">
+                    <rect x="1891" width="235" height="67" rx="5" class="hit-area" />
+
+                    <text x="2012" y="40" text-anchor="middle">Hollywood</text>
+                </g>
+
+            </a>
+
+        </g>
+
+        <g id="row-4" class="row" transform="translate(0, 1366)">
+
+            <a href="https://charlie-videos.s3.us-east-1.amazonaws.com/MongoDB_Candids.mp4">
+
+                <g class="video-link">
+                    <rect x="370" width="236" height="67" rx="5" class="hit-area" />
+
+                    <text x="488" y="25" text-anchor="middle">
+                        <tspan x="488" dy="0">MongoDB Candids</tspan>
+                        <tspan x="488" dy="28">London</tspan>
+                    </text>
+
+                </g>
+
+            </a>
+
+            <a href="https://charlie-videos.s3.us-east-1.amazonaws.com/MongoDB_London_2013.mp4">
+
+                <g class="video-link">
+                    <rect x="671" width="236" height="67" rx="5" class="hit-area" />
+
+                    <text x="789" y="25" text-anchor="middle">
+                        <tspan x="789" dy="0">MongoDB</tspan>
+                        <tspan x="789" dy="28">London 2013</tspan>
+                    </text>
+
+                </g>
+
+            </a>
+
+            <a href="https://charlie-videos.s3.us-east-1.amazonaws.com/NAPP_Imazin.mp4">
+
+                <g class="video-link">
+                    <rect x="974" y="25" width="235" height="67" rx="5" class="hit-area" />
+
+                    <text x="1092" y="40" text-anchor="middle">Imazin Launch</text>
+                </g>
+
+            </a>
+
+            <a href="https://charlie-videos.s3.us-east-1.amazonaws.com/NAPP_Loop.mp4">
+
+                <g class="video-link">
+                    <rect x="1285" width="226" height="67" rx="5" class="hit-area" />
+
+                    <text x="1398" y="40" text-anchor="middle">Imazin Loop</text>
+                </g>
+
+            </a>
+
+            <a href="https://charlie-videos.s3.us-east-1.amazonaws.com/novartis.mp4">
+
+                <g class="video-link">
+                    <rect x="1588" width="237" height="67" rx="5" class="hit-area" />
+
+                    <text x="1706" y="40" text-anchor="middle">Novartis CD</text>
+                </g>
+
+            </a>
+
+            <a href="https://charlie-videos.s3.us-east-1.amazonaws.com/Outline_logo.mp4"
+                title="With apologies to Pixar">
+
+                <g class="video-link">
+                    <rect x="1891" width="242" height="67" rx="5" class="hit-area" />
+
+                    <text x="2012" y="40" text-anchor="middle">Outline Logo</text>
+                </g>
+
+            </a>
+
+        </g>
+
+        <g id="row-5" class="row" transform="translate(0, 1471)">
+
+            <a href="https://charlie-videos.s3.us-east-1.amazonaws.com/pier_house.mp4">
+
+                <g class="video-link">
+                    <rect x="370" width="236" height="67" rx="5" class="hit-area" />
+
+                    <text x="488" y="25" text-anchor="middle">
+                        <tspan x="488" dy="0">Pier House</tspan>
+                        <tspan x="488" dy="28">1995</tspan>
+                    </text>
+
+                </g>
+
+            </a>
+
+            <a href="https://charlie-videos.s3.us-east-1.amazonaws.com/salvo.mp4">
+
+                <g class="video-link">
+                    <rect x="671" width="236" height="67" rx="5" class="hit-area" />
+
+                    <text x="789" y="25" text-anchor="middle">
+                        <tspan x="789" dy="0">Salvo Tanks</tspan>
+                        <tspan x="789" dy="28">Gameplay</tspan>
+                    </text>
+
+                </g>
+
+            </a>
+
+            <a href="https://charlie-videos.s3.us-east-1.amazonaws.com/saur.mp4">
+
+                <g class="video-link">
+                    <rect x="974" width="235" height="67" rx="5" class="hit-area" />
+
+                    <text x="1092" y="40" text-anchor="middle">SAUR</text>
+                </g>
+
+            </a>
+
+            <a href="https://charlie-videos.s3.us-east-1.amazonaws.com/second.mp4">
+
+                <g class="video-link">
+                    <rect x="1285" width="226" height="67" rx="5" class="hit-area" />
+
+                    <text x="1398" y="25" text-anchor="middle">
+                        <tspan x="1398" dy="0">Second Gharb</tspan>
+                        <tspan x="1398" dy="28">Timelapse</tspan>
+                    </text>
+
+                </g>
+
+            </a>
+
+            <a href="https://charlie-videos.s3.us-east-1.amazonaws.com/showreel-1996.mp4">
+
+                <g class="video-link">
+                    <rect x="1588" width="237" height="67" rx="5" class="hit-area" />
+
+                    <text x="1706" y="40" text-anchor="middle">Showreel 1996</text>
+                </g>
+
+            </a>
+
+            <a href="https://charlie-videos.s3.us-east-1.amazonaws.com/Teamwork.mp4">
+
+                <g class="video-link">
+                    <rect x="1891" width="242" height="67" rx="5" class="hit-area" />
+
+                    <text x="2012" y="40" text-anchor="middle">Teamwork</text>
+                </g>
+
+            </a>
+
+        </g>
+
+    </svg>
+
+    <div class="simple-list">
+
+        <div><a href="https://charlie-videos.s3.us-east-1.amazonaws.com/asteroids-gameplay-2.mp4" title=""
+                aria-label="">Asteroids Gameplay 2</a></div>
+        <div><a href="https://charlie-videos.s3.us-east-1.amazonaws.com/asteroids-gameplay.mp4" title=""
+                aria-label="">Asteroids Gameplay</a></div>
+        <div><a href="https://charlie-videos.s3.us-east-1.amazonaws.com/bay_timelapse.mp4" title="" aria-label="">Bay
+                Timelapse</a></div>
+        <div><a href="https://charlie-videos.s3.us-east-1.amazonaws.com/brians-novel.mp4" title="" aria-label="">Brian’s
+                Novel</a></div>
+        <div><a href="https://charlie-videos.s3.us-east-1.amazonaws.com/charlie_robin_old_showreel.mp4" title=""
+                aria-label="">Old Showreel</a></div>
+        <div><a href="https://charlie-videos.s3.us-east-1.amazonaws.com/charlie_robin.mp4" title=""
+                aria-label="">Charlie Robin</a></div>
+
+        <div><a href="https://charlie-videos.s3.us-east-1.amazonaws.com/cinder-and-reactphysics3d.mp4" title=""
+                aria-label="">Cinder and ReactPhysics3D</a></div>
+        <div><a href="https://charlie-videos.s3.us-east-1.amazonaws.com/cinder-lens-flares.mp4" title=""
+                aria-label="">Cinder Lens Flares</a></div>
+        <div><a href="https://charlie-videos.s3.us-east-1.amazonaws.com/dell_2008.mp4" title="" aria-label="">Dell
+                2008</a></div>
+        <div><a href="https://charlie-videos.s3.us-east-1.amazonaws.com/dell_gig_edit.mp4" title="" aria-label="">Dell
+                Gig Edit</a></div>
+        <div><a href="https://charlie-videos.s3.us-east-1.amazonaws.com/Dell_Loop.mp4" title="" aria-label="">Dell
+                Loop</a></div>
+        <div><a href="https://charlie-videos.s3.us-east-1.amazonaws.com/dune.mp4" title="" aria-label="">Dune
+                Production</a></div>
+
+        <div><a href="https://charlie-videos.s3.us-east-1.amazonaws.com/final_trimmed.mp4" title="" aria-label="">Final
+                Trimmed Timelapse</a></div>
+        <div><a href="https://charlie-videos.s3.us-east-1.amazonaws.com/gameplay-experiments.mp4" title=""
+                aria-label="">Gameplay Experiments</a></div>
+        <div><a href="https://charlie-videos.s3.us-east-1.amazonaws.com/gharb_final.mp4" title="" aria-label="">Gharb
+                Final</a></div>
+        <div><a href="https://charlie-videos.s3.us-east-1.amazonaws.com/Hitachi_Budapest.mp4" title=""
+                aria-label="">Hitachi Budapest</a></div>
+        <div><a href="https://charlie-videos.s3.us-east-1.amazonaws.com/hitachi_edit.mp4" title="" aria-label="">Hitachi
+                Edit</a></div>
+        <div><a href="https://charlie-videos.s3.us-east-1.amazonaws.com/hollywood-white-hunter-black-heart.mp4" title=""
+                aria-label="">Hollywood</a></div>
+
+        <div><a href="https://charlie-videos.s3.us-east-1.amazonaws.com/MongoDB_Candids.mp4" title=""
+                aria-label="">MongoDB Candids</a></div>
+        <div><a href="https://charlie-videos.s3.us-east-1.amazonaws.com/MongoDB_London_2013.mp4" title=""
+                aria-label="">MongoDB London 2013</a></div>
+        <div><a href="https://charlie-videos.s3.us-east-1.amazonaws.com/NAPP_Imazin.mp4" title="" aria-label="">NAPP
+                Imazin Launch</a></div>
+        <div><a href="https://charlie-videos.s3.us-east-1.amazonaws.com/NAPP_Loop.mp4" title="" aria-label="">NAPP
+                Imazin Loop</a></div>
+        <div><a href="https://charlie-videos.s3.us-east-1.amazonaws.com/novartis.mp4" title="" aria-label="">Novartis
+                CD</a></div>
+        <div><a href="https://charlie-videos.s3.us-east-1.amazonaws.com/Outline_logo.mp4"
+                title="With apologies to Pixar" aria-label="">Outline Logo</a></div>
+
+        <div><a href="https://charlie-videos.s3.us-east-1.amazonaws.com/pier_house.mp4" title="" aria-label="">Pier
+                House 1995</a></div>
+        <div><a href="https://charlie-videos.s3.us-east-1.amazonaws.com/salvo.mp4" title="" aria-label="">Salvo
+                Tanks Gameplay</a></div>
+        <div><a href="https://charlie-videos.s3.us-east-1.amazonaws.com/saur.mp4" title="" aria-label="">SAUR</a>
         </div>
+        <div><a href="https://charlie-videos.s3.us-east-1.amazonaws.com/second.mp4" title="" aria-label="">Second
+                Gharb Timelapse</a></div>
+        <div><a href="https://charlie-videos.s3.us-east-1.amazonaws.com/showreel-1996.mp4" title=""
+                aria-label="">Showreel 1996</a></div>
+        <div><a href="https://charlie-videos.s3.us-east-1.amazonaws.com/Teamwork.mp4" title=""
+                aria-label="">Teamwork</a></div>
     </div>
 
 </body>
