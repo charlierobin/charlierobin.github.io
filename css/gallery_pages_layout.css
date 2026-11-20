@@ -1,0 +1,78 @@
+:root {
+  --homeLinkFontSize: 2em;
+}
+
+body {
+  background-color: rgb(238, 212, 147);
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-weight: bold;
+  color: rgb(18, 18, 9);
+  font-size: calc(1vw / 1.5);
+}
+
+#map {
+  width: min(100%, calc((100vh - (var(--homeLinkFontSize) * 2)) * (2500 / 1700)));
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+.video-link {
+  cursor: pointer;
+}
+
+.video-link .hit-area {
+  fill: transparent;
+  transition: fill 150ms ease;
+}
+
+.video-link:hover .hit-area {
+  fill: rgba(255, 255, 255, 0.38);
+}
+
+.video-link text {
+  font-family: Georgia, serif;
+  font-size: 25px;
+  font-weight: bold;
+  fill: rgba(36, 28, 4, 0.84);
+  pointer-events: none;
+}
+
+.simple-list {
+  display: none;
+  padding-bottom: 2em;
+}
+
+.simple-list>div {
+  margin-bottom: 1em;
+}
+
+p {
+  text-align: center;
+  margin-bottom: 1em;
+}
+
+#home {
+  font-size: var(--homeLinkFontSize);
+}
+
+@media only screen and (max-width: 740px) {
+
+  body {
+    font-size: 1em;
+    padding: 1em;
+  }
+
+  #map {
+    display: none;
+  }
+
+  .simple-list {
+    display: block;
+  }
+
+  #home {
+    font-size: 1em;
+    padding-bottom: 2em;
+  }
+}

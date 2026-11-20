@@ -24,14 +24,14 @@
 
     <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@200;600&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="css/reset.css?v=16">
-    <link rel="stylesheet" href="css/page_layout.css?v=16">
-    <link rel="stylesheet" href="css/styles.css?v=16">
+    <link rel="stylesheet" href="css/reset.css?v=17">
+    <link rel="stylesheet" href="css/page_layout.css?v=17">
+    <link rel="stylesheet" href="css/styles.css?v=17">
 
-    <link rel="stylesheet" href="css/grid_layout.css?v=16">
+    <link rel="stylesheet" href="css/grid_layout.css?v=17">
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-    <script src="js/common.js?v=16"></script>
+    <script src="js/common.js?v=17"></script>
 
     <link rel="stylesheet" type="text/css" href="https://x3dom.org/release/x3dom.css" />
     <script type="text/javascript" src="https://x3dom.org/release/x3dom.js"></script>
@@ -73,21 +73,32 @@
         #wanderlust a {
             text-decoration: none;
         }
-        
+
         #gallery2 {
             position: relative;
         }
-        
+
         .inset {
-        	padding: 0.2em;
-        	background-color: rgb(50, 50, 50);
-        	position: absolute;
-            bottom: 0px;
+            padding: 0.2em;
+            background-color: rgb(50, 50, 50);
+            position: absolute;
+            bottom: 1em;
             border-radius: 0.2em;
         }
-        
+
         .inset a {
-        	text-decoration: none;
+            text-decoration: none;
+        }
+
+        @media only screen and (max-width: 740px) {
+
+            #video {
+                display: none;
+            }
+
+            .inset {
+                position: unset;
+            }
         }
     </style>
 
@@ -102,7 +113,7 @@
             <section id="welcome" class="width-half content">
                 <h1>hello, my name is <br /><span>charlie</span></h1>
                 <p>this was originally a single-page experiment with <a href="https://pages.github.com"
-                        title="Learn more about GitHub Pages">GitHub Pages</a>, now it&rsquo;s a four page experiment
+                        title="Learn more about GitHub Pages">GitHub Pages</a>, now it&rsquo;s a <s>four</s> six page experiment
                     with <a href="https://pages.github.com" title="Learn more about GitHub Pages">GitHub Pages</a></p>
             </section>
 
@@ -205,10 +216,15 @@
                             <p>ranges from 1995 onwards, mostly very low resolution because I threw away
                                 all of the original source materials</p>
                             <p>(see also: <a href="standalone-video-gallery.html"
-                                    title="videos (nothing to see here, please disperse)">videos</a>)</p>
-                                    
-                            <div class="inset"><a href="https://www.google.com/maps/place/Complex+School+Pbdr/@13.2956133,-4.8992908,17z/data=!3m1!4b1!4m6!3m5!1s0xe37e55bffffffff:0xa029a10dda4efa52!8m2!3d13.2956081!4d-4.8967105!16s%2Fg%2F11c1xd2l0h?entry=ttu&g_ep=EgoyMDI1MDczMC4wIKXMDSoASAFQAw%3D%3D" 
-                            title="Yes, I went to school here!">Complexe Scolaire PBDR</a></div>
+                                    title="videos (nothing to see here, please disperse)">videos</a>, <a
+                                    href="videos.html"
+                                    title="new videos page (STILL nothing to see here, STILL please disperse)">new video
+                                    gallery</a>)</p>
+
+                            <div class="inset"><a
+                                    href="https://www.google.com/maps/place/Complex+School+Pbdr/@13.2956133,-4.8992908,17z/data=!3m1!4b1!4m6!3m5!1s0xe37e55bffffffff:0xa029a10dda4efa52!8m2!3d13.2956081!4d-4.8967105!16s%2Fg%2F11c1xd2l0h?entry=ttu&g_ep=EgoyMDI1MDczMC4wIKXMDSoASAFQAw%3D%3D"
+                                    title="Yes, I went to school here! - for a short while - that’s where the picture above was taken">Complexe Scolaire PBDR</a>
+                            </div>
 
                         </div>
 
@@ -328,7 +344,7 @@
 
                     <article id="square-loop" class="width-half">
 
-                        <a href="software-gallery.html" title="github repositories &amp; download links"> </a>
+                        <a href="software-gallery.html" title="a simple page listing a few github repositories"> </a>
 
                     </article>
 
@@ -352,7 +368,8 @@
 
                             </scene>
                         </x3d>
-                        <div id="wanderlust"><a href="wanderlust.html" title="gone sailing…"><span style="font-size: 60%">▶︎</span></a>
+                        <div id="wanderlust"><a href="wanderlust.html" title="gone sailing…"><span
+                                    style="font-size: 60%">▶︎</span></a>
                         </div>
                     </article>
 
