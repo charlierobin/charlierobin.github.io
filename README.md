@@ -1,10 +1,12 @@
 # my brain hurts
 
-Boy, it’s hard to think of anything particularly intelligent or helpful to say about this repository. But it’s a cold(ish) rainy day, I can’t go on a bike ride, I can’t take the dog for a walk, so it’s time for a cup of tea and…
+[Hello, Mr Gumby](https://www.youtube.com/watch?v=1ybAw78mStI).
+
+Boy, it’s hard to think of anything particularly intelligent or helpful to say about this repository. But it’s a cold(ish) very rainy day, I can’t go on a bike ride, I can’t take the dog for a walk, so it’s time for a cup of tea and here we go…
 
 It’s all the source code (and some of the assets) for the site at [charlierobin.com](https://charlierobin.com/)
 
-It started out as a single page, just when GitHub Pages came into being, and I’ve just sort of added pages here and there, whenever I’ve been in the mood for some fun or experimentation.
+It started out as a single page, just when GitHub Pages came into being, and I’ve added pages here and there, whenever I’ve been in the mood for some fun, learning something new, or mere experimentation.
 
 But what specifically is worth README-ing about it? Who knows…
 
@@ -68,7 +70,7 @@ Bad as that this is, I thought it couldn’t be any worse when I started messing
 
 ## archaeology_new.html
 
-Turns out I was wrong, it COULD be worse: a lot lot worse.
+Turns out I was wrong, it COULD be worse: [a lot lot worse](https://charlierobin.com/archaeology_new.html).
 
 Quite what I had in mind when I did this I don’t know. There was a vague idea of lots little thumbnails, clicking/dragging on them to call them out, and then being able to position them, and alt-drag on them to rotate and scale. Why oh why oh why? So it’s been officially abandoned.
 
@@ -76,13 +78,13 @@ It’s basically all done in [JQuery](https://jquery.com/), which I still really
 
 I do have an idea for the replacement, though. And this time around I have a little more confidence that it’ll fit in better with the overall design of the rest of the site. And I might do it in [AngularJS](https://angularjs.org/), simply because I also still really like [AngularJS](https://angularjs.org/). Unlike [Angular](https://angular.dev/).
 
-## gallery.html?s=1,2,3,4,5,6,7,8
+## gallery.html
 
-This page kind of works, I think. Javascript looks at URL prams, eg:
+[This page](https://charlierobin.com/gallery.html) kind of works, I think. Javascript looks at URL prams, eg:
 
 `gallery.html?s=1,2,3,4,5,6,7,8`
 
-… and displays those pictures. If there are no params, it just displays random pics.
+… and displays those pictures. If there are no params, it just displays random pics. Reload gets the next random batch, but though a URL with params, as I wanted your “history” of viewed pictures to be preserved in your browser, er, history.
 
 Or you can step forwards and backwards between pages of pics, going through the whole list in linear fashion.
 
@@ -90,9 +92,9 @@ It’s half a solution; not as bad as `archaeology.html`, but still not great. I
 
 ## standalone-video-gallery.html
 
-All the video links go to this page, which uses Javascript and [VideoJS](https://videojs.org/). If there’s a param in the URL, it loads that video. If there’s no param, it just cues up a default (which is itself a really old showreel from circa 2010 or something).
+[All the video links go to this page](https://charlierobin.com/standalone-video-gallery.html), which uses Javascript and [VideoJS](https://videojs.org/). If there’s a param in the URL, it loads that video. If there’s no param, it just cues up a default (which is itself a really old showreel from circa 2010 or something).
 
-There is, however, a newer video page I’ve been playing around with:
+There is, however, a [newer video page](https://charlierobin.com/videos.html) I’ve been playing around with:
 
 ## videos.html
 
@@ -120,17 +122,17 @@ Collapsing down to a mobile-phone sized screen switches over to a simpler list v
 
 ## software-gallery.html
 
-This page is only here as something that Google can spider from to a few of my GitHub repositories.
+[This](https://charlierobin.com/software-gallery.html) page is only here as something that Google can spider from to a few of my GitHub repositories.
 
 But…
 
 ## software.html
 
-This is here to be what will hopefully eventually be a decent replacement for the above. Modelled on the new videos page, just with a different (but still [ChatGPT](https://chatgpt.com) generated) background.
+This is here to be what will hopefully eventually be [a decent replacement for the above](https://charlierobin.com/software.html). Modelled on the new videos page, just with a different (but still [ChatGPT](https://chatgpt.com) generated) background.
 
 ## wanderlust.html
 
-Linked to from the globe on the home page, just a standalone version of the same, still using [x3dom](https://www.x3dom.org/) (also [here](https://www.web3d.org/x3dom-framework)).
+Linked to from the globe on the home page, just a [standalone version](https://charlierobin.com/wanderlust.html) of the same, still using [x3dom](https://www.x3dom.org/) (also [here](https://www.web3d.org/x3dom-framework)).
 
 
 
