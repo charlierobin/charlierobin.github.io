@@ -140,3 +140,4 @@ Linked to from the globe on the home page, just a [standalone version](https://c
 
 
 
+<img width="800" height="600" alt="me_in_mali" src="https://github.com/user-attachments/assets/c8bd877f-5e17-4cbc-ab14-f1c4ed44d13d" />
