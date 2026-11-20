@@ -120,6 +120,8 @@ Using:
 
 Collapsing down to a mobile-phone sized screen switches over to a simpler list view.
 
+All the links just go straight through to the video itself. Although I do like [VideoJS](https://videojs.org/), and the controls etc it provides, I guess I also have this thing about replacing the user’s platform’s own native controls when it comes to things like videos, scrollbars, etc. If they’re on iOS, they get to see the iOS controls they are already familiar with. If they’re on Windows, they see the Windows controls. And so on. But judging by most of the websites I see out there, I get the feeling I very much have the minority opinion on this topic.
+
 ## software-gallery.html
 
 [This](https://charlierobin.com/software-gallery.html) page is only here as something that Google can spider from to a few of my GitHub repositories.
